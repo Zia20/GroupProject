@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Project 2 Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zia20/GroupProject.git"
+  },
+  "author": "Mellow Group",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zia20/GroupProject/issues"
+  },
+  "homepage": "https://github.com/Zia20/GroupProject#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.2.10"
+  }
+}
