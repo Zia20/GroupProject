@@ -21,5 +21,4 @@ parkRouter.route("/")
     res.end(`Deleting your addition`)
 })
 
-
 module.exports = parkRouter;
