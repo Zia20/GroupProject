@@ -30,13 +30,12 @@ uploadRouter.route("/")
     res.setHeader("content-Type", "image/plain");
     next();
 })
-.post(upload.single("imageFile"), (req, res) => {
-
+.post(upload, (req, res) => {
+    //Double check
+    upload(req, res, (err) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json(req.file);
-    //Double check
-    upload(req, res, (err) => {
         if(err) {
             res.status = 400;
             res.send(`Ensure you are submiting and image`);
