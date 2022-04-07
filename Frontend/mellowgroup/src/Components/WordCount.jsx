@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import images from "../images/falling_trees.png";
+import 'bootstrap/dist/css/bootstrap.css';
+import Images from "../images/falling_trees.png";
 
 function WordCount() {
     const wordTyping =  ["Recreation", "Parks", "Citizen", "Clean Reporting"];
@@ -47,11 +48,13 @@ function WordCount() {
 
   return (
     <div>
-    <h1>Mello the Citizen to report parks</h1>
-    <h2>
-        {`Hello, and Welcome to ${wordTyping[index].substring(0, subIndex)}${blink ? "|" : ""}`}
-    </h2>
-    <image src={images}/>
+      <di>
+        <h1>Mello the Citizen to report parks</h1>
+        <h2>
+            {`Hello, and Welcome to ${wordTyping[index].substring(0, subIndex)}${blink ? "|" : ""}`}
+        </h2>
+        <img alt='parks' src={Images}/>
+      </di>
     </div>
   )
 }

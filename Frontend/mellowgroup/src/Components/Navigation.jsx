@@ -5,7 +5,7 @@ import { Container, Nav, Navbar, Form, FormControl, Button } from 'react-bootstr
 function Navigation() {
   return (
     <>
-      <Navbar bg="danger" expand="lg">
+      <Navbar bg="success" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#">Mellow</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -24,7 +24,7 @@ function Navigation() {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-info">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>
