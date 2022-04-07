@@ -30,6 +30,10 @@ uploadRouter.route("/")
     res.setHeader("content-Type", "image/plain");
     next();
 })
+.get((req, res) => {
+    res.status = 403;
+    res.end(`This request is not supported!`);
+})
 .post(upload, (req, res) => {
     //Double check
     upload(req, res, (err) => {
