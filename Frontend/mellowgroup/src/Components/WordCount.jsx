@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Images from "../images/falling_trees.png";
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function WordCount() {
     const wordTyping =  ["Recreation", "Parks", "Citizen", "Clean Reporting"];
@@ -47,15 +48,21 @@ function WordCount() {
       }, [blink]);
 
   return (
-    <div>
-      <di>
-        <h1>Mello the Citizen to report parks</h1>
-        <h2>
-            {`Hello, and Welcome to ${wordTyping[index].substring(0, subIndex)}${blink ? "|" : ""}`}
-        </h2>
+
+  <Container>
+    <Row className='mt-3'>
+      <Col className='mt-5 pl-3'>
+          <h1>Mello the Citizen to report parks</h1>
+          <h2>
+              {`Hello, and Welcome to ${wordTyping[index].substring(0, subIndex)}${blink ? "|" : ""}`}
+          </h2>
+          <Button className='mt-3' variant="outline-success" size="lg">Rate Parks</Button>
+      </Col>
+      <Col>
         <img alt='parks' src={Images}/>
-      </di>
-    </div>
+      </Col>
+    </Row>
+  </Container>
   )
 }
 

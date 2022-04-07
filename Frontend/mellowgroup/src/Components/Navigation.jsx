@@ -7,7 +7,7 @@ function Navigation() {
     <>
       <Navbar bg="success" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">Mellow</Navbar.Brand>
+          <Navbar.Brand href="#"><span className='text-danger'>Mell</span>ow</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
