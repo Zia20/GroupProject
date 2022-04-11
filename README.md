@@ -25,3 +25,64 @@ https://localhost:3000/signup
 
 
 
+
+
+
+
+
+## Project-Tree Visual Studio Code Extension Updated to March 29-April 04, 2022.
+```
+GroupProject
+├─ Backend
+│  ├─ .env
+│  ├─ models
+│  │  ├─ parks.js
+│  │  └─ users.js
+│  ├─ mongoose.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ public
+│  │  ├─ images
+│  │  │  ├─ girlphone.png
+│  │  │  └─ voice.png
+│  │  └─ index.html
+│  ├─ routes
+│  │  ├─ loginRouter.js
+│  │  ├─ parkRouter.js
+│  │  ├─ signupRouter.js
+│  │  ├─ uploadRouter.js
+│  │  └─ weatherRouter.js
+│  └─ server.js
+├─ Frontend
+│  └─ mellowgroup
+│     ├─ mellowgroup@0.1.0
+│     ├─ package-lock.json
+│     ├─ package.json
+│     ├─ public
+│     │  ├─ favicon.ico
+│     │  ├─ index.html
+│     │  ├─ logo192.png
+│     │  ├─ logo512.png
+│     │  ├─ manifest.json
+│     │  └─ robots.txt
+│     ├─ react-scripts
+│     ├─ README.md
+│     └─ src
+│        ├─ App.css
+│        ├─ App.js
+│        ├─ App.test.js
+│        ├─ Components
+│        │  ├─ GoogleApiWrapper.jsx
+│        │  ├─ Navigation.jsx
+│        │  └─ WordCount.jsx
+│        ├─ images
+│        │  └─ falling_trees.png
+│        ├─ index.css
+│        ├─ index.js
+│        ├─ logo.svg
+│        ├─ reportWebVitals.js
+│        └─ setupTests.js
+├─ package-lock.json
+└─ README.md
+
+```
