@@ -3,12 +3,14 @@ import './App.css';
 import GoogleApiWrappers from './Components/GoogleApiWrapper';
 import Navigation from './Components/Navigation';
 import WordCount from './Components/WordCount';
+import Ratings from './Components/Ratings';
 
 function App() {
   return (
     <>
       <Navigation />
       <WordCount />
+      <Ratings/>
       <GoogleApiWrappers />
     </>
   );
