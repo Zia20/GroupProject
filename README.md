@@ -1,4 +1,4 @@
-# GroupProject
+# GroupProject - Mellow
 
 ## Project 2. March 29 to May 6 2022. InceptionU. 
 
@@ -14,6 +14,10 @@ https://data.calgary.ca/browse?category=Recreation+and+Culture&sortBy=newest
 
 ## Running Project2
 nodemon server.js   //Run server.js Backend
+## Install
+npm install - node_modules
+npm install react-scripts --save 
+npm install react-icons
 
 ## Browser URLS
 https://localhost:3000   //Launch browser this location
