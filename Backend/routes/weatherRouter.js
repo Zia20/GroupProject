@@ -1,25 +1,12 @@
 const express = require("express");
 const weatherRouter = express.Router();
 require('dotenv').config();
-const fetch = require('cross-fetch');
+const fetch = require('node-fetch');
 
 const AKEY = process.env.API_KEY;
-const weatherUrl = `https://www.meteosource.com/api/v1/free/find_places_prefix?text=Calgary%2C%20Alberta&language=en&key=${AKEY}`;
+//  = `https://www.meteosource.com/api/v1/free/find_places_prefix?text=Calgary%2C%20Alberta&language=en&key=`;
+ const weatherUrl= `https://www.meteosource.com/api/v1/free/point?place_id=Calgary&sections=all&timezone=UTC&language=en&units=metric&key=${AKEY}`;
 
-async function getWeather(){
-    try {
-        let response = await fetch(weatherUrl);
-        let data = response.json();
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
-}
-// getWeather()
-// .then((data) => {
-
-//     return (data);
-// });
 
 weatherRouter.route("/")
 .all((req, res, next) => {
@@ -27,16 +14,24 @@ weatherRouter.route("/")
     res.setHeader("content-Type", "json/plain");
     next();
 })
-.get((req, res) => {
-    res.status = 403;
-    res.end(`This request is not supported!`);
+.get( async(req, res) => {
+    try {
+        let response = await fetch(weatherUrl);
+        let data = response.json();
+        console.log(data)
+        res.json(data)
+    } catch (error) {
+        res.send(error.message);
+        console.log(error);
+    }
 })
 .post((req, res) => {
+    let data = req.body
+    let city = data.city
     res.statusCode = 400;
     res.setHeader("Content-Type", "application/json");
     res.json(req.weather);
 });
-
 
 // fetch('people.json')
 //     .then(function (response) {

@@ -15,7 +15,7 @@ const signupRouter = require("./routes/signupRouter");
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'./public')));
 // app.use('/static', express.static('public'))
-// app.use("/static", express.static(path.join(__dirname, 'public')));
+app.use("/static", express.static(path.join(__dirname, 'public')));
 
 //Website routing
 app.use('/', parkRouter);
