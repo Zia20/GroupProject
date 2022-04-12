@@ -22,16 +22,16 @@ https://localhost:3000/weather
 https://localhost:3000/login
 https://localhost:3000/signup
 
+## Mongo Atlas 
+--Related files--
+mongoose.js add consolelog(checkURL);
+.env //no comments allowed in .env ADDED:MONGO_URL=mongodb+srv://mellow789:mellow789@cluster0.xt5qk.mongodb.net/project2789?retryWrites=true&w=majority
 
+## Mongoose Steps
+First be sure you have MongoDB and Node.js installed.
 
-
-
-
-
-
-
-## Project-Tree Visual Studio Code Extension Updated to March 29-April 04, 2022.
-```
+## Project-Tree Visual Studio Code Extension Updated to March 29-April 04, 2022. ctrl+shift+p-->Project-Tree
+```js
 GroupProject
 ├─ Backend
 │  ├─ .env
