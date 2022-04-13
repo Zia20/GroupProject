@@ -56,7 +56,7 @@ function WordCount() {
           <h2>
               {`Hello, and Welcome to ${wordTyping[index].substring(0, subIndex)}${blink ? "|" : ""}`}
           </h2>
-          <Button className='mt-3' variant="outline-success" size="lg">Rate Parks</Button>
+          <Button className='mt-3' variant="outline-success" size="lg">Get in touch</Button>
       </Col>
       <Col>
         <img alt='parks' src={Images}/>

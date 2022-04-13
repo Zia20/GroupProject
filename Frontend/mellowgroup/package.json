@@ -4,6 +4,8 @@
   "private": true,
   "proxy": "http://localhost:4000",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@react-google-maps/api": "^2.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
@@ -16,7 +18,7 @@
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^5.0.0",
+    "react-scripts": "^5.0.1",
     "reactstrap": "^9.0.1",
     "web-vitals": "^2.1.4"
   },

@@ -1,13 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Nav, Navbar, Form, FormControl, Button } from 'react-bootstrap';
 
 function Navigation() {
+
+  const NavbarStyle = {
+    // color: "white",
+    padding: "10px",
+    fontFamily: "Cursive",
+    marginLeft: "10px",
+    fontSpacing: "20px",
+  }
+
   return (
     <>
-      <Navbar bg="success" expand="lg">
+      <Navbar bg="success" expand="lg" className='py-3'>
         <Container fluid>
-          <Navbar.Brand href="#"><span className='text-danger'>Mell</span>ow</Navbar.Brand>
+          <Navbar.Brand href="#" style={NavbarStyle}>Me<span className='text-danger'>llow</span></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -25,6 +35,9 @@ function Navigation() {
                 aria-label="Search"
               />
               <Button variant="outline-info">Search</Button>
+            </Form>
+            <Form className="d-flex">
+            <Button variant="outline-info"><FontAwesomeIcon icon="fas fa-sign-in" />SignUp</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
-
+.Navbar {
+  font-size: 200px;
+}
+.NavbarB{
+  font-size: 200px;
+  color: red;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

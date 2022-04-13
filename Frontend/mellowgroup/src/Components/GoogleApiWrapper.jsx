@@ -1,5 +1,9 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import { Container, Row, Col } from 'react-bootstrap';
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import Images from "../images/mobile.png";
+
 // import 'dotenv/config'
 const GoogleKey = "";  //Google Api Key goes here.
 
@@ -42,13 +46,26 @@ const GoogleApiWrapper = () => {
     }, [])
 
   return isLoaded ? (
-    <GoogleMap 
-        mapContainerStyle={mapStyles}
-        center={mainCenter}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-    />
+
+    <Container>
+        <Row className='mt-3'>
+            <Col>
+                <img alt='parks' src={Images}/>
+            </Col>
+            <Col>
+                <GoogleMap 
+                    mapContainerStyle={mapStyles}
+                    center={mainCenter}
+                    zoom={10}
+                    onLoad={onLoad}
+                    onUnmount={onUnmount}
+                />
+            </Col>
+        </Row>
+    </Container>
+
+
+    
   ) : <></>
 }
 export default GoogleApiWrapper;
