@@ -42,7 +42,7 @@ function Navigation() {
               <Link to="/search" style={myLink}><Button className='shadow-none' variant="outline-dark">Search</Button></Link>
             </Form>
             <Form className="d-flex">
-            <Nav.Link><Link to="/signup" style={myLink}><Button className='shadow-none' variant="outline-dark">SignUp</Button></Link></Nav.Link>
+            <Nav.Link><Link to="/signup" style={myLink}><Button className='shadow-none' variant="outline-dark">Sign In</Button></Link></Nav.Link>
             </Form>
           </Navbar.Collapse>
         </Container>
