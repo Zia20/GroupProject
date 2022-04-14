@@ -48,7 +48,7 @@ const GoogleApiWrapper = () => {
   return isLoaded ? (
 
     <Container>
-        <Row className='mt-3'>
+        <Row className='mt-3 mb-5'>
             <Col>
                 <img alt='parks' src={Images}/>
             </Col>

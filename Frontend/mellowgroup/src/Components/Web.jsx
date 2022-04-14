@@ -4,6 +4,7 @@ import WordCount from './WordCount';
 import Ratings from './Ratings';
 import Cross from './Cross';
 import Maps from "./Maps";
+import Footer from './Footer';
 
 function Web() {
   return (
@@ -15,6 +16,7 @@ function Web() {
         <Maps />
         <Cross />
         <GoogleApiWrappers />
+        <Footer />
     </>
   )
 }
