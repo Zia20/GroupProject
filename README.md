@@ -14,6 +14,7 @@ https://data.calgary.ca/browse?category=Recreation+and+Culture&sortBy=newest
 
 ## Running Project2
 nodemon server.js   //Run server.js Backend
+https://localhost:3000 //Launch in Browser
 ## Install
 npm install - node_modules
 npm install react-scripts --save 
@@ -88,5 +89,4 @@ GroupProject
 │        └─ setupTests.js
 ├─ package-lock.json
 └─ README.md
-
 ```
