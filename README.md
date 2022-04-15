@@ -5,10 +5,10 @@
 Project Title: How Might We Improve the Communication from citizen to city with parks and recreation.
 
 ## **Team Members** [Fowzia Hassan, Emmanuel A., Paul Neumann, Yulia Sinko]
-Alaf | alafonye at gmail.com  
+Alaf   | alafonye at gmail.com  
 Fowzia | hassanfowzia2 at gmail.com  
-Yulia | yulias.linc at gmail.com  
-Paul | neumann4 at gmail.com   
+Yulia  | yulias.linc at gmail.com  
+Paul   | neumann4 at gmail.com   
 
 
 
