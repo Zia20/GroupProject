@@ -52,7 +52,7 @@ function WordCount() {
   <Container>
     <Row className='mt-3'>
       <Col className='mt-5 pl-3'>
-          <h1>Mello the Citizen to report parks</h1>
+          <h1>Mellow the Citizen to report parks</h1>
           <h2>
               {`Hello, and Welcome to ${wordTyping[index].substring(0, subIndex)}${blink ? "|" : ""}`}
           </h2>

@@ -6,9 +6,11 @@ import Recreation from "./Components/Recreation";
 import Search from "./Components/Search";
 import Signup from "./Components/Signup";
 import Web from "./Components/Web";
-import Footer from "./Components/Web";
+import Footer from "./Components/Footer";
 import Navigation from './Components/Navigation';
 import ErrorPage from "./Components/ErrorPage";
+import About from "./Components/About";
+
 
 
 function App() {
@@ -22,10 +24,10 @@ function App() {
         <Route path="/campground" element={<Campground />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/footer" element={<Footer />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<ErrorPage />} />
-
       </Routes>
+      <Footer />
     </>
   );
 }

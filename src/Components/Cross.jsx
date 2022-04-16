@@ -1,5 +1,6 @@
 import React from 'react';
-import Images from "../images/falling_trees.png";
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import Images from "../images/joggingBG.png";
 
 function Cross() {
     const mystyle = {
@@ -7,11 +8,27 @@ function Cross() {
         backgroundImage: "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)",
         padding: "10px",
         fontFamily: "Arial",
-        height: "150px"
       };
   return (
     <div style={mystyle}>
-        {/* <img alt='parks' src={Images}/> */}
+      <Container>
+        <Row>
+        <Col>
+            <img alt='parks' src={Images}/>
+          </Col>
+          <Col className='py-5 my-auto'>
+          <h2>Mellow Group Technologies</h2>
+          <h5>Citizen to City Project</h5>
+            <div>
+              <Button size="lg" variant="success">React</Button>{' '}
+              <Button size="lg" variant="warning">Express</Button>{' '}
+              <Button size="lg" variant="danger">MongoDB</Button>{' '}
+              <Button size="lg" variant="info">Node</Button>{' '}
+              <Button size="lg" variant="primary">ReactBootstrap</Button>{' '}
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   )
 }
