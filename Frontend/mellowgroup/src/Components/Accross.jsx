@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Images from "../images/joggingBG.png";
 
-function Cross() {
+function Accross() {
     const mystyle = {
         color: "white",
         backgroundImage: "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)",
@@ -33,4 +33,4 @@ function Cross() {
   )
 }
 
-export default Cross;
+export default Accross;

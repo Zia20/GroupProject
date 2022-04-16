@@ -55,20 +55,20 @@ const Signup = () => {
       <h1 className="h3 mb-3 fw-normal">Please sign up</h1>
       <div className="form-floating">
         <input type="text" className="form-control" id="floatingPassword shadow-none" placeholder="First Name" />
-        <label for="floatingPassword">First Name</label>
+        <label htmlFor="floatingPassword">First Name</label>
       </div>
       <div className="form-floating">
 
         <input type="text" className="form-control" id="floatingPassword shadow-none" placeholder="Last Name" />
-        <label for="floatingPassword">Last Name</label>
+        <label htmlFor="floatingPassword">Last Name</label>
       </div>
       <div className="form-floating">
         <input type="email" className="form-control" id="floatingInput shadow-none" placeholder="name@example.com" />
-        <label for="floatingInput">Email address</label>
+        <label htmlFor="floatingInput">Email address</label>
       </div>
       <div className="form-floating">
         <input type="password" className="form-control" id="floatingPassword shadow-none" placeholder="Password" />
-        <label for="floatingPassword">Password</label>
+        <label htmlFor="floatingPassword">Password</label>
       </div>
 
       <div className="checkbox mb-3">
