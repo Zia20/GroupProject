@@ -13,12 +13,6 @@ const Campground = () => {
   const [choose, setChoose ] = useState('');
   const [text, setText ] = useState('');
 
-  // const formStyles = {
-  //   justifyContent: 'center',
-  //   marginLeft: "200px"
-  // }
-
-
   const formStyle = {
     backgroundImage: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
     padding: "10px",
@@ -38,7 +32,8 @@ const Campground = () => {
       date, 
       choose, 
       text 
-    }
+    };
+
 
     console.log(newComplain);
     const data = JSON.stringify(newComplain)
@@ -67,10 +62,9 @@ const Campground = () => {
             <div>
               <h1>We are here to assist you!</h1>
               <p>Please complete the form below for your complaints</p>
-              
               <form onSubmit={handleSubmit}>
                 <label>Complainant's First Name:</label><br />
-                <input class="rounded" type="text" required value={firstName} onChange={ (event) => {setFirstName(event.target.value)} } /><br />
+                <input class="rounded text-success" type="text" required value={firstName} onChange={ (event) => {setFirstName(event.target.value)} } /><br />
 
                 <label>Complainant's Last Name:</label><br />
                 <input class="rounded" type="text" required value={lastName} onChange={(event) => {setLastName(event.target.value)}} /><br />
