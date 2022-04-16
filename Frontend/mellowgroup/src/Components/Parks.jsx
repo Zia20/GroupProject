@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container, Row, Col, Button, Carousel } from 'react-bootstrap';
+import { Container, Row, Col, Carousel } from 'react-bootstrap';
 import Images from "../images/circle.jpg";
 import Image1 from "../images/campfire.jpg";
 import Image2 from "../images/alone.jpg";
 import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAtom, faCampground, faHospital, faMapLocationDot, faEye, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faCampground, faHospital, faMapLocationDot, faEye, faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 const Parks = () => {
 
@@ -21,7 +21,6 @@ const carousalStyle = {
   fontFamily: "Arial",
   paddingTop: "30px",
   paddingBottom: "30px",
-  fontFamily: "Arial",
 };
 
 const fontStyle = {

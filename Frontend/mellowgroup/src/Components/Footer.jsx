@@ -1,7 +1,9 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faFacebookF, faGithub, faLinkedinIn, faTwitter , } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
 
@@ -17,8 +19,8 @@ const Footer = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#features">Recreation</Nav.Link>
+            <Nav.Link href="#pricing">Parks</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">More deets</Nav.Link>
@@ -27,7 +29,10 @@ const Footer = () => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <FontAwesomeIcon icon={['fal', 'code']} />
+        <FontAwesomeIcon className='px-2 mx-2' icon={faLinkedinIn} size="2x"  />
+        <FontAwesomeIcon className='px-2 mx-2' icon={faFacebookF} size="2x" />
+        <FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x" />
+        <FontAwesomeIcon className='px-2 mx-2' icon={faTwitter} size="2x" />
         </Container>
     </Navbar>
     </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Images from "../images/fire.png";
 import Image1 from "../images/jogging.png";

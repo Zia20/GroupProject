@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Images from "../images/falling_trees.png";
 
-
-
-
 const Signup = () => {
 
   const [firstName, setFirstname ] = useState('');
