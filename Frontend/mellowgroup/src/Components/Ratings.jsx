@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa'
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import Images from "../images/globeBG.png";
 
 const Ratings = () => {
@@ -69,11 +69,15 @@ return (
             <h2>Mellow Group Technologies</h2>
             <h5>Citizen to City Project</h5>
                 <div>
-                <Button size="lg" variant="success">React</Button>{' '}
-                <Button size="lg" variant="warning">Express</Button>{' '}
-                <Button size="lg" variant="danger">MongoDB</Button>{' '}
-                <Button size="lg" variant="info">Node</Button>{' '}
-                <Button size="lg" variant="primary">ReactBootstrap</Button>{' '}
+                    <Button size="lg" variant="success">React</Button>{' '}
+                    <Button size="lg" variant="warning">Express</Button>{' '}
+                    <Button size="lg" variant="danger">MongoDB</Button>{' '}
+                    <Button size="lg" variant="info">Node</Button>{' '}
+                    <Button size="lg" variant="primary">ReactBootstrap</Button>{' '}
+                    <Button variant="primary" disabled>
+                    <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" />
+                    Loading...
+                </Button>
                 </div>
             </Col>
             </Row>

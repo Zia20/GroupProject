@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import Images from "../images/joggingBG.png";
+import Image1 from "../images/fire.png";
+
 
 const Campground = () => {
 
@@ -10,10 +13,19 @@ const Campground = () => {
   const [choose, setChoose ] = useState('');
   const [text, setText ] = useState('');
 
-  const formStyles = {
-    justifyContent: 'center',
-    marginLeft: "200px"
-  }
+  // const formStyles = {
+  //   justifyContent: 'center',
+  //   marginLeft: "200px"
+  // }
+
+
+  const formStyle = {
+    backgroundImage: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
+    padding: "10px",
+    paddingTop: "80px",
+    paddingBottom: "100px",
+    fontFamily: "Arial",
+};
 
   const handleSubmit = async (e) => {
     
@@ -44,34 +56,68 @@ const Campground = () => {
   }
 
   return (
-    <div style={formStyles}>
-      <h1>We are here to assist you!</h1>
-      <p>Please complete the form below fo your complaints</p>
-      
-      <form onSubmit={handleSubmit}>
-        <label>Complainant's First Name:</label><br />
-        <input type="text" required value={firstName} onChange={ (event) => {setFirstName(event.target.value)} } /><br />
+    <div>
+      <div style={formStyle}>
+      <Container>
+        <Row>
+          <Col>
+          <img alt='parks' src={Images}/>
+          </Col>
+          <Col>
+            <div>
+              <h1>We are here to assist you!</h1>
+              <p>Please complete the form below for your complaints</p>
+              
+              <form onSubmit={handleSubmit}>
+                <label>Complainant's First Name:</label><br />
+                <input class="rounded" type="text" required value={firstName} onChange={ (event) => {setFirstName(event.target.value)} } /><br />
 
-        <label>Complainant's Last Name:</label><br />
-        <input type="text" required value={lastName} onChange={(event) => {setLastName(event.target.value)}} /><br />
+                <label>Complainant's Last Name:</label><br />
+                <input class="rounded" type="text" required value={lastName} onChange={(event) => {setLastName(event.target.value)}} /><br />
 
-        <label>Email:</label><br />
-        <input type="email" required value={email} onChange={(event) => {setEmail(event.target.value)}} /><br />
+                <label>Email:</label><br />
+                <input class="rounded" type="email" required value={email} onChange={(event) => {setEmail(event.target.value)}} /><br />
 
-        <label>Date of report</label> <br />
-        <input type="datetime-local" value={date} onChange={(event) => {setDate(event.target.value)}} /><br />
+                <label>Date of report</label> <br />
+                <input class="rounded" type="datetime-local" value={date} onChange={(event) => {setDate(event.target.value)}} /><br />
 
-        <label htmlFor="complaints">Choose a type:</label><br />
-        <select id="complaints" value={choose} onChange={(event) => {setChoose(event.target.value)}}>
-          <option value="Wildlife">Wildlife</option>
-          <option value="Assault">Assault</option>
-          <option value="Damaged Items">Damaged Items</option>
-          <option value="Maintenance Issues">maintenance Issues</option>
-        </select><br />
-        <textarea rows="4" cols="50" placeholder='Write your complaints' value={text} onChange={(event) => {setText(event.target.value)}}></textarea><br />
-        <Button className='mt-3 shadow-none' variant="outline-success" size="lg" type='submit'>Submit</Button>
-      </form>
+                <label htmlFor="complaints">Choose a type:</label><br />
+                <select class="rounded" id="complaints" value={choose} onChange={(event) => {setChoose(event.target.value)}}>
+                  <option value="Wildlife">Wildlife</option>
+                  <option value="Assault">Assault</option>
+                  <option value="Damaged Items">Damaged Items</option>
+                  <option value="Maintenance Issues">maintenance Issues</option>
+                </select><br />
+                <textarea class="rounded" rows="4" cols="50" placeholder='Write your complaints' value={text} onChange={(event) => {setText(event.target.value)}}></textarea><br />
+                <Button className='mt-3 shadow-none' variant="outline-success" size="lg" type='submit'>Submit</Button>
+              </form>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
+    <div>
+      <Container>
+        <Row>
+          <Col className='py-5 my-auto'>
+          <h2>Mellow Group Technologies</h2>
+          <h5>Citizen to City Project</h5>
+            <div>
+              <Button size="lg" variant="success">React</Button>{' '}
+              <Button size="lg" variant="warning">Express</Button>{' '}
+              <Button size="lg" variant="danger">MongoDB</Button>{' '}
+              <Button size="lg" variant="info">Node</Button>{' '}
+              <Button size="lg" variant="primary">ReactBootstrap</Button>{' '}
+            </div>
+          </Col>
+          <Col>
+            <img alt='parks' src={Image1}/>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+    </div>
+    
   )
 }
 

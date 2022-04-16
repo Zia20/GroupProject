@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Images from "../images/joggingBG.png";
 
+
+
 function Accross() {
     const mystyle = {
         color: "white",
