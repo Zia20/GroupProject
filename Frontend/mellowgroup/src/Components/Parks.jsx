@@ -1,19 +1,55 @@
-import React from 'react'
-import { Container, Row, Col, Carousel } from 'react-bootstrap';
+import React, { useState } from 'react'
+import { Container, Row, Col, Carousel, Button } from 'react-bootstrap';
 import Images from "../images/circle.jpg";
 import Image1 from "../images/campfire.jpg";
 import Image2 from "../images/alone.jpg";
+import Image3 from "../images/recordingBG.png";
 import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCampground, faHospital, faMapLocationDot, faEye, faGlobe } from '@fortawesome/free-solid-svg-icons'
 
+
 const Parks = () => {
 
+  const [ fileData, setFileData ] = useState();
+
+  const handleFileChange = (event) => {
+
+    setFileData(event.target.files[0]);
+  }
+
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+    //The for accepts a key:value to store data
+    const data = new FormData()
+    //Image name must corresponds to data in database.
+    data.append("image", fileData);
+
+    try {
+      fetch("/upload", {
+        method: "POST",
+        body: data,
+      })
+    } catch (error) {
+      alert('something wrong')
+      console.log(error.message);
+    }
+    
+  };
+
   const mystyle = {
-   
   paddingTop: "30px",
   paddingBottom: "30px",
   fontFamily: "Arial",
+};
+
+const upLoadstyle = {
+  backgroundImage: "linear-gradient(-60deg, #16a085 0%, #f4d03f 100%)",
+  paddingTop: "30px",
+  paddingBottom: "30px",
+  fontFamily: "Arial",
+  marginTop: "20px",
 };
 
 const carousalStyle = {
@@ -24,13 +60,32 @@ const carousalStyle = {
 };
 
 const fontStyle = {
-   
   color: "green",
 };
  
-
   return (
     <div>
+
+      <div style={upLoadstyle}>
+        <Container>
+          <Row>
+            <Col>
+              <img alt='parks' src={Image3}/>
+            </Col>
+            <Col>
+              <div className='py-5 my-5'>
+                <form onSubmit={handleSubmit}>
+                  <label>Make a complain with by Uploading an Image</label><br />
+                  <input type="file" onChange={handleFileChange} /><br />
+                  <Button className='shadow-none my-3' variant="outline-success" size="lg" type='submit'>Upload</Button>
+                </form>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      
+      
       <div style={mystyle}>
         <Container>
           <Row>
