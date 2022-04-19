@@ -13,20 +13,12 @@ signupRouter
   })
   .get((req, res) => {
     res.status = 200;
-    // res.sendFile(path.join(__dirname, "../public/index.html"));
   })
   //Users signup to report a case to avoid spamming fake reports
   .post(async (req, res) => {
     res.statusCode = 200;
     const newUser = req.body;
     newUser.password = md5(newUser.password);
-
-    //    await User.create({
-    //         fname: req.body.fname,
-    //         lname: req.body.lname,
-    //         email: req.body.email,
-    //         password: (md5(req.body.password))
-    //     });
     await User.create(newUser);
     res.send("Success!");
   });

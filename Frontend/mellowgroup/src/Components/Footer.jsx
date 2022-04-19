@@ -4,15 +4,12 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFacebookF, faGithub, faLinkedinIn, faTwitter , } from '@fortawesome/free-brands-svg-icons';
+import { footerStyles } from "./Styles";
 
 const Footer = () => {
 
-  const recreated = {
-    backgroundImage: "linear-gradient(180deg, #2af598 0%, #009efd 100%)",
-    padding: "50px",
-  }
   return (
-    <div style={recreated}>
+    <div style={footerStyles}>
       <Navbar collapseOnSelect expand="lg" variant="dark">
         <Container>
         <Navbar.Brand href="#home">Mellow</Navbar.Brand>

@@ -1,16 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Images from "../images/joggingBG.png";
+import { myCross } from "./Styles";
 
 function Cross() {
-    const mystyle = {
-        color: "white",
-        backgroundImage: "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)",
-        padding: "10px",
-        fontFamily: "Arial",
-      };
+    
   return (
-    <div style={mystyle}>
+    <div style={myCross}>
       <Container>
         <Row>
         <Col>

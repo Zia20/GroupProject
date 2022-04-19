@@ -1,12 +1,11 @@
+require('dotenv').config();
 const express = require("express");
 const weatherRouter = express.Router();
-require('dotenv').config();
 const fetch = require('node-fetch');
 
-const AKEY = process.env.API_KEY;
-//  = `https://www.meteosource.com/api/v1/free/find_places_prefix?text=Calgary%2C%20Alberta&language=en&key=`;
- const weatherUrl= `https://www.meteosource.com/api/v1/free/point?place_id=Calgary&sections=all&timezone=UTC&language=en&units=metric&key=${AKEY}`;
-
+// const AKEY = process.env.API_KEY;
+// const location = Calgary;
+//  const weatherUrl= `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${AKEY}&units=metric`;
 
 weatherRouter.route("/")
 .all((req, res, next) => {
@@ -16,13 +15,11 @@ weatherRouter.route("/")
 })
 .get( async(req, res) => {
     try {
-        let response = await fetch(weatherUrl);
+        const response = await fetch(weatherUrl);
         let data = response.json();
-        console.log(data)
         res.json(data)
     } catch (error) {
-        res.send(error.message);
-        console.log(error);
+        console.log(error.message)
     }
 })
 .post((req, res) => {
@@ -32,27 +29,6 @@ weatherRouter.route("/")
     res.setHeader("Content-Type", "application/json");
     res.json(req.weather);
 });
-
-// fetch('people.json')
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         appendData(data);
-//     })
-//     .catch(function (err) {
-//         console.log('error: ' + err);
-//     });
-// function appendData(data) {
-//     var mainContainer = document.getElementById("myData");
-//     for (var i = 0; i < data.length; i++) {
-//         var div = document.createElement("div");
-//         div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
-//         mainContainer.appendChild(div);
-//     }
-// }
-
-
 
 module.exports = weatherRouter;
 

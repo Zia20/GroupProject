@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Images from "../images/joggingBG.png";
 import Image1 from "../images/fire.png";
+import { CampFormStyles } from "./Styles";
 
 
 const Campground = () => {
@@ -13,18 +14,9 @@ const Campground = () => {
   const [choose, setChoose ] = useState('');
   const [text, setText ] = useState('');
 
-  const formStyle = {
-    backgroundImage: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
-    padding: "10px",
-    paddingTop: "80px",
-    paddingBottom: "100px",
-    fontFamily: "Arial",
-};
-
   const handleSubmit = async (e) => {
     
     e.preventDefault();
-
     const newComplain = { 
       firstName, 
       lastName, 
@@ -33,7 +25,6 @@ const Campground = () => {
       choose, 
       text 
     };
-
 
     console.log(newComplain);
     const data = JSON.stringify(newComplain)
@@ -52,7 +43,7 @@ const Campground = () => {
 
   return (
     <div>
-      <div style={formStyle}>
+      <div style={CampFormStyles}>
       <Container>
         <Row>
           <Col>
