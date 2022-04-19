@@ -20,8 +20,8 @@ function Recreation() {
   const getWeather = async(e) => {
     if (e.key === "Enter"){
       try {
-        const response = await fetch(weatherUrl);
-        let data = response.json();
+        const response = await fetch(weatherUrl);        
+        let data = await response.json();
         setWeatherData(data)
         setCity('')
         console.log(data)
