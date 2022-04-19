@@ -1,24 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Images from "../images/fire.png";
 import Image1 from "../images/jogging.png";
 import Image2 from "../images/counting.png";
+import Image3 from "../images/worldBG.png";
+import { recreatePage, recreated, weatherInput } from "./Styles";
+
 import { Container, Card, Row, Col, Button, ProgressBar, Spinner } from 'react-bootstrap';
 
 function Recreation() {
 
-  const recreate = {
-    backgroundImage: "linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)",
-    padding: "50px",
-  }
+  const [ weatherData, setWeatherData ] = useState([{}]);
+  const [ city, setCity ] = useState('')
 
-  const recreated = {
-    backgroundImage: "linear-gradient(180deg, #2af598 0%, #009efd 100%)",
-    padding: "50px",
+  // const AKEY = process.env.API_KEY;
+  const weatherUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  const getWeather = async(e) => {
+    // e.preventDefault();
+    if (e.key === "Enter"){
+      try {
+        const response = await fetch(weatherUrl);
+        let data = response.json();
+        setWeatherData(data)
+        setCity('')
+        console.log(data)
+        } catch (error) {
+        console.log(error.message)
+      }
+    }
   }
   
   return (
-    <>
+    <div>
       <div>
       <Container>
         <Row className='mt-3'>
@@ -35,7 +49,7 @@ function Recreation() {
         </Row>
       </Container>
     </div>
-    <div style={recreate}>
+    <div style={recreatePage}>
     <Container>
       <Row>
         <Col>
@@ -137,9 +151,42 @@ function Recreation() {
         </Row>
       </Container>
     </div>
-    </>
-    
-  
+    <div style={recreatePage}>
+      <Container>
+        <Row className='mt-3'>
+          <Col>
+            <img alt='parks' src={Image3}/>
+          </Col>
+          <Col className='mt-5 pl-3'>
+            <input style={weatherInput}
+            type="text" 
+            className='rounded' 
+            placeholder='Enter you City' 
+            value={city} 
+            onChange={ 
+              (event) => {setCity(event.target.value)} 
+              } 
+            onKeyDown={getWeather}
+              /><br/>
+
+            {typeof weatherData.main === 'undefined' ? (
+              <div>
+                <p>Welcome to Mellow weather.</p> <br/>
+              </div>
+            ) : (
+              <div>
+                <p>{weatherData.name}</p> <br/>
+                <p>{Math.round(weatherData.main.temp)}oC</p> <br/>
+                <p>{weatherData.weather[0].main}</p>
+              </div>
+            )}
+
+            {weatherData.cod === "404" ? (<p>City is not found</p>) : (<></>)}
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  </div>
   )
 }
 
