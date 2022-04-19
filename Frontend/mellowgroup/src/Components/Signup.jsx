@@ -4,35 +4,38 @@ import Images from "../images/falling_trees.png";
 
 const Signup = () => {
 
-  const [firstName, setFirstname ] = useState('');
-  const [lastName, setLastname ] = useState('');
+  const [firstName, setFirstName ] = useState('');
+  const [lastName, setLastName ] = useState('');
   const [email, setEmail ] = useState('');
-  const [date, setDate ] = useState('');
-  const [choose, setChoose ] = useState('');
-  const [text, setText ] = useState('');
+  const [password, setPassword ] = useState('');
 
   const formStyles = {
     justifyContent: 'center',
     marginLeft: "200px"
   }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (e) => {
 
-    event.preventDefault();
-    const newComplains = { firstName, 
+    e.preventDefault();
+    const newUser = { 
+      firstName, 
       lastName, 
       email, 
-      date, 
-      choose, 
-      text };
+      password, 
+    };
 
-      const response = await fetch("http://localhost:3000/complaints", {
-        method: "POST",
-        headers: { "Content-Type": "application/json " },
-        body: JSON.stringify(newComplains)
-      }).then(() => {
-        console.log("Added new complaints")
-      });
+    const data = JSON.stringify(newUser)
+      try {
+
+        await fetch("/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json"},
+          body: data,
+        })
+        
+      } catch (error) {
+        console.log(error)
+      }
   }
 
   const signupStyle = {
@@ -47,24 +50,25 @@ const Signup = () => {
     }
 
   return (
+
     <form style={signupStyle} onSubmit={handleSubmit}>
       <img className="mb-4" width="72" height="57" alt='parks' src={Images}/>
       <h1 className="h3 mb-3 fw-normal">Please sign up</h1>
       <div className="form-floating">
-        <input type="text" className="form-control" id="floatingPassword shadow-none" placeholder="First Name" />
+        <input type="text" className="form-control shadow-none" id="floatingPassword" value={firstName} onChange={ (event) => {setFirstName(event.target.value)} } />
         <label htmlFor="floatingPassword">First Name</label>
       </div>
       <div className="form-floating">
 
-        <input type="text" className="form-control" id="floatingPassword shadow-none" placeholder="Last Name" />
+        <input type="text" className="form-control shadow-none" id="floatingPassword" value={lastName} onChange={ (event) => {setLastName(event.target.value)} } />
         <label htmlFor="floatingPassword">Last Name</label>
       </div>
       <div className="form-floating">
-        <input type="email" className="form-control" id="floatingInput shadow-none" placeholder="name@example.com" />
+        <input type="email" className="form-control shadow-none" id="floatingInput" value={email} onChange={ (event) => {setEmail(event.target.value)} } />
         <label htmlFor="floatingInput">Email address</label>
       </div>
       <div className="form-floating">
-        <input type="password" className="form-control" id="floatingPassword shadow-none" placeholder="Password" />
+        <input type="password" className="form-control shadow-none" id="floatingPassword" value={password} onChange={ (event) => {setPassword(event.target.value)} } />
         <label htmlFor="floatingPassword">Password</label>
       </div>
 
@@ -73,7 +77,7 @@ const Signup = () => {
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
-      <button className="w-100 btn btn-lg btn-success shadow-none my-2" type="submit">Sign In</button>
+      {/* <button className="w-100 btn btn-lg btn-success shadow-none my-2" type="submit">Sign In</button> */}
       <button className="w-100 btn btn-lg btn-primary shadow-none" type="submit">Sign Up</button>
       <p className="mt-5 mb-3 text-muted">&copy; Mellow 2022</p>
     </form>
