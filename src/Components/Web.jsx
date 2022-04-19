@@ -11,9 +11,8 @@ function Web() {
         <WordCount />
         <Cross />
         <Ratings/>
-        <Cross />
+        
         <Maps />
-        <Cross />
         <GoogleApiWrappers />
     </>
   )
