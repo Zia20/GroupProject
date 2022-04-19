@@ -13,7 +13,6 @@ complainRouter.route("/")
 })
 .post( async (req, res) => {
     
-    console.log("reached enpoint");
     const newComplain = req.body;
 
     try {

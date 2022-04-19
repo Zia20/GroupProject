@@ -24,7 +24,7 @@ const upload = multer({
     storage: storage, 
     limits: {fileSize: 1000000}, 
     imageFileFilter})
-    .single("parksImage"); //multer middleware
+    .single("image"); //multer middleware - Name must be same as in the frontend/Parks
     //Handling Routers to accepting posting Image.
 
     //Router to handle upload
