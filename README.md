@@ -18,6 +18,7 @@ nodemon server.js   //Run server.js Backend
 npm install - node_modules
 npm install react-scripts --save 
 npm install react-icons
+npm install react-map-gl
 
 ## Browser URLS
 https://localhost:3000   //Launch browser this location
