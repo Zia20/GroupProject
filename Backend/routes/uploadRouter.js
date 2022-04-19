@@ -24,7 +24,7 @@ const upload = multer({
     storage: storage, 
     limits: {fileSize: 1000000}, 
     imageFileFilter})
-    .single("parksImage"); //multer middleware
+    .single("image"); //multer middleware - Name must be same as in the frontend/Parks
     //Handling Routers to accepting posting Image.
 
     //Router to handle upload
@@ -34,9 +34,9 @@ uploadRouter.route("/")
     res.setHeader("content-Type", "image/plain");
     next();
 })
-.get((req, res) => {
-    res.status = 403;
-    res.end(`This request is not supported!`);
+.get(upload, (req, res) => {
+    res.status = 200;
+    res.send(`This request is not supported!`);
 })
 .post(upload, (req, res) => {
     res.statusCode = 200;

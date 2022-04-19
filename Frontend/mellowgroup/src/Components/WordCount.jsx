@@ -52,11 +52,11 @@ function WordCount() {
   <Container>
     <Row className='mt-3'>
       <Col className='mt-5 pl-3'>
-          <h1>Mello the Citizen to report parks</h1>
+          <h1>Mellow the Citizen to report parks</h1>
           <h2>
               {`Hello, and Welcome to ${wordTyping[index].substring(0, subIndex)}${blink ? "|" : ""}`}
           </h2>
-          <Button className='mt-3' variant="outline-success" size="lg">Rate Parks</Button>
+          <Button className='mt-3' variant="outline-success" size="lg">Get in touch</Button>
       </Col>
       <Col>
         <img alt='parks' src={Images}/>

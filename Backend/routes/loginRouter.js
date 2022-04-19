@@ -1,4 +1,5 @@
 const express = require("express");
+//Authentication
 const md5 = require("md5");
 const loginRouter = express.Router();
 
@@ -10,7 +11,7 @@ loginRouter.route("/")
 })
 .get((req, res) => {
     res.status = 200;
-    res.render(`login`);
+    res.sendFile(path.join(__dirname, "../public/index.html"));
 })
 .post((req, res) => {
     res.statusCode = 200;

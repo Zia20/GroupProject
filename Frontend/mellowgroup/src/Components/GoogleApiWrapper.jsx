@@ -1,53 +1,13 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import { Container, Row, Col } from 'react-bootstrap';
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import Images from "../images/mobile.png";
+
 // import 'dotenv/config'
 const GoogleKey = "";  //Google Api Key goes here.
 
-const locations = [
-    {
-      name: "Location 1",
-      location: { 
-        lat: 41.3954,
-        lng: 2.162 
-      },
-    },
-    {
-      name: "Location 2",
-      location: { 
-        lat: 41.3917,
-        lng: 2.1649
-      },
-    },
-    {
-      name: "Location 3",
-      location: { 
-        lat: 41.3773,
-        lng: 2.1585
-      },
-    },
-    {
-      name: "Location 4",
-      location: { 
-        lat: 41.3797,
-        lng: 2.1682
-      },
-    },
-    {
-      name: "Location 5",
-      location: { 
-        lat: 41.4055,
-        lng: 2.1915
-      },
-    }
-  ];
-
 const GoogleApiWrapper = () => {
-
-    // const markerStyle = {
-    //     height: "50px",
-    //     width: "50px",
-    //     marginTop: "-50px"
-    // }
 
     const mapStyles = {
         height: "400px",
@@ -80,13 +40,26 @@ const GoogleApiWrapper = () => {
     }, [])
 
   return isLoaded ? (
-    <GoogleMap 
-        mapContainerStyle={mapStyles}
-        center={mainCenter}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-    />
+
+    <Container>
+        <Row className='mt-3'>
+            <Col>
+                <img alt='parks' src={Images}/>
+            </Col>
+            <Col>
+                <GoogleMap 
+                    mapContainerStyle={mapStyles}
+                    center={mainCenter}
+                    zoom={10}
+                    onLoad={onLoad}
+                    onUnmount={onUnmount}
+                />
+            </Col>
+        </Row>
+    </Container>
+
+
+    
   ) : <></>
 }
 export default GoogleApiWrapper;
