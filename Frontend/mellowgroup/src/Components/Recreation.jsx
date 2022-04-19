@@ -13,11 +13,11 @@ function Recreation() {
   const [ weatherData, setWeatherData ] = useState([{}]);
   const [ city, setCity ] = useState('')
 
+  const apiKey = "307f9855ed28565c54e790f9ca066555"
   // const AKEY = process.env.API_KEY;
   const weatherUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   const getWeather = async(e) => {
-    // e.preventDefault();
     if (e.key === "Enter"){
       try {
         const response = await fetch(weatherUrl);
