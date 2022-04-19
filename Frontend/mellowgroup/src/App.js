@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import Maps from './Components/mapbox';
 import GoogleApiWrappers from './Components/GoogleApiWrapper';
 import Navigation from './Components/Navigation';
 import WordCount from './Components/WordCount';
@@ -10,8 +11,8 @@ function App() {
     <>
       <Navigation />
       <WordCount />
+      <Maps />
       <Ratings/>
-      <GoogleApiWrappers />
     </>
   );
 }
