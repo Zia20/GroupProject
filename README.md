@@ -96,3 +96,100 @@ GroupProject
 ├─ package-lock.json
 └─ README.md
 ```
+
+
+
+
+## Sat Apr 16 2022
+```
+GroupProject
+├─ Backend
+│  ├─ .env
+│  ├─ models
+│  │  ├─ complains.js
+│  │  ├─ parks.js
+│  │  └─ users.js
+│  ├─ mongoose.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ public
+│  │  ├─ images
+│  │  │  ├─ girlphone.png
+│  │  │  └─ voice.png
+│  │  └─ index.html
+│  ├─ routes
+│  │  ├─ complainRouter.js
+│  │  ├─ loginRouter.js
+│  │  ├─ parkRouter.js
+│  │  ├─ signupRouter.js
+│  │  ├─ uploadRouter.js
+│  │  └─ weatherRouter.js
+│  └─ server.js
+├─ Frontend
+│  ├─ mellowgroup
+│  │  ├─ mellowgroup@0.1.0
+│  │  ├─ package-lock.json
+│  │  ├─ package.json
+│  │  ├─ public
+│  │  │  ├─ favicon.ico
+│  │  │  ├─ index.html
+│  │  │  ├─ logo192.png
+│  │  │  └─ manifest.json
+│  │  ├─ react-scripts
+│  │  ├─ README.md
+│  │  └─ src
+│  │     ├─ App.css
+│  │     ├─ App.js
+│  │     ├─ App.test.js
+│  │     ├─ Components
+│  │     │  ├─ Accross.jsx
+│  │     │  ├─ Campground.js
+│  │     │  ├─ Cross.jsx
+│  │     │  ├─ ErrorPage.js
+│  │     │  ├─ Footer.js
+│  │     │  ├─ GoogleApiWrapper.jsx
+│  │     │  ├─ Maps.jsx
+│  │     │  ├─ Navigation.jsx
+│  │     │  ├─ Parks.js
+│  │     │  ├─ Ratings.jsx
+│  │     │  ├─ Recreation.js
+│  │     │  ├─ Search.js
+│  │     │  ├─ Signup.js
+│  │     │  ├─ Web.jsx
+│  │     │  └─ WordCount.jsx
+│  │     ├─ Fonts.js
+│  │     ├─ images
+│  │     │  ├─ alone.jpg
+│  │     │  ├─ campfire.jpg
+│  │     │  ├─ camping.png
+│  │     │  ├─ circle.jpg
+│  │     │  ├─ city.png
+│  │     │  ├─ counting.png
+│  │     │  ├─ dog.png
+│  │     │  ├─ falling_trees.png
+│  │     │  ├─ fire.png
+│  │     │  ├─ globe.png
+│  │     │  ├─ globeBG.png
+│  │     │  ├─ ipad.png
+│  │     │  ├─ jogging.png
+│  │     │  ├─ joggingBG.png
+│  │     │  ├─ mobile.png
+│  │     │  ├─ ney.png
+│  │     │  ├─ recording.png
+│  │     │  ├─ Ukraine.png
+│  │     │  ├─ upload.png
+│  │     │  ├─ urban.png
+│  │     │  ├─ walking.png
+│  │     │  └─ world.png
+│  │     ├─ index.css
+│  │     ├─ index.js
+│  │     ├─ logo.svg
+│  │     ├─ reportWebVitals.js
+│  │     └─ setupTests.js
+│  └─ package-lock.json
+├─ JSONdebuggerText.MD
+├─ package-lock.json
+├─ package.json
+└─ README.md
+
+```
