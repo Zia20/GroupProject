@@ -42,6 +42,11 @@ mongoose.js add consolelog(checkURL);
 ## Mongoose Steps
 First be sure you have MongoDB and Node.js installed.
 
+#Critical Errors
+npm ERR! JSON.parse Failed to parse JSON data.
+
+
+
 ## Project-Tree Visual Studio Code Extension Updated to March 29-April 04, 2022. ctrl+shift+p-->Project-Tree
 ```js
 GroupProject
