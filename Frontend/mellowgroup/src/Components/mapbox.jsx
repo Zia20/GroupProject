@@ -1,10 +1,10 @@
 //const dotenv = require('dotenv').config()
 import React, { useState} from "react";
-import Map, {FillLayer, Layer, Source, NavigationControl} from "react-map-gl";
+import Map, {Layer, Source, Marker, NavigationControl} from "react-map-gl";
 import geoJsonData from './data/ParksSites.geojson';
 
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
-const dataLayer: FillLayer = {
+const dataLayer = {
   id: 'data',
   type: 'fill',
   paint: {
@@ -26,25 +26,50 @@ const dataLayer: FillLayer = {
   }
 };
 
-const Maps = () => {  
+const navControlStyle = {
+  right: 10,
+  top: 10,
+};
+
+const Maps = (center) => {  
+
+
+  const [viewport, setViewport ] = useState();
   return (
       <Map
     initialViewState={{
       longitude: -114.0719,
       latitude: 51.0447,
-      zoom: 8
+      center: center,
+      zoom: 10
     }}
+    
     mapboxAccessToken={AKEY}
-    style={{width: 800, height: 600}}
+    style={{width: 760, height: 660}}
     mapStyle="mapbox://styles/mapbox/streets-v9"
   >
     <Source 
       type="geojson"
       data={geoJsonData}
     >
-      <Layer {...dataLayer} />
+      <Layer {...dataLayer} 
+        onViewportChange = {viewport => {
+        setViewport(viewport);
+      }}
+      />
       </Source>
-      <NavigationControl />
+      {/* {geoJsonData.features.map((park) => (
+        <Marker key={park.properties.minortype} 
+        latitude={park.geometry.coordinates[1]}
+        longitude={park.geometry.coordinates[0]}
+        >
+          <div>PARKS</div>
+        </Marker>
+      ))} */}
+      <NavigationControl 
+        style={navControlStyle}
+        showCompass={true}
+        showZoom={true}/>
     </Map>
   );
 };

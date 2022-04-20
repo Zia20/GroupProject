@@ -1,4 +1,5 @@
 // import { ReactDOM } from 'react';
+import './App.css'; //Don't Remove please
 import { Route, Routes } from "react-router-dom"
 import Campground from "./Components/Campground";
 import Parks from "./Components/Parks";
@@ -8,8 +9,10 @@ import Signin from "./Components/Signin";
 import Web from "./Components/Web";
 import Footer from "./Components/Footer";
 import Navigation from './Components/Navigation';
+import WordCount from './Components/WordCount';
 import ErrorPage from "./Components/ErrorPage";
 import About from "./Components/About";
+import Ratings from './Components/Ratings';
 import Maps from './Components/mapbox';
 
 

@@ -52,3 +52,21 @@ input[type ="radio"]{
   transition: color 200ms;
 }
 
+.mapboxgl-ctrl-group{
+  border-radius: 1px;
+}
+.mapboxgl-ctrl-group button:focus{
+  box-shadow: none;
+}
+.mapboxgl-ctrl-group > .mapboxgl-ctrl-icon {
+  width: 24px;
+  height: 24px;
+}
+.mapboxgl-ctrl-group > .mapboxgl-ctrl-icon > button {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 2px !important;
+}
+.mapboxgl-ctrl-compass-arrow {
+  margin: 0.1em 2px !important;
+}
