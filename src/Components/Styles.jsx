@@ -2,6 +2,7 @@
 export const recreatePage = {
     backgroundImage: "linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)",
     padding: "50px",
+  
   }
 
   export const recreated = {
@@ -71,7 +72,7 @@ export const myParkStyle = {
   paddingBottom: "30px",
   fontFamily: "Arial",
 };
-
+  //Parks Styles
 export const upLoadstyle = {
   backgroundImage: "linear-gradient(-60deg, #16a085 0%, #f4d03f 100%)",
   paddingTop: "30px",
