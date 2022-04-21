@@ -8,6 +8,7 @@ import geoJsonData from "./data/community_parks.geojson";
 //import geoJsonData from "./data/special_parks.geojson";
 //import geoJsonData from './data/ParksSites_r.geojson';
 //import geoJsonData from './data/ParksSites.geojson';
+//import geoJsonData from './data/ParksSites.geojson';
 
 const navStyle = {
   position: 'absolute',
