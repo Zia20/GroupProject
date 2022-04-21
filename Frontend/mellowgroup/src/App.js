@@ -9,9 +9,10 @@ import Signin from "./Components/Signin";
 import Web from "./Components/Web";
 import Footer from "./Components/Footer";
 import Navigation from './Components/Navigation';
-import WordCount from './Components/WordCount';
 import ErrorPage from "./Components/ErrorPage";
 import About from "./Components/About";
+import Dashboard from "./Components/Dashboard";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/about" element={<About />} />
+        <PrivateRoute>
+          <Dashboard />
+        </PrivateRoute>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
