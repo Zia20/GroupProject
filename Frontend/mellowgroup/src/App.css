@@ -52,3 +52,39 @@ input[type ="radio"]{
   transition: color 200ms;
 }
 
+.sidebar {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
+  }
+
+/* .mapboxgl-ctrl-logo {
+  display: none !important;
+} */
+
+.nav{
+  border-radius: 1px;
+}
+
+.mapboxgl-ctrl-group{
+  border-radius: 1px;
+}
+.mapboxgl-ctrl-group > .mapboxgl-ctrl-icon {
+  width: 24px;
+  height: 24px;
+}
+.mapboxgl-ctrl-group > .mapboxgl-ctrl-icon > button {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 2px !important;
+}
+.mapboxgl-ctrl-compass-arrow {
+  margin: 0.1em 2px !important;
+}
