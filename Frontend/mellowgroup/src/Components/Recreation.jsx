@@ -173,17 +173,17 @@ function Recreation() {
 
             {typeof weatherData.main === 'undefined' ? (
               <div>
-                <p>Welcome to Mellow weather.</p> <br/>
+                <p>Weather Near You.</p> <br/>
               </div>
             ) : (
               <div>
-                <p>{weatherData.name}</p> <br/>
-                <p>{Math.round(weatherData.main.temp)}oC</p> <br/>
+                <p>{weatherData.name}</p><br/>
+                <p>{Math.round(weatherData.main.temp)} °C</p> <br/> {/*Degree sign ALT+0176*/}
                 <p>{weatherData.weather[0].main}</p>
               </div>
             )}
 
-            {weatherData.cod === "404" ? (<p>City is not found</p>) : (<></>)}
+            {weatherData.cod === "404" ? (<p>City is not found</p>) : (<></>)} 
           </Col>
         </Row>
       </Container>
