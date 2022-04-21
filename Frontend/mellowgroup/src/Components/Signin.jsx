@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
-import Images from "../images/falling_trees.png";
+import Images from "../images/signin.jpg";
 import { signupStyle } from "./Styles";
 
 const Signin = () => {
@@ -30,7 +30,7 @@ const Signin = () => {
   }
   return (
     <form style={signupStyle} onSubmit={handleSubmit}>
-      <img className="mb-4" width="72" height="57" alt='parks' src={Images}/>
+      <img className="mb-4" width="125" height="100" alt='parks' src={Images}/>
       <h1 className="h3 mb-3 fw-normal">Please sign In</h1>
       <div className="form-floating">
         <input type="email" className="form-control shadow-none" id="floatingInput" value={email} onChange={ (event) => {setEmail(event.target.value)} } />
