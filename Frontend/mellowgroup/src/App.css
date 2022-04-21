@@ -69,6 +69,10 @@ input[type ="radio"]{
   display: none !important;
 } */
 
+.nav{
+  border-radius: 1px;
+}
+
 .mapboxgl-ctrl-group{
   border-radius: 1px;
 }

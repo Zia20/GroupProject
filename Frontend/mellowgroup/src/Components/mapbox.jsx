@@ -9,6 +9,14 @@ import geoJsonData from "./data/community_parks.geojson";
 //import geoJsonData from './data/ParksSites_r.geojson';
 //import geoJsonData from './data/ParksSites.geojson';
 
+const navStyle = {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  padding: '10px'
+}
+
+
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 const dataLayer = {
   id: "data",
@@ -39,10 +47,12 @@ const navControlStyle = {
 
 const Maps = (props) => {
   const [viewport, setViewport] = useState();
+  const [hoverInfo, setHoverInfo] = useState(null);
   return (
     <div className="mapboxgl-ctrl-group 
                     mapboxgl-ctrl-icon 
                     mapboxgl-ctrl-compass-arrow" >
+      
       <Map
         initialViewState={{
           longitude: -114.0719,
@@ -52,43 +62,38 @@ const Maps = (props) => {
           pixelRatio: window.devicePixelRatio || 1,
           attributionControl: false,
           logo: false,
+          locale: {
+            'NavigationControl.ZoomIn': 'Zoom in',
+            'NavigationControl.ZoomOut': 'Zoom out',
+          }
         }}
-        mapboxAccessToken={AKEY}
-        style={{ width: 800, height: 660 }}
-        mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"
+          
+          mapboxAccessToken={AKEY}
+          style={{ width: 800, height: 660 }}
+          mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"  
       >
         <Source type="geojson" data={geoJsonData}>
           <Layer
             {...dataLayer}
-            onViewportChange={(viewport) => {
-              setViewport(viewport);
-            }}
           />
         </Source>
-        <NavigationControl
-          style={navControlStyle}
-          showCompass={true}
-          showZoom={true}
-          //map.addControl(new mapboxgl.NavigationControl());
-        />
-        {/* 
-      {geoJsonData.features.map((park) => (
-        <Marker key={park.properties.site_name}
-        latitude={park.geometry.coordinates[0][0][1]}
-        longitude={park.geometry.coordinates[0][0][0]}
-        >
-          <div>PARKS</div>
-        </Marker>
-      ))} */}
 
-        {/* return (
-      <div>
+        {/* {geoJsonData.features.map((park) => (
+          <Marker key={park.properties.asset_cd}
+            latitude={park.geometry.coordinates[0][0][1]}
+            longitude={park.geometry.coordinates[0][0][0]}
+          >
+            <div>PARKS</div>
+          </Marker>
+        ))}    */}
+
         <div className="sidebar">
-          Longitude: {longitude} | Latitude: {latitude} | Zoom: {zoom}
+          Longitude: {}| Latitude: {} | Zoom: {}
         </div>
-        <div ref={Map} className="map-container" />
-      </div>
-      ); */}
+        <div className="nav" style={navStyle}>
+          <NavigationControl onViewportChange={viewport} />
+        </div>
+  
       </Map>
     </div>
   );
