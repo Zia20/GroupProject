@@ -45,12 +45,7 @@ const Ratings = () => {
             <Col>
               {/* <img alt='parks' src={Images}/> */}
               <h1>Why You Should Care About Parks</h1>
-              <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
-                slightly believable.
-              </p>
+            <p>Having public parks in your community can provide immense health benefits, as the air and water in the area are positively affected. Not only do urban parks function as an environmental purifier, city parks provide preservation and conservation of wildlife and plant life, further highlighting the importance of parks.</p>
             </Col>
           </Row>
         </Container>
@@ -100,4 +95,4 @@ const Ratings = () => {
   );
 };
 
-export default Ratings;
+export default Ratings;             
