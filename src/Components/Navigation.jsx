@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
-import { myBLink, myLink, NavbarStyle  } from "./Styles"; 
+import { myBLink, myLink, NavbarStyle  } from "./Styles";
 
 function Navigation() {
 
