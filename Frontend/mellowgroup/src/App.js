@@ -12,17 +12,11 @@ import Navigation from './Components/Navigation';
 import WordCount from './Components/WordCount';
 import ErrorPage from "./Components/ErrorPage";
 import About from "./Components/About";
-import Ratings from './Components/Ratings';
-import Maps from './Components/mapbox';
-
 
 function App() {
   return (
     <>
       <Navigation />
-      <WordCount />
-      <Maps />
-      <Ratings/>
       <Routes>
         <Route path="/" element={<Web />} />
         <Route path="/recreation" element={<Recreation />} />

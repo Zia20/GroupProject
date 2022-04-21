@@ -1,4 +1,5 @@
 //const dotenv = require('dotenv').config()
+import { RulerControl, StylesControl, CompassControl, ZoomControl } from 'mapbox-gl-controls';
 import React, { useState } from "react";
 import Map, { Layer, Source, Marker, NavigationControl } from "react-map-gl";
 import geoJsonData from "./data/community_parks.geojson";
@@ -36,7 +37,7 @@ const navControlStyle = {
   top: 10,
 };
 
-const Maps = (center) => {
+const Maps = (props) => {
   const [viewport, setViewport] = useState();
   return (
     <div className="mapboxgl-ctrl-group 
@@ -46,15 +47,14 @@ const Maps = (center) => {
         initialViewState={{
           longitude: -114.0719,
           latitude: 51.0447,
-          center: center,
-          zoom: 9,
+          center: [-144, 51],
+          zoom: 9.4,
+          pixelRatio: window.devicePixelRatio || 1,
           attributionControl: false,
           logo: false,
         }}
         mapboxAccessToken={AKEY}
-        style={{ width: 900, height: 660 }}
-        //mapStyle="mapbox://styles/mapbox/streets-v9"
-        //mapStyle="mapbox://styles/mapbox/navigation-day-v1"
+        style={{ width: 800, height: 660 }}
         mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"
       >
         <Source type="geojson" data={geoJsonData}>
