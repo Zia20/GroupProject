@@ -47,6 +47,7 @@ const navControlStyle = {
 
 const Maps = (props) => {
   const [viewport, setViewport] = useState();
+  const [hoverInfo, setHoverInfo] = useState(null);
   return (
     <div className="mapboxgl-ctrl-group 
                     mapboxgl-ctrl-icon 
@@ -61,6 +62,10 @@ const Maps = (props) => {
           pixelRatio: window.devicePixelRatio || 1,
           attributionControl: false,
           logo: false,
+          locale: {
+            'NavigationControl.ZoomIn': 'Zoom in',
+            'NavigationControl.ZoomOut': 'Zoom out',
+          }
         }}
           
           mapboxAccessToken={AKEY}
@@ -70,27 +75,25 @@ const Maps = (props) => {
         <Source type="geojson" data={geoJsonData}>
           <Layer
             {...dataLayer}
-              onViewportChange={(viewport) => {
-                setViewport(viewport);
-            }}
           />
         </Source>
-        <div className="nav" style={navStyle}>
-          <NavigationControl onViewportChange={viewport} />
-        </div>
+
+        {/* {geoJsonData.features.map((park) => (
+          <Marker key={park.properties.asset_cd}
+            latitude={park.geometry.coordinates[0][0][1]}
+            longitude={park.geometry.coordinates[0][0][0]}
+          >
+            <div>PARKS</div>
+          </Marker>
+        ))}    */}
 
         <div className="sidebar">
           Longitude: {}| Latitude: {} | Zoom: {}
         </div>
+        <div className="nav" style={navStyle}>
+          <NavigationControl onViewportChange={viewport} />
+        </div>
   
-        {/* {geoJsonData.features.map((park) => (
-          <Marker key={park.properties.site_name}
-          latitude={park.geometry.coordinates[0][0][1]}
-          longitude={park.geometry.coordinates[0][0][0]}
-          >
-            <div>PARKS</div>
-          </Marker>
-        ))}  */}
       </Map>
     </div>
   );
