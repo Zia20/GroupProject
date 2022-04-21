@@ -88,3 +88,10 @@ input[type ="radio"]{
 .mapboxgl-ctrl-compass-arrow {
   margin: 0.1em 2px !important;
 }
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}

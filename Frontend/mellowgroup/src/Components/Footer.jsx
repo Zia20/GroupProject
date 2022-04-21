@@ -12,17 +12,14 @@ const Footer = () => {
     <div style={footerStyles}>
       <Navbar collapseOnSelect expand="lg" variant="dark">
         <Container>
-        <Navbar.Brand href="#home">Mellow</Navbar.Brand>
+        <Navbar.Brand to="/">Mellow</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Recreation</Nav.Link>
-            <Nav.Link href="#pricing">Parks</Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
+            <Nav.Link >Recreation</Nav.Link>
+            <Nav.Link >Parks</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-              Dank memes
+            &copy; Mellow 2022
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
