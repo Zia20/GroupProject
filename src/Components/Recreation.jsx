@@ -13,15 +13,15 @@ function Recreation() {
   const [ weatherData, setWeatherData ] = useState([{}]);
   const [ city, setCity ] = useState('')
 
+  const apiKey = "b695184324a9e5f4d0961f0ef8dbb94d"
   // const AKEY = process.env.API_KEY;
   const weatherUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   const getWeather = async(e) => {
-    // e.preventDefault();
     if (e.key === "Enter"){
       try {
         const response = await fetch(weatherUrl);
-        let data = response.json();
+        let data = await response.json();
         setWeatherData(data)
         setCity('')
         console.log(data)
@@ -45,6 +45,42 @@ function Recreation() {
           </Col>
           <Col>
             <img alt='parks' src={Images}/>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+
+    <div style={recreatePage}>
+      <Container>
+        <Row className='mt-3'>
+          <Col>
+            <img alt='parks' src={Image3}/>
+          </Col>
+          <Col className='mt-5 pl-3'>
+            <input style={weatherInput}
+            type="text" 
+            className='rounded' 
+            placeholder='Enter you City' 
+            value={city} 
+            onChange={ 
+              (event) => {setCity(event.target.value)} 
+              } 
+            onKeyDown={getWeather}
+              /><br/>
+            {typeof weatherData.main === 'undefined' ? (
+              <div>
+                <p>Welcome to Mellow weather.</p> <br/>
+              </div>
+            ) : (
+              <div>
+                <p className="text-danger fs-2">{weatherData.name}</p> <br/>
+                <p className="text-info fs-2">{Math.round(weatherData.main.temp)}°C</p> <br/>
+                <p className="text-success fs-2">{weatherData.weather[0].main}</p>
+                <p className="text-success fs-2">{weatherData.weather[0].main.pressure}</p>
+              </div>
+            )}
+
+            {weatherData.cod === "404" ? (<p>City is not found</p>) : (<></>)}
           </Col>
         </Row>
       </Container>
@@ -147,41 +183,6 @@ function Recreation() {
           </Col>
           <Col>
             <img alt='parks' src={Image2}/>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-    <div style={recreatePage}>
-      <Container>
-        <Row className='mt-3'>
-          <Col>
-            <img alt='parks' src={Image3}/>
-          </Col>
-          <Col className='mt-5 pl-3'>
-            <input style={weatherInput}
-            type="text" 
-            className='rounded' 
-            placeholder='Enter you City' 
-            value={city} 
-            onChange={ 
-              (event) => {setCity(event.target.value)} 
-              } 
-            onKeyDown={getWeather}
-              /><br/>
-
-            {typeof weatherData.main === 'undefined' ? (
-              <div>
-                <p>Welcome to Mellow weather.</p> <br/>
-              </div>
-            ) : (
-              <div>
-                <p>{weatherData.name}</p> <br/>
-                <p>{Math.round(weatherData.main.temp)}oC</p> <br/>
-                <p>{weatherData.weather[0].main}</p>
-              </div>
-            )}
-
-            {weatherData.cod === "404" ? (<p>City is not found</p>) : (<></>)}
           </Col>
         </Row>
       </Container>

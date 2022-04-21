@@ -5,7 +5,7 @@ import Images from "../images/falling_trees.png";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function WordCount() {
-    const wordTyping =  ["Recreation", "Parks", "Citizen", "Clean Reporting", "Yulia"];
+    const wordTyping =  ["Recreation", "Parks", "Citizen", "Clean Reporting"];
     const [ index, setIndex ] = useState(0);
     const [ blink, setBlink ] = useState(true);
     const [ subIndex, setSubIndex ] = useState(0);

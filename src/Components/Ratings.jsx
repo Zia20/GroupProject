@@ -3,25 +3,13 @@ import { FaStar } from 'react-icons/fa'
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import Images from "../images/globeBG.png";
+import { myRatingStyle, topStyle } from "./Styles";
 
 const Ratings = () => {
 
 const [rating, setRating] = useState(null);
 const [hover, setHover] = useState(null);
 
-const mystyle = {
-    backgroundImage: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
-    padding: "10px",
-    paddingTop: "80px",
-    paddingBottom: "80px",
-    fontFamily: "Arial",
-};
-const topStyle = {
-    padding: "10px",
-    paddingTop: "80px",
-    paddingBottom: "80px",
-    fontFamily: "Arial",
-};
 
 return (
 <div>
@@ -59,7 +47,7 @@ return (
         </Container>
     </div>
 
-    <div style={mystyle}>
+    <div style={myRatingStyle}>
         <Container>
             <Row>
             <Col>

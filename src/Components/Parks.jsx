@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import { Container, Row, Col, Carousel, Button } from 'react-bootstrap';
 import Images from "../images/circle.jpg";
 import Image1 from "../images/campfire.jpg";
@@ -6,13 +8,12 @@ import Image2 from "../images/alone.jpg";
 import Image3 from "../images/recordingBG.png";
 import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCampground, faHospital, faMapLocationDot, faEye, faGlobe } from '@fortawesome/free-solid-svg-icons'
-
+import { faCampground, faHospital, faMapLocationDot, faEye, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { myParkStyle, upLoadstyle, carousalStyle, fontStyle  } from "./Styles";
 
 const Parks = () => {
-
   const [ fileData, setFileData ] = useState();
-
+  const navigateTo = useNavigate();
   const handleFileChange = (event) => {
 
     setFileData(event.target.files[0]);
@@ -35,34 +36,10 @@ const Parks = () => {
       alert('something wrong')
       console.log(error.message);
     }
-    
+
+    navigateTo('/');
   };
 
-  const mystyle = {
-  paddingTop: "30px",
-  paddingBottom: "30px",
-  fontFamily: "Arial",
-};
-
-const upLoadstyle = {
-  backgroundImage: "linear-gradient(-60deg, #16a085 0%, #f4d03f 100%)",
-  paddingTop: "30px",
-  paddingBottom: "30px",
-  fontFamily: "Arial",
-  marginTop: "20px",
-};
-
-const carousalStyle = {
-  backgroundImage: "linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%)",
-  fontFamily: "Arial",
-  paddingTop: "30px",
-  paddingBottom: "30px",
-};
-
-const fontStyle = {
-  color: "green",
-};
- 
   return (
     <div>
 
@@ -86,7 +63,7 @@ const fontStyle = {
       </div>
       
       
-      <div style={mystyle}>
+      <div style={myParkStyle}>
         <Container>
           <Row>
             <Carousel>

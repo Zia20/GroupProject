@@ -8,16 +8,14 @@ import Images from "../images/AlaGit.jpg";
 import Image1 from "../images/joggingBG.png";
 import Image2 from "../images/joggingBG.png";
 import Image3 from "../images/joggingBG.png";
+import { aboutStyles } from "./Styles";
+
 
 function About() {
-    const mystyle = {
-        // backgroundImage: "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)",
-        padding: "10px",
-        fontFamily: "Arial",
-      };
+    
 
   return (
-    <div style={mystyle}>
+    <div style={aboutStyles}>
       <Container>
         <Row>
           <Col>

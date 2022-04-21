@@ -9,12 +9,6 @@ const GoogleKey = "";  //Google Api Key goes here.
 
 const GoogleApiWrapper = () => {
 
-    // const markerStyle = {
-    //     height: "50px",
-    //     width: "50px",
-    //     marginTop: "-50px"
-    // }
-
     const mapStyles = {
         height: "400px",
         width: "75%",
