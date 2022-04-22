@@ -7,7 +7,7 @@ mongoose.connect('mongodb://localhost:27017/Meeteee');
 
 //Run CheckURL ensure connection
 //---------------**Variable*********---//
-// mongoose.connect(connectionStringUrl);    //
+// mongoose.connect(connectionStringUrl);    // De-comment line 3 + 10 to connect to MONGO Atlas
 
 // mongoose.connect("mongodb://127.0.0.1:27017/usersDb"); //Keep for local testing 
 

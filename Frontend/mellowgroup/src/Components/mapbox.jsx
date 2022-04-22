@@ -19,6 +19,8 @@ const navStyle = {
 
 
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
+// const AKEY = "pk.eyJ1IjoiemVlMjIiLCJhIjoiY2wyNThqcjM4MjdwajNjcWQzNmFya2ducSJ9.aUEfBpg2rKZXIbQ14vPcnA";
+
 const dataLayer = {
   id: "data",
   type: "fill",

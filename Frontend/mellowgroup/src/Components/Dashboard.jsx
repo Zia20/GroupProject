@@ -2,7 +2,7 @@ import React from "react";
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Navbar } from 'react-bootstrap';
-
+import { Link } from "react-router-dom"; //Link added April 21 2022 3:30pm
 
 const Dashboard = () => {
   return (
