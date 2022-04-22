@@ -25,8 +25,6 @@ app.use('/signup', signupRouter);
 app.use('/complain', complainRouter);
 app.use(express.static(path.join(__dirname,'./public')));
 
-
-
 app.listen(PORT, function(){
 
     console.log(`Server is running on port:${PORT}`)

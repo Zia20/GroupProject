@@ -1,7 +1,6 @@
 const express = require("express");
-//Authentication
-const md5 = require("md5");
 const loginRouter = express.Router();
+const bcrypt = require("bcrypt");
 const User = require("../models/users");
 
 loginRouter.route("/")
@@ -12,27 +11,26 @@ loginRouter.route("/")
 })
 .get((req, res) => {
     res.status = 200;
-    res.sendFile(path.join(__dirname, "../public/index.html"));
 })
 .post( async(req, res) => {
-    console.log(`Reached`);
-    res.statusCode = 200;
-    const  users = await req.body;
-    const password = (md5(users.password));
 
-    User.findOne({email: email}, function(error, users){
-        if(!User){
-            const err = new Error(`User email does not exist`)
-            err.status = 401;
-            return next(err);
-        } else if(users.password !==password){
-            const err = new Error(`Your password is incorrect`);
-            err.status = 401;
-            return next(err)
-        }
-        else if(users.password === password && users.email === email ){
-            res.render("dashboard");
-        }
-    })
+    console.log("reached");
+    const  users = await User.findOne({email: req.body.email});
+
+    if(!users){
+       
+        return res.status(404).send({
+            message: "User not found"
+        });
+    } else if(!await bcrypt.compare(req.body.password, users.password)){
+        return res.status(400).send({
+            message: "Incorrect credentials"
+        });
+    }
+    console.log("Found User")
+    res.send("Dashboard");
+    // else if(users.password === password && users.email === email ){
+    //     res.render("dashboard");
+    // }
 });
 module.exports = loginRouter;

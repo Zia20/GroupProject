@@ -10,15 +10,15 @@ const Signin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newUser = { 
+    const users = { 
       email, 
       password, 
     };
 
-    const data = JSON.stringify(newUser)
+    const data = JSON.stringify(users)
       try {
 
-        await fetch("/signin", {
+        await fetch("/login", {
           method: "POST",
           headers: { "Content-Type": "application/json"},
           body: data,

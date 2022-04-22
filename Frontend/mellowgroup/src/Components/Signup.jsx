@@ -33,9 +33,7 @@ const Signup = () => {
       }
   }
 
-  
   return (
-
     <form style={signupStyle} onSubmit={handleSubmit}>
       <img className="mb-4" width="125" height="100" alt='parks' src={Images}/>
       <h1 className="h3 mb-3 fw-normal">Please sign up</h1>
