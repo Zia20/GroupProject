@@ -1,72 +1,58 @@
 import React from "react";
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Navbar } from 'react-bootstrap';
-
+import { Container, Row, Col } from 'react-bootstrap';
+// import { a } from "react-router-dom";
 
 const Dashboard = () => {
+
+const sidenav =  {
+    height: "100%",
+    width: "160px",
+    position: "fixed",
+    zIndex: "0",
+    top: "30",
+    marginTop:"300px",
+    left: "0",
+    bottom: "20px",
+    backgroundColor: "grey",
+    overflowX: "hidden",
+    paddingTop: "20px",
+  }
+
+
   return (
     <div>
-      <Navbar className="navbar navbar-inverse visible-xs">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <button
-              type="button"
-              className="navbar-toggle"
-              data-toggle="collapse"
-              data-target="#myNavbar"
-            >
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            <Link className="navbar-brand" href="#">
+    <Container>
+      <Row>
+        <div style={sidenav}>
+          <div>
+            <a className="navbar-brand" href="#">
               Mellow
-            </Link>
+            </a>
           </div>
-          <div className="collapse navbar-collapse" id="myNavbar">
-            <ul className="Navbar navbar-Navbar">
-              <li className="active">
-                <Link href="#">Dashboard</Link>
+          <div>
+            <ul >
+              <li>
+                <a href="#">Dashboard</a>
               </li>
               <li>
-                <Link href="#">Complains</Link>
+                <a href="#">Complains</a>
               </li>
               <li>
-                <Link href="#">Signup</Link>
+                <a href="#">Signup</a>
               </li>
               <li>
-                <Link href="#">Ratings</Link>
+                <a href="#">Ratings</a>
               </li>
             </ul>
           </div>
         </div>
-      </Navbar>
-
-      <div className="container-fluid">
+        <div className="container-fluid">
         <div className="row content">
-          <div className="col-sm-3 sidenav hidden-xs">
-            <h2>Logo</h2>
-            <ul className="Navbar Navbar-pills Navbar-stacked">
-              <li className="active">
-                <Link href="#section1">Dashboard</Link>
-              </li>
-              <li>
-                <Link href="#section2">Age</Link>
-              </li>
-              <li>
-                <Link href="#section3">Gender</Link>
-              </li>
-              <li>
-                <Link href="#section3">Geo</Link>
-              </li>
-            </ul>
-            <br />
-          </div>
           <br />
-
           <div className="col-sm-9">
-            <div className="well bg-success">
+            <div className="well bg-info">
               <h4>Mellow</h4>
               <p>Some text..</p>
             </div>
@@ -134,6 +120,8 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      </Row>
+    </Container>
     </div>
   );
 };

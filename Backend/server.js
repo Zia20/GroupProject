@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors')
 const path = require('path');
+const cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3020;
@@ -15,6 +17,11 @@ const complainRouter = require("./routes/complainRouter");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cors({
+    credentials: true,
+    // origin: ["http://localhost:3020"]
+}))
+app.use(cookieParser());
 
 //Website routing
 app.use('/', parkRouter);

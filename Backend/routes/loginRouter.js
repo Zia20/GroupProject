@@ -1,5 +1,6 @@
 const express = require("express");
 const loginRouter = express.Router();
+const jwt = require('jsonwebtoken');
 const bcrypt = require("bcrypt");
 const User = require("../models/users");
 
@@ -18,7 +19,6 @@ loginRouter.route("/")
     const  users = await User.findOne({email: req.body.email});
 
     if(!users){
-       
         return res.status(404).send({
             message: "User not found"
         });
@@ -27,10 +27,15 @@ loginRouter.route("/")
             message: "Incorrect credentials"
         });
     }
-    console.log("Found User")
-    res.send("Dashboard");
-    // else if(users.password === password && users.email === email ){
-    //     res.render("dashboard");
-    // }
+    const token = jwt.sign({_id: users._id}, "secret")
+
+    res.cookie("jwt", token, {
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000 //Max age of cookie is one day.
+    });
+    
+    res.send({
+        message: "Success"
+    })
 });
 module.exports = loginRouter;

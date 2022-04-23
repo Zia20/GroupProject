@@ -21,6 +21,7 @@ function Navigation() {
               <Link to="/recreation" style={myLink} className="mx-2">Recreation</Link> 
               <Link to="/parks" style={myLink} className="mx-2">Parks</Link>
               <Link to="/campground" style={myLink} className="mx-2">Campground</Link>
+              <Link to="/dashboard" style={myLink} className="mx-2">Dashboard</Link>
               <Link to="/about" style={myLink} className="mx-2">About us</Link>
             </Nav>
             <Form className="d-flex">

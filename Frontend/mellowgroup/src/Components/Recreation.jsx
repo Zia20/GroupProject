@@ -176,7 +176,7 @@ function Recreation() {
           <Col className='mt-5 pl-3'>
               <h1>Report an issue or rate YYC parks</h1>
               <h4>Residence to City Reporting</h4>
-              <Button className='mt-3 shadow-none' variant="outline-success" size="lg">Learn more</Button>
+              <Button className='mt-3' variant="outline-success" size="lg">Learn more</Button>
           </Col>
           <Col>
             <img alt='parks' src={Image2}/>
