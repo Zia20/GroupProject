@@ -15,6 +15,7 @@ const weatherRouter = require("./routes/weatherRouter");
 const loginRouter = require("./routes/loginRouter");
 const signupRouter = require("./routes/signupRouter");
 const complainRouter = require("./routes/complainRouter");
+const dogRouter = require("./routes/dogRouter");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
@@ -31,6 +32,8 @@ app.use('/weather', weatherRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/complain', complainRouter);
+app.use('/dog', dogRouter);
+
 app.use(express.static(path.join(__dirname,'./public')));
 
 app.listen(PORT, function(){

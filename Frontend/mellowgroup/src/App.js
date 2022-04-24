@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 import Navigation from './Components/Navigation';
 import ErrorPage from "./Components/ErrorPage";
 import About from "./Components/About";
+import Dog from "./Components/Dog";
 import Dashboard from "./Components/Dashboard";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/about" element={<About />} />
+        <Route path="/dog" element={<Dog />} />
         <Route path="/dashboard" element={
           <Dashboard />
         } />    
