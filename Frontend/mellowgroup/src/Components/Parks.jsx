@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Carousel, Button } from 'react-bootstrap';
 import Images from "../images/FishCreek.jpg";
 import Image1 from "../images/ConfederationPark.jpg";
@@ -17,6 +18,8 @@ import { myParkStyle, upLoadstyle, carousalStyle, fontStyle  } from "./Styles";
 const Parks = () => {
 
   const [ fileData, setFileData ] = useState();
+  const [isPending, setIsPending ] = useState(false);
+  const navigate = useNavigate();
 
   const handleFileChange = (event) => {
 
@@ -29,23 +32,23 @@ const Parks = () => {
     //The for accepts a key:value to store data
     const data = new FormData()
     //Image name must corresponds to data in database.
+  setIsPending(true);
     data.append("image", fileData);
-
     try {
       fetch("/upload", {
         method: "POST",
         body: data,
       })
+      setIsPending(false)
     } catch (error) {
       alert('something wrong')
       console.log(error.message);
     }
-    
+    navigate("/")
   };
 
   return (
     <div>
-
       <div style={upLoadstyle}>
         <Container>
           <Row>
@@ -54,10 +57,12 @@ const Parks = () => {
             </Col>
             <Col>
               <div className='py-5 my-5'>
+              <h1>Make your experience better</h1>
                 <form onSubmit={handleSubmit}>
-                  <label>Make a complain with by Uploading an Image</label><br />
+                  <label>Submit a complain with by Uploading an Image.</label><br />
                   <input type="file" onChange={handleFileChange} /><br />
-                  <Button className='shadow-none my-3' variant="outline-success" size="lg" type='submit'>Upload</Button>
+                  {!isPending && <Button className='shadow-none my-3' variant="outline-warning" size="lg" type='submit'>Upload</Button>}
+                  {isPending && <Button className='shadow-none my-3' variant="outline-success" disabled size="lg" type='submit'>Uploading ...</Button>}
                 </form>
               </div>
             </Col>
@@ -156,7 +161,7 @@ const Parks = () => {
           </Row>
         </Container>
       </div>
-      <div style={carousalStyle}>
+      <div style={carousalStyle} className='mb-2'>
           <Row className='px-5 mx-5'>
             <Col>
               <h1>Attraction</h1>
