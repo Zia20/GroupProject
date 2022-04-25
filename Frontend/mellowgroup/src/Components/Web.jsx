@@ -1,5 +1,4 @@
 import React from 'react';
-import GoogleApiWrappers from './GoogleApiWrapper';
 import WordCount from './WordCount';
 import Ratings from './Ratings';
 import Cross from './Cross';

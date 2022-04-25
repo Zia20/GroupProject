@@ -4,9 +4,9 @@
 
 Project Title: How Might We Improve the Communication from citizen to city with parks and recreation.
 
-## **Team Members** [ Alaf Emmanuel, Paul Neumann, Yulia Sinko]
+## **Team Members** [ Alaf Emmanuel, Zia Hassan, Paul Neumann, Yulia Sinko]
 Alaf----| alafonye at gmail.com  
-
+Zia --| hassanzia3 at gmail.com
 Yulia---| yulias.linc at gmail.com  
 Paul----| neumann4 at gmail.com   
 
@@ -41,6 +41,11 @@ mongoose.js add consolelog(checkURL);
 
 ## Mongoose Steps
 First be sure you have MongoDB and Node.js installed.
+
+#Critical Errors
+npm ERR! JSON.parse Failed to parse JSON data.
+
+
 
 ## Project-Tree Visual Studio Code Extension Updated to March 29-April 04, 2022. ctrl+shift+p-->Project-Tree
 ```js

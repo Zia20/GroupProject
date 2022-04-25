@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import Images from "../images/camping.png";
 
 
-const Maps = () => {
+const GoogleMaps = () => {
 
   return (
     <div>
@@ -24,4 +24,4 @@ const Maps = () => {
   )
 }
 
-export default Maps;
+export default GoogleMaps;
