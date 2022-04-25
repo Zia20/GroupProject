@@ -15,7 +15,7 @@ function Web() {
         <Downtown />
         <Maps />
         <Highlights />
-        <GoogleApiWrappers />
+        {/* <GoogleApiWrappers /> */}
     </>
   )
 }
