@@ -1,10 +1,11 @@
-import React from "react";
-import { Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Container, Row } from "react-bootstrap";
 
 const Dog = (props) => {
 
   const dogLists = props.dogLists;
-
+  const [ showModal, setShowModal] = useState(false);
+  
   return (
     <>
       <Container>
@@ -17,6 +18,7 @@ const Dog = (props) => {
           <h5>{dogLists.steward}</h5>
           <h5>{dogLists.opened_dt}</h5>
         </Row>
+      <Button>Submit</Button>
       </Container>
     </>
   );

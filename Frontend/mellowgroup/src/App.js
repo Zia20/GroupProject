@@ -28,10 +28,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/about" element={<About />} />
-        <Route
-          path="/dog"
+        <Route path="/dog"
           element={offLeash.map((dogLists, index) => {
-            //Index is used to control the amount of list displayed.
             if (index < 3) {
               return <Dog dogLists={dogLists} />;
             }
