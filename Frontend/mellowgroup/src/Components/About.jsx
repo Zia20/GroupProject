@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button, Card} from 'react-bootstrap';
 import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import 'bootstrap/dist/css/bootstrap.css';
 import Images from "../images/AlaGit.jpg";
 import Image1 from "../images/joggingBG.png";
@@ -40,7 +40,7 @@ function About() {
                   <Card.Title className='bold'>Emmanuel Alafonye</Card.Title>
                   <Card.Text>Petroleum & Software Engineer, previously a construction worker.
                   </Card.Text>
-                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faLinkedinIn} size="2x"  /></Button>
+                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button>
                 </Card.Body>
               </Card>
             </div>
@@ -54,7 +54,7 @@ function About() {
                   <Card.Text>
                     Software Engineer and a GIS
                   </Card.Text>
-                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faLinkedinIn} size="2x"  /></Button>
+                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button>
                 </Card.Body>
               </Card>
             </div>
@@ -68,7 +68,7 @@ function About() {
                   <Card.Text>
                   Software Engineer and a GIS
                   </Card.Text>
-                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faLinkedinIn} size="2x"  /></Button>
+                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button>
                 </Card.Body>
               </Card>
             </div>
@@ -82,7 +82,7 @@ function About() {
                   <Card.Text>
                   Software Engineer and a GIS
                   </Card.Text>
-                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faLinkedinIn} size="2x"  /></Button>
+                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button>
                 </Card.Body>
               </Card>
             </div>
