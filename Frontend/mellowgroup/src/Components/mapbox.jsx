@@ -9,10 +9,9 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState } from "react";
 import Map, { Layer, Source, Popup, Marker, NavigationControl } from "react-map-gl";
 import geoJsonData from "./data/ParksSitesAddress.json";
-import {ParkIcon, Room} from "@mui/icons-material";
+import {ParkIcon, Room, Star} from "@mui/icons-material";
 import NorthIcon from '@mui/icons-material/North';
 import { toggleButtonGroupClasses } from "@mui/material";
-
 
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
@@ -100,8 +99,8 @@ const Maps = () => {
           closeOnClick={false}>
           <Room
             color="error"
-            // style={{fontSize:viewport.zoom*20 }}
-            style={{ height: 5 * `${zoom}px`, width: 9 * `${zoom}px` }}
+            //style={{fontSize:viewport.zoom *20 }}
+            style={{ height:10 * `${zoom}px`, width: 9 * `${zoom}px` }}
           />
         </Marker>
 
@@ -110,10 +109,24 @@ const Maps = () => {
           longitude={long}
           closeButton={true}
           closeOnClick={false}
-          anchor="bottom">
-          <div> You are here </div>
+          anchor="left">
+          <div className="mapCard"> 
+            <label>Place</label>
+            <h4 className="place">Calgary Location</h4>
+            <label>Review</label>
+            <p>This is the best city in Canada. Unexpected weather patterns!.</p>
+            <label>Ratings</label>
+            <div className="mapStars">
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+            </div>
+            <label>Information</label>
+            <span className="date">1 Hour ago</span>
+          </div>
         </Popup>
-
 
         <div className="sidebar">
           Longitude: {long}| Latitude: {lat} | Zoom: {zoom}
