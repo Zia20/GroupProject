@@ -33,15 +33,15 @@ const Signin = () => {
       navigate("/")
   }
   return (
-    <form style={signupStyle} onSubmit={handleSubmit}>
+        <form style={signupStyle} onSubmit={handleSubmit}>
       <img className="mb-4" width="125" height="100" alt='parks' src={Images}/>
       <h1 className="h3 mb-3 fw-normal">Please sign In</h1>
       <div className="form-floating">
-        <input type="email" className="form-control shadow-none" id="floatingInput" value={email} onChange={ (event) => {setEmail(event.target.value)} } />
+        <input type="email" className="form-control shadow-none form-control" value={email} onChange={ (event) => {setEmail(event.target.value)} } />
         <label htmlFor="floatingInput">Email address</label>
       </div>
       <div className="form-floating">
-        <input type="password" className="form-control shadow-none" id="floatingPassword" value={password} onChange={ (event) => {setPassword(event.target.value)} } />
+        <input type="password" className="form-control shadow-none" value={password} onChange={ (event) => {setPassword(event.target.value)} } />
         <label htmlFor="floatingPassword">Password</label>
       </div>
 
@@ -55,6 +55,7 @@ const Signin = () => {
 
       <p className="mt-5 mb-3 text-muted">&copy; Mellow 2022</p>
     </form>
+    
   )
 }
 

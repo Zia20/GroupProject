@@ -44,20 +44,20 @@ const Signup = () => {
       <img className="mb-4" width="125" height="100" alt='parks' src={Images}/>
       <h1 className="h3 mb-3 fw-normal">Please sign up</h1>
       <div className="form-floating">
-        <input type="text" className="form-control shadow-none" id="floatingPassword" value={firstName} onChange={ (event) => {setFirstName(event.target.value)} } />
+        <input type="text" className="form-control shadow-none" value={firstName} onChange={ (event) => {setFirstName(event.target.value)} } />
         <label htmlFor="floatingPassword">First Name</label>
       </div>
       <div className="form-floating">
 
-        <input type="text" className="form-control shadow-none" id="floatingPassword" value={lastName} onChange={ (event) => {setLastName(event.target.value)} } />
+        <input type="text" className="form-control shadow-none" value={lastName} onChange={ (event) => {setLastName(event.target.value)} } />
         <label htmlFor="floatingPassword">Last Name</label>
       </div>
       <div className="form-floating">
-        <input type="email" className="form-control shadow-none" id="floatingInput" value={email} onChange={ (event) => {setEmail(event.target.value)} } />
+        <input type="email" className="form-control shadow-none" value={email} onChange={ (event) => {setEmail(event.target.value)} } />
         <label htmlFor="floatingInput">Email address</label>
       </div>
       <div className="form-floating">
-        <input type="password" className="form-control shadow-none" id="floatingPassword" value={password} onChange={ (event) => {setPassword(event.target.value)} } />
+        <input type="password" className="form-control shadow-none" value={password} onChange={ (event) => {setPassword(event.target.value)} } />
         <label htmlFor="floatingPassword">Password</label>
       </div>
 

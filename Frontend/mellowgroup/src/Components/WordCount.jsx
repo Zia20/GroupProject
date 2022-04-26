@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Images from "../images/falling_trees.png";
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Navigate } from 'react-router-dom';
 
 function WordCount() {
     const wordTyping =  ["Recreation", "Parks", "Citizen", "Clean Reporting"];
@@ -46,7 +47,9 @@ function WordCount() {
         }, 500);
         return () => clearTimeout(timeout2);
       }, [blink]);
-
+      const click = function(){
+          Navigate('/')
+      }
   return (
 
   <Container>
@@ -56,8 +59,8 @@ function WordCount() {
           <h2>
               {`Hello, and Welcome to ${wordTyping[index].substring(0, subIndex)}${blink ? "|" : ""}`}
           </h2>
-          <a href='http://localhost:3000/campground'>
-          <Button type='button' className='mt-3' variant="outline-success" size="lg">Get in touch</Button></a>
+          <a href='http://localhost:3000/engage'>
+          <Button type='button' className='mt-3' variant="outline-success"  size="lg">Get in touch</Button></a>
       </Col>
       <Col>
         <img alt='parks' src={Images}/>

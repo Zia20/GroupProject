@@ -59,7 +59,7 @@ const Parks = () => {
               <div className='py-5 my-5'>
               <h1>Make your experience better</h1>
                 <form onSubmit={handleSubmit}>
-                  <label>Submit a complain with by Uploading an Image.</label><br />
+                  <label>Submit a complain by Uploading an Image.</label><br />
                   <input type="file" onChange={handleFileChange} /><br />
                   {!isPending && <Button className='shadow-none my-3' variant="outline-warning" size="lg" type='submit'>Upload</Button>}
                   {isPending && <Button className='shadow-none my-3' variant="outline-success" disabled size="lg" type='submit'>Uploading ...</Button>}
@@ -180,7 +180,7 @@ const Parks = () => {
               <FontAwesomeIcon className='px-4 mx-2' icon={faMapLocationDot} size="2x" style={fontStyle} />
             </Col>
             <Col>
-              <h1>Hosptitals</h1>
+              <h1>Hospitals</h1>
               <FontAwesomeIcon className='px-4 mx-1' icon={faHospital} size="2x" style={fontStyle} />
             </Col>
           </Row>
