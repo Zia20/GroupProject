@@ -42,12 +42,8 @@ and our Vision.</p>
                   <Card.Title className='bold'>Emmanuel Alafonye</Card.Title>
                   <Card.Text>Petroleum & Software Engineer.
                   </Card.Text>
-<<<<<<< HEAD
-                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button>
-=======
                   <a href="https://github.com/Ataene" target="_blank">
                   <Button type='button' className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2 text-center' icon={faGithub} size="2x"  /></Button></a>
->>>>>>> 93e239f317204579a19ccb9847af1f6f8b7a5d65
                 </Card.Body>
               </Card>
             </div>
@@ -61,12 +57,8 @@ and our Vision.</p>
                   <Card.Text>
                     Software Engineer and a GIS
                   </Card.Text>
-<<<<<<< HEAD
-                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button>
-=======
                   <a href="https://github.com/Zia20" target="_blank">
                   <Button type='button' className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-3' icon={faGithub} size="2x"  /></Button></a>
->>>>>>> 93e239f317204579a19ccb9847af1f6f8b7a5d65
                 </Card.Body>
               </Card>
             </div>
@@ -80,12 +72,8 @@ and our Vision.</p>
                   <Card.Text>
                   Software Engineer and a GIS
                   </Card.Text>
-<<<<<<< HEAD
-                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button>
-=======
                   <a href="https://github.com/neu4mann" target="_blank">
                   <Button type='button' className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button> </a>
->>>>>>> 93e239f317204579a19ccb9847af1f6f8b7a5d65
                 </Card.Body>
               </Card>
             </div>
@@ -99,12 +87,8 @@ and our Vision.</p>
                   <Card.Text>
                   Software Engineer and a GIS
                   </Card.Text>
-<<<<<<< HEAD
-                  <Button className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button>
-=======
                   <a href="https://github.com/bnurmos" target="_blank">
                   <Button type='button' className='shadow-none'  variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button> </a>
->>>>>>> 93e239f317204579a19ccb9847af1f6f8b7a5d65
                 </Card.Body>
               </Card>
             </div>
