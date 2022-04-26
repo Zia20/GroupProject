@@ -25,7 +25,6 @@ function Web() {
         <Cross />
         <Ratings/>
         <Downtown />
-        <Maps />
         <Highlights />
         {/* <GoogleApiWrappers /> */}
     </>
