@@ -1,25 +1,29 @@
 //const dotenv = require('dotenv').config()
-import { RulerControl, StylesControl, CompassControl, ZoomControl } from 'mapbox-gl-controls';
+import {
+  RulerControl,
+  StylesControl,
+  CompassControl,
+  ZoomControl,
+} from "mapbox-gl-controls";
+import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState } from "react";
-import { Container, Row } from 'react-bootstrap';
 import Map, { Layer, Source, Marker, NavigationControl } from "react-map-gl";
-import geoJsonData from "./data/community_parks.geojson";
-//import geoJsonData from './data/district_parks.geojson';
-//import geoJsonData from './data/regional_parks.geojson';
-//import geoJsonData from "./data/special_parks.geojson";
-//import geoJsonData from './data/ParksSites_r.geojson';
-//import geoJsonData from './data/ParksSites.geojson';
-
+import geoJsonData from "./data/ParksSitesAddress.json";
+//import geoJsonData from "./data/ParksSites.geojson";
+import "../App.css";
+//import parkLogo from "./svg/park-trees.svg";
+import ParkIcon from "@mui/icons-material/Park";
+//@material-ui/icons
 
 const navStyle = {
-  position: 'absolute',
-  top: "0",
-  left: "0",
-  padding: '10px'
-}
+  position: "absolute",
+  top: 0,
+  left: 0,
+  padding: "10px",
+};
 
+const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
-const AKEY = "";
 const dataLayer = {
   id: "data",
   type: "fill",
@@ -47,64 +51,68 @@ const navControlStyle = {
   top: 10,
 };
 
-const Maps = (props) => {
+const Maps = () => {
+  const [long, setLong] = useState(-114.0719);
+  const [lat, setLat] = useState(51.0447);
+  const [zoom, setZoom] = useState(9.4);
   const [viewport, setViewport] = useState();
   const [hoverInfo, setHoverInfo] = useState(null);
+  console.log(`geojson data ${typeof geoJsonData}`);
   return (
-    <>
-    <Container>
-      <Row>
-      <div className="mapboxgl-ctrl-group 
+    <div
+      className="mapboxgl-ctrl-group 
                     mapboxgl-ctrl-icon 
-                    mapboxgl-ctrl-compass-arrow" >
-      
+                    mapboxgl-ctrl-compass-arrow"
+    >
       <Map
         initialViewState={{
-          longitude: -114.0719,
-          latitude: 51.0447,
+          longitude: long,
+          latitude: lat,
           center: [-144, 51],
-          zoom: 9.4,
+          zoom: zoom,
           pixelRatio: window.devicePixelRatio || 1,
           attributionControl: false,
           logo: false,
           locale: {
-            'NavigationControl.ZoomIn': 'Zoom in',
-            'NavigationControl.ZoomOut': 'Zoom out',
-          }
+            "NavigationControl.ZoomIn": "Zoom in",
+            "NavigationControl.ZoomOut": "Zoom out",
+          },
         }}
-          
-          mapboxAccessToken={AKEY}
-          style={{ width: 1300, height: 660 }}
-          mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"  
+        mapboxAccessToken={AKEY}
+        style={{ width: 1300, height: 660 }}
+        mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"
       >
         <Source type="geojson" data={geoJsonData}>
-          <Layer
-            {...dataLayer}
-          />
+          <Layer {...dataLayer} />
         </Source>
 
-        {/* {geoJsonData.features.map((park) => (
-          <Marker key={park.properties.asset_cd}
-            latitude={park.geometry.coordinates[0][0][1]}
-            longitude={park.geometry.coordinates[0][0][0]}
+        {geoJsonData.features.map((park) => (
+          <Marker
+            key={park.properties.asset_cd}
+            latitude={parseFloat(park.geometry.coordinates[0][0][0][1])}
+            longitude={parseFloat(park.geometry.coordinates[0][0][0][0])}
           >
-            <div>PARKS</div>
+            {/* `${ZoomView}px` */}
+            <button className="park-marker">
+              <ParkIcon
+                color="error"
+                style={{ height: 10 * `${zoom}px`, width: 15 * `${zoom}px` }}
+              />
+              Sorry, your browser does not support inline SVG.
+            </button>
           </Marker>
-        ))}    */}
+        ))}
 
         <div className="sidebar">
-          Longitude: {}| Latitude: {} | Zoom: {}
+          Longitude: {long}| Latitude: {lat} | Zoom: {zoom}
         </div>
         <div className="nav" style={navStyle}>
-          <NavigationControl onViewportChange={viewport} />
+          <NavigationControl
+            onViewportChange={(viewport) => this.setState({ viewport })}
+          />
         </div>
-  
       </Map>
     </div>
-      </Row>
-    </Container>
-    </>
-    
   );
 };
 

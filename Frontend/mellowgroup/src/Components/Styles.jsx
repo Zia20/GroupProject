@@ -43,7 +43,7 @@ export const aboutStyles = {
   fontFamily: "Arial",
 };
 
-  //Campground Form Styles
+  //Engage Form Styles
 export const CampFormStyles = {
   backgroundImage: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
   padding: "10px",

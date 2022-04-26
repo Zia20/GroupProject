@@ -11,8 +11,8 @@ import Footer from "./Components/Footer";
 import Navigation from './Components/Navigation';
 import ErrorPage from "./Components/ErrorPage";
 import About from "./Components/About";
-import Dashboard from "./Components/Dashboard";
-import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+// import Dashboard from "./Components/Dashboard";
+// import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -27,11 +27,11 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/about" element={<About />} />
 
-        <Route path="/about" element={
+        {/* <Route path="/about" element={
           <PrivateRoute>
           <Dashboard />
         </PrivateRoute>
-        } />    
+        } />     */}
 
         <Route path="*" element={<ErrorPage />} />
       </Routes>

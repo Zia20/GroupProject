@@ -95,3 +95,12 @@ input[type ="radio"]{
     margin-top: 0;
   }
 }
+
+.park-marker {
+  background: none;
+  border: none;
+}
+
+.park-marker-img {
+  width: 25px;
+}

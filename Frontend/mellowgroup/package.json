@@ -4,11 +4,16 @@
   "private": true,
   "proxy": "http://localhost:3020",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "@material-ui/icons": "^4.11.3",
+    "@mui/icons-material": "^5.6.2",
+    "@mui/material": "^5.6.3",
     "@react-google-maps/api": "^2.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
@@ -26,6 +31,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.0",
     "reactstrap": "^9.0.1",
+    "swr": "^1.3.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
