@@ -10,7 +10,7 @@ const Ratings = () => {
   const [hover, setHover] = useState(null);
 
   return (
-    <div>
+    <>
       <div style={topStyle}>
         <Container className="ml-auto">
           <Row className="mt-5">
@@ -38,8 +38,8 @@ const Ratings = () => {
                 );
               })}
               {/* <p>The rating is {rating}.</p> */}
-              <Button className="mt-3" variant="outline-success" size="lg">
-                Rate Parks
+              <Button className="mt-3 d-flex shadow-none" variant="outline-warning" size="lg">
+                YYC Rate Parks
               </Button>
             </Col>
             <Col>
@@ -91,7 +91,7 @@ const Ratings = () => {
           </Row>
         </Container>
       </div>
-    </div>
+    </>
   );
 };
 

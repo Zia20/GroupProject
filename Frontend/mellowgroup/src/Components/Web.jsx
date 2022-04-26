@@ -2,15 +2,20 @@ import React from 'react';
 import WordCount from './WordCount';
 import Ratings from './Ratings';
 import Cross from './Cross';
-import Maps from './mapbox';
+import Maps from "./Maps";
+import Downtown from "./DowntownProjects";
+import Highlights from './Highlights';
 
 function Web() {
   return (
     <>
         <WordCount />
-        <Maps />
-        <Ratings/>
         <Cross />
+        <Ratings/>
+        <Downtown />
+        <Maps />
+        <Highlights />
+        {/* <GoogleApiWrappers /> */}
     </>
   )
 }

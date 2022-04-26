@@ -1,6 +1,7 @@
 //const dotenv = require('dotenv').config()
 import { RulerControl, StylesControl, CompassControl, ZoomControl } from 'mapbox-gl-controls';
 import React, { useState } from "react";
+import { Container, Row } from 'react-bootstrap';
 import Map, { Layer, Source, Marker, NavigationControl } from "react-map-gl";
 import geoJsonData from "./data/community_parks.geojson";
 //import geoJsonData from './data/district_parks.geojson';
@@ -9,18 +10,16 @@ import geoJsonData from "./data/community_parks.geojson";
 //import geoJsonData from './data/ParksSites_r.geojson';
 //import geoJsonData from './data/ParksSites.geojson';
 
-
 const navStyle = {
   position: 'absolute',
-  top: 0,
-  left: 0,
+  top: "0",
+  left: "0",
   padding: '10px'
 }
 
+// const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
-const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
-// const AKEY = "pk.eyJ1IjoiemVlMjIiLCJhIjoiY2wyNThqcjM4MjdwajNjcWQzNmFya2ducSJ9.aUEfBpg2rKZXIbQ14vPcnA";
-
+const AKEY = "";
 const dataLayer = {
   id: "data",
   type: "fill",
@@ -52,7 +51,10 @@ const Maps = (props) => {
   const [viewport, setViewport] = useState();
   const [hoverInfo, setHoverInfo] = useState(null);
   return (
-    <div className="mapboxgl-ctrl-group 
+    <>
+    <Container>
+      <Row>
+      <div className="mapboxgl-ctrl-group 
                     mapboxgl-ctrl-icon 
                     mapboxgl-ctrl-compass-arrow" >
       
@@ -72,7 +74,7 @@ const Maps = (props) => {
         }}
           
           mapboxAccessToken={AKEY}
-          style={{ width: 800, height: 660 }}
+          style={{ width: 1300, height: 660 }}
           mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"  
       >
         <Source type="geojson" data={geoJsonData}>
@@ -99,6 +101,10 @@ const Maps = (props) => {
   
       </Map>
     </div>
+      </Row>
+    </Container>
+    </>
+    
   );
 };
 
