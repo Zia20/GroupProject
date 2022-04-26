@@ -7,14 +7,10 @@ import {
 } from "mapbox-gl-controls";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState } from "react";
-import Map, { Layer, Source, Popup, Marker, NavigationControl } from "react-map-gl";
+import Map, { Layer, Source, Marker, NavigationControl } from "react-map-gl";
 import geoJsonData from "./data/ParksSitesAddress.json";
-import {ParkIcon, Room} from "@mui/icons-material";
+import ParkIcon from "@mui/icons-material/Park";
 import NorthIcon from '@mui/icons-material/North';
-import { toggleButtonGroupClasses } from "@mui/material";
-
-
-const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const navStyle = {
   position: "absolute",
@@ -22,6 +18,8 @@ const navStyle = {
   left: 0,
   padding: "10px",
 };
+
+const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const dataLayer = {
   id: "data",
@@ -58,7 +56,11 @@ const Maps = () => {
   const [hoverInfo, setHoverInfo] = useState(null);
   console.log(`geojson data ${typeof geoJsonData}`);
   return (
-    <div>
+    <div
+      className="mapboxgl-ctrl-group 
+                    mapboxgl-ctrl-icon 
+                    mapboxgl-ctrl-compass-arrow"
+    >
       <Map
         initialViewState={{
           longitude: long,
@@ -66,54 +68,30 @@ const Maps = () => {
           center: [-144, 51],
           zoom: zoom,
         }}
-        {...viewport} //viewport not working
         mapboxAccessToken={AKEY}
-        onViewportChange ={(nextViewport) => setViewport(nextViewport)}
         style={{ width: 1300, height: 660 }}
         mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"
         >
         <Source type="geojson" data={geoJsonData}>
           <Layer {...dataLayer} />
         </Source>
-{/* 
+
         {geoJsonData.features.map((park) => (
           <Marker
           key={park.properties.asset_cd}
           latitude={parseFloat(park.geometry.coordinates[0][0][0][1])}
           longitude={parseFloat(park.geometry.coordinates[0][0][0][0])}
           >
+            {/* `${ZoomView}px` */}
             <button className="park-marker">
               <ParkIcon
                 color="success"
-                // style={{fontSize:viewport.zoom*20 }}
                 style={{ height: 5 * `${zoom}px`, width: 9 * `${zoom}px` }}
               />
               Sorry, your browser does not support inline SVG.
             </button>
           </Marker>
-        ))} */}
-
-        <Marker
-          latitude={lat}
-          longitude={long}
-          closeButton={true}
-          closeOnClick={false}>
-          <Room
-            color="error"
-            // style={{fontSize:viewport.zoom*20 }}
-            style={{ height: 5 * `${zoom}px`, width: 9 * `${zoom}px` }}
-          />
-        </Marker>
-
-        <Popup
-          latitude={lat}
-          longitude={long}
-          closeButton={true}
-          closeOnClick={false}
-          anchor="bottom">
-          <div> You are here </div>
-        </Popup>
-
+        ))}
 
         <div className="sidebar">
           Longitude: {long}| Latitude: {lat} | Zoom: {zoom}
