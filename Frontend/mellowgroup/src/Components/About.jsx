@@ -48,22 +48,12 @@ function About() {
             <div className="d-flex justify-content-around">
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" class="rounded-circle" src={Images} />
-                <Card.Body className="text-center">
-                  <Card.Title className="bold">Emmanuel Alafonye</Card.Title>
-                  <Card.Text>Petroleum & Software Engineer.</Card.Text>
+                <Card.Body className='text-center'>
+                  <Card.Title className='bold'>Emmanuel Alafonye</Card.Title>
+                  <Card.Text>Petroleum & Software Engineer.
+                  </Card.Text>
                   <a href="https://github.com/Ataene" target="_blank">
-                    <Button
-                      type="button"
-                      className="shadow-none"
-                      variant="primary"
-                    >
-                      <FontAwesomeIcon
-                        className="px-2 mx-2 text-center"
-                        icon={faGithub}
-                        size="2x"
-                      />
-                    </Button>
-                  </a>
+                  <Button type='button' className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2 text-center' icon={faGithub} size="2x"  /></Button></a>
                 </Card.Body>
               </Card>
             </div>
@@ -72,22 +62,13 @@ function About() {
             <div className="d-flex justify-content-around">
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" class="rounded-circle" src={Image1} />
-                <Card.Body className="text-center">
-                  <Card.Title className="bold">Fowzia Hassan</Card.Title>
-                  <Card.Text>Software Engineer and a GIS</Card.Text>
+                <Card.Body className='text-center'>
+                  <Card.Title className='bold'>Fowzia Hassan</Card.Title>
+                  <Card.Text>
+                    Software Engineer and a GIS
+                  </Card.Text>
                   <a href="https://github.com/Zia20" target="_blank">
-                    <Button
-                      type="button"
-                      className="shadow-none"
-                      variant="primary"
-                    >
-                      <FontAwesomeIcon
-                        className="px-2 mx-3"
-                        icon={faGithub}
-                        size="2x"
-                      />
-                    </Button>
-                  </a>
+                  <Button type='button' className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-3' icon={faGithub} size="2x"  /></Button></a>
                 </Card.Body>
               </Card>
             </div>
@@ -96,22 +77,13 @@ function About() {
             <div className="d-flex justify-content-around">
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" class="rounded-circle" src={Image2} />
-                <Card.Body className="text-center">
-                  <Card.Title className="bold">Paul Neumann</Card.Title>
-                  <Card.Text>Software Engineer and a GIS</Card.Text>
+                <Card.Body className='text-center'>
+                  <Card.Title className='bold'>Paul Neumann</Card.Title>
+                  <Card.Text>
+                  Software Engineer and a GIS
+                  </Card.Text>
                   <a href="https://github.com/neu4mann" target="_blank">
-                    <Button
-                      type="button"
-                      className="shadow-none"
-                      variant="primary"
-                    >
-                      <FontAwesomeIcon
-                        className="px-2 mx-2"
-                        icon={faGithub}
-                        size="2x"
-                      />
-                    </Button>{" "}
-                  </a>
+                  <Button type='button' className='shadow-none' variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button> </a>
                 </Card.Body>
               </Card>
             </div>
@@ -120,22 +92,13 @@ function About() {
             <div className="d-flex justify-content-around">
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" class="rounded-circle" src={Image3} />
-                <Card.Body className="text-center">
-                  <Card.Title className="bold">Yulia Sinko</Card.Title>
-                  <Card.Text>Software Engineer and a digital Advertiser.</Card.Text>
+                <Card.Body className='text-center'>
+                  <Card.Title className='bold'>Yulia Sinko</Card.Title>
+                  <Card.Text>
+                  Software Engineer and a GIS
+                  </Card.Text>
                   <a href="https://github.com/bnurmos" target="_blank">
-                    <Button
-                      type="button"
-                      className="shadow-none"
-                      variant="primary"
-                    >
-                      <FontAwesomeIcon
-                        className="px-2 mx-2"
-                        icon={faGithub}
-                        size="2x"
-                      />
-                    </Button>{" "}
-                  </a>
+                  <Button type='button' className='shadow-none'  variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button> </a>
                 </Card.Body>
               </Card>
             </div>
