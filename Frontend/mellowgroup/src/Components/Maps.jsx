@@ -12,7 +12,7 @@ const GoogleMaps = () => {
         <Row className='mt-3'>
             <Col>
                 <h1>History of Calgary Parks</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>At present, Calgary has 5,200 parks totalling 10,1100 hectares, giving Calgary eight hectares of parks/1,000 citizens — twice the recommendation.</p>
                 <Button className='mt-3' variant="outline-success" size="lg">Rate Parks</Button>
             </Col>
             <Col>

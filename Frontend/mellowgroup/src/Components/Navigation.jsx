@@ -20,8 +20,10 @@ function Navigation() {
               <Link to="/" style={myLink} className="mx-2">Home</Link>
               <Link to="/recreation" style={myLink} className="mx-2">Recreation</Link> 
               <Link to="/parks" style={myLink} className="mx-2">Parks</Link>
-              <Link to="/campground" style={myLink} className="mx-2">Campground</Link>
-              <Link to="/about" style={myLink} className="mx-2">About us</Link>
+              <Link to="/engage" style={myLink} className="mx-2">Engage</Link>
+              <Link to="/dashboard" style={myLink} className="mx-2">Dashboard</Link>
+              <Link to="/dog" style={myLink} className="mx-2">Dogs</Link>
+              <Link to="/about" style={myLink} className="mx-2">About Us</Link>
             </Nav>
             <Form className="d-flex">
               <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />

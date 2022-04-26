@@ -58,6 +58,23 @@ export const myCross = {
   padding: "10px",
   fontFamily: "Arial",
 };
+  //Downtown section Styles
+ export const myDowntown = {
+  color: "white",
+  backgroundImage: "linear-gradient(120deg, #84fab0 0%, #ffc107 100%)",
+  padding: "10px",
+  fontFamily: "Arial",
+  };
+
+   //Highlights section Styles
+ export const myHighlight = {
+  color: "white",
+  backgroundImage: "linear-gradient(120deg, #05EDFF 0%, #00FFAA 100%)",
+  padding: "10px",
+  marginRight: "10px",
+  fontFamily: "Arial",
+  };
+
 
   //Footer Sytles
 export const footerStyles = {

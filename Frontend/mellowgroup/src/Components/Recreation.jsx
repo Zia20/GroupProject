@@ -13,11 +13,8 @@ function Recreation() {
   const [ weatherData, setWeatherData ] = useState([{}]);
   const [ city, setCity ] = useState('')
 
-  // const apiKey = "307f9855ed28565c54e790f9ca066555" //OLD April 19, 2022
-  const apiKey = "b695184324a9e5f4d0961f0ef8dbb94d"    //NEW April 19, 2022
-
-  // const AKEY = process.env.API_KEY;
-  const weatherUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const APIKEY = process.env.API_KEY;
+  const weatherUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=metric`;
 
   const getWeather = async(e) => {
     if (e.key === "Enter"){
@@ -176,7 +173,7 @@ function Recreation() {
           <Col className='mt-5 pl-3'>
               <h1>Report an issue or rate YYC parks</h1>
               <h4>Residence to City Reporting</h4>
-              <Button className='mt-3 shadow-none' variant="outline-success" size="lg">Learn more</Button>
+              <Button className='mt-3' variant="outline-success" size="lg">Learn more</Button>
           </Col>
           <Col>
             <img alt='parks' src={Image2}/>

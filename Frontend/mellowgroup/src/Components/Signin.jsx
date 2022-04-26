@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import Images from "../images/signin.jpg";
 import { signupStyle } from "./Styles";
@@ -7,6 +8,9 @@ const Signin = () => {
 
   const [email, setEmail ] = useState('');
   const [password, setPassword ] = useState('');
+  const [isPending, setIsPending ] = useState(false);
+  const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,19 +18,19 @@ const Signin = () => {
       email, 
       password, 
     };
-
+    setIsPending(true);
     const data = JSON.stringify(users)
       try {
-
         await fetch("/login", {
           method: "POST",
           headers: { "Content-Type": "application/json"},
           body: data,
         })
-        
+        setIsPending(false)
       } catch (error) {
         console.log(error)
       }
+      navigate("/")
   }
   return (
     <form style={signupStyle} onSubmit={handleSubmit}>
@@ -46,7 +50,9 @@ const Signin = () => {
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
-      <button className="w-100 btn btn-lg btn-primary shadow-none" type="submit">Sign in</button>
+      {!isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" type="submit">Sign in</button>}
+      {isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" disabled type="submit">Adding ...</button>}
+
       <p className="mt-5 mb-3 text-muted">&copy; Mellow 2022</p>
     </form>
   )
