@@ -54,7 +54,7 @@ const Parks = () => {
         <Container fluid='md'>
           <Row>
             <Col>
-              <img alt='parks' width='420px' src={Image3}/>
+              <img alt='parks' width='380px' src={Image3}/>
             </Col>
             <Col>
               <div className='py-3 my-5'>
