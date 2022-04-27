@@ -3,9 +3,9 @@ import WordCount from "./WordCount";
 import Ratings from "./Ratings";
 import Cross from "./Cross";
 import Maps from "./mapbox";
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Downtown from "./DowntownProjects";
-import Highlights from './Highlights';
+import Highlights from "./Highlights";
 
 function Web() {
   return (
@@ -21,12 +21,8 @@ function Web() {
 
       <Ratings />
       <Cross />
-        <WordCount />
-        <Cross />
-        <Ratings/>
-        <Downtown />
-        <Highlights />
-        {/* <GoogleApiWrappers /> */}
+      <Downtown />
+      <Highlights />
     </>
   );
 }

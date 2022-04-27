@@ -181,13 +181,10 @@ const Maps = () => {
             showCompass={true}
             onViewportChange={(viewport) => this.setState({ viewport })}
           />
+          
           <HomeIcon
             className="home"
-            onClick={(e) => {
-              e.preventDefault();
-              setViewport({initialViewState});
-            }}
-            
+            onClick={initialViewState}
           />
         </div>
       </Map>
