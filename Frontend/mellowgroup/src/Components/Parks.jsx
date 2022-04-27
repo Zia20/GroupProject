@@ -51,16 +51,16 @@ const Parks = () => {
   return (
     <div>
       <div style={upLoadstyle}>
-        <Container>
+        <Container fluid='md'>
           <Row>
             <Col>
-              <img alt='parks' width="300" height="220" src={Image3}/>
+              <img alt='parks' width='420px' src={Image3}/>
             </Col>
             <Col>
-              <div className='py-5 my-5'>
+              <div className='py-3 my-5'>
               <h1>Make your experience better</h1>
                 <form onSubmit={handleSubmit}>
-                  <label>Submit a complain by Uploading an Image.</label><br />
+                  <label>Submit a complaint by Uploading an Image.</label><br />
                   <input type="file" onChange={handleFileChange} /><br />
                   {!isPending && <Button className='shadow-none my-3' variant="outline-warning" size="lg" type='submit'>Upload</Button>}
                   {isPending && <Button className='shadow-none my-3' variant="outline-success" disabled size="lg" type='submit'>Uploading ...</Button>}
@@ -73,11 +73,11 @@ const Parks = () => {
       
       
       <div style={myParkStyle}>
-        <Container>
+        <Container fluid='md'>
           <Row>
             <div class="text-center">
-          <h1 className='animate__animated animate__pulse'>The Most Beautiful Parks</h1>
-          <h3 className='animate__animated animate__fadeInRight animate-delay-1s 1s'>Calgary's parks and green spaces offer an urban connection to nature</h3>
+          <h1 className='animate__animated animate__heartBeat'>The Most Beautiful Parks</h1>
+          <h3>Calgary's parks and green spaces offer an urban connection to nature</h3>
           </div>
             <Carousel>
               <Carousel.Item interval={2000}>
