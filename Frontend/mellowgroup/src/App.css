@@ -65,6 +65,14 @@ input[type ="radio"]{
   border-radius: 4px;
   }
 
+  .home {
+    font-size: xx-large;
+    top: 4.5em;
+    left: 1250px;
+    border-radius: 4px;
+    position: relative;
+    }
+
 /* .mapboxgl-ctrl-logo {
   display: none !important;
 } */
@@ -153,4 +161,12 @@ a-link{
   color: #1B9CFC;
   text-decoration: none;
   font-weight: bold;
+}
+
+.control-panel {
+  font-family: "UberMove";
+  top: 60px;
+  right: 0;
+  outline: none;
+  cursor: auto;
 }

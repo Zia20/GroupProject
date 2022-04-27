@@ -6,7 +6,7 @@ const values = Object.values(parksData);
 console.log(values.filter(category => category.properties));
 function ControlPanel(props) {
   return (
-    <div>
+    <div className="control-panel">
         {values.filter(category => category.properties === 'CALGARY PARK').map((category, index) => (
         <div key={`btn-${index}`} className="input">
             <input

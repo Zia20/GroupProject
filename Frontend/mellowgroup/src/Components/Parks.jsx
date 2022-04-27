@@ -10,6 +10,7 @@ import Image5 from "../images/PrinceIslandPark.jpg";
 import Image6 from "../images/St.PatrickIslandPark.jpg";
 import Image7 from "../images/SueHigginsPark.jpg";
 import 'font-awesome/css/font-awesome.min.css';
+import 'animate.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCampground, faHospital, faMapLocationDot, faEye, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { myParkStyle, upLoadstyle, carousalStyle, fontStyle  } from "./Styles";
@@ -50,16 +51,16 @@ const Parks = () => {
   return (
     <div>
       <div style={upLoadstyle}>
-        <Container>
+        <Container fluid='md'>
           <Row>
             <Col>
-              <img alt='parks' src={Image3}/>
+              <img alt='parks' width='420px' src={Image3}/>
             </Col>
             <Col>
-              <div className='py-5 my-5'>
+              <div className='py-3 my-5'>
               <h1>Make your experience better</h1>
                 <form onSubmit={handleSubmit}>
-                  <label>Submit a complain by Uploading an Image.</label><br />
+                  <label>Submit a complaint by Uploading an Image.</label><br />
                   <input type="file" onChange={handleFileChange} /><br />
                   {!isPending && <Button className='shadow-none my-3' variant="outline-warning" size="lg" type='submit'>Upload</Button>}
                   {isPending && <Button className='shadow-none my-3' variant="outline-success" disabled size="lg" type='submit'>Uploading ...</Button>}
@@ -72,14 +73,14 @@ const Parks = () => {
       
       
       <div style={myParkStyle}>
-        <Container>
+        <Container fluid='md'>
           <Row>
             <div class="text-center">
-          <h1>The Most Beautiful Parks</h1>
+          <h1 className='animate__animated animate__heartBeat'>The Most Beautiful Parks</h1>
           <h3>Calgary's parks and green spaces offer an urban connection to nature</h3>
           </div>
             <Carousel>
-              <Carousel.Item interval={1000}>
+              <Carousel.Item interval={2000}>
                   <img width="400" height="750"
                     className="d-block w-100"
                     src={Images}
@@ -91,7 +92,7 @@ const Parks = () => {
                     <p>Location: <a a href="https://www.google.com/maps/place/Visitor+Centre+-+Fish+Creek+Provincial+Park/@50.9103451,-114.0198039,15z/data=!4m5!3m4!1s0x0:0x2694044fdcb34327!8m2!3d50.910209!4d-114.0197319" class="stretched-link" rel="opener">15979 Bow Bottom Trail SE</a></p>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={1500}>
                   <img width="400" height="750"
                     className="d-block w-100"
                     src={Image1}
@@ -102,7 +103,7 @@ const Parks = () => {
                     <p>Location: <a a href="https://www.google.ca/maps/place/Confederation+Park/@51.079769,-114.079318,17z/data=!3m1!4b1!4m5!3m4!1s0x53716f870cce6cc1:0x9977f871fce03e04!8m2!3d51.079769!4d-114.079318?hl=en" class="stretched-link" rel="opener">905 30 Ave NW</a></p>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={1500}>
                   <img width="400" height="750"
                     className="d-block w-100"
                     src={Image2}
@@ -113,7 +114,7 @@ const Parks = () => {
                     <p>Location: <a a href="https://www.google.ca/maps/place/Edworthy+Park/@51.0633376,-114.1556968,17z/data=!3m1!4b1!4m5!3m4!1s0x53716e4e8351e247:0x3c54a79f7f6cd44c!8m2!3d51.0633376!4d-114.1556968" class="stretched-link" rel="opener">5050 Spruce Dr. SW</a></p>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={1500}>
                   <img width="400" height="750"
                     className="d-block w-100"
                     src={Image4}
@@ -124,7 +125,7 @@ const Parks = () => {
                     <p>Location: <a a href="https://www.google.ca/maps/place/Nose+Hill+Park/@51.1119248,-114.1114232,14z/data=!4m2!3m1!1s0x537165f81dcb7df7:0x7576f90d970ea8af" class="stretched-link" rel="opener">5620 14 St. NW</a></p>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={1500}>
                   <img width="400" height="750"
                     className="d-block w-100"
                     src={Image5}
@@ -135,7 +136,7 @@ const Parks = () => {
                     <p>Location: <a a href="https://www.google.ca/maps?q=prince%27s+island+park&hl=en&sll=51.013117,-114.088499&sspn=0.659228,1.722107&hq=prince%27s+island+park&t=m&z=16" class="stretched-link" rel="opener">4 St. and 1 Ave. SW</a></p>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={1500}>
                   <img width="400" height="750"
                     className="d-block w-100"
                     src={Image6}
@@ -146,7 +147,7 @@ const Parks = () => {
                     <p>Location: <a a href="https://www.google.ca/maps/place/St+Patrick%27s+Island,+Calgary,+AB/@51.0473074,-114.0420884,17z/data=!3m1!4b1!4m2!3m1!1s0x53717aace7dfa08f:0xfcad0ceaea045ae1" class="stretched-link" rel="opener">1300 Zoo Rd. NE</a></p>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item interval={1500}>
                   <img width="400" height="750"
                     className="d-block w-100"
                     src={Image7}

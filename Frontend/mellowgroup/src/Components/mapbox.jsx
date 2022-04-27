@@ -14,6 +14,7 @@ import Map, {
 import geoJsonData from "./data/ParksSitesAddress.json";
 import ParkIcon from "@mui/icons-material/Park";
 import RoomIcon from "@mui/icons-material/Room";
+import HomeIcon from "@mui/icons-material/Home";
 import NorthIcon from "@mui/icons-material/North";
 //import { Card, Typography, Link } from "@mui/material";
 //import { toggleButtonGroupClasses } from "@mui/material";
@@ -128,7 +129,6 @@ const Maps = () => {
           </Marker>
         ))}
 
-        <button>Home</button>
         <Marker
           latitude={lat}
           longitude={long}
@@ -173,13 +173,21 @@ const Maps = () => {
           </Popup>
         ) : null}
 
-        <div className="sidebar">
+        {/* <div className="sidebar">
           Longitude: {long}| Latitude: {lat} | Zoom: {zoom}
-        </div>
+        </div> */}
         <div className="nav" style={navStyle}>
           <NavigationControl
             showCompass={true}
             onViewportChange={(viewport) => this.setState({ viewport })}
+          />
+          <HomeIcon
+            className="home"
+            onClick={(e) => {
+              e.preventDefault();
+              setViewport({initialViewState});
+            }}
+            
           />
         </div>
       </Map>
