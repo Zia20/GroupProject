@@ -1,10 +1,7 @@
 import "../App.css";
-import {
-  RulerControl,
-  StylesControl,
-  CompassControl,
-  ZoomControl,
-} from "mapbox-gl-controls";
+import { useRef, useCallback } from "react";
+import ControlPanel from "./controlPanel";
+//import MapRef from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState, useEffect } from "react";
 import Map, {
@@ -16,19 +13,13 @@ import Map, {
 } from "react-map-gl";
 import geoJsonData from "./data/ParksSitesAddress.json";
 import ParkIcon from "@mui/icons-material/Park";
-import RoomIcon from '@mui/icons-material/Room';
+import RoomIcon from "@mui/icons-material/Room";
 import NorthIcon from "@mui/icons-material/North";
-import { toggleButtonGroupClasses } from "@mui/material";
+//import { Card, Typography, Link } from "@mui/material";
+//import { toggleButtonGroupClasses } from "@mui/material";
 import MapRatings from "./MapRatings";
 
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
-
-const navStyle = {
-  position: "absolute",
-  top: 0,
-  left: 0,
-  padding: "10px",
-};
 
 const dataLayer = {
   id: "data",
@@ -52,6 +43,13 @@ const dataLayer = {
   },
 };
 
+const navStyle = {
+  position: "absolute",
+  top: 0,
+  left: 0,
+  padding: "10px",
+};
+
 const navControlStyle = {
   right: 10,
   top: 10,
@@ -63,28 +61,41 @@ const Maps = () => {
   const [zoom, setZoom] = useState(9.4);
   const [viewport, setViewport] = useState();
   const [selectedPark, setSelectedPark] = useState(null);
-  
+
+  const initialViewState = {
+    longitude: long,
+    latitude: lat,
+    center: [-144, 51],
+    zoom: zoom,
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+
+  const mapRef = useRef(null);
+  // {*mapRef.current.animateToRegion*}
+
+  const onSelectParks = useCallback(({ long, lat }) => {
+    mapRef.current?.flyTo({ center: [long, lat], duration: 2000 });
+  }, []);
+
   useEffect(() => {
-    const listener = e => {
+    const listener = (e) => {
       if (e.key === "Escape") {
         setSelectedPark(null);
       }
     };
     window.addEventListener("keydown", listener);
-  
-    },[]);
+
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <div>
       <Map
-        initialViewState={{
-          longitude: long,
-          latitude: lat,
-          center: [-144, 51],
-          zoom: zoom,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        }}
+        ref={mapRef}
+        initialViewState={initialViewState}
         {...viewport} //viewport not working
         mapboxAccessToken={AKEY}
         onViewportChange={(nextViewport) => setViewport(nextViewport)}
@@ -130,16 +141,18 @@ const Maps = () => {
             style={{ height: 10 * `${zoom}px`, width: 9 * `${zoom}px` }}
           />
         </Marker>
-        
+
         {selectedPark ? (
           <Popup
             latitude={parseFloat(selectedPark.geometry.coordinates[0][0][0][1])}
-            longitude={parseFloat(selectedPark.geometry.coordinates[0][0][0][0])}
+            longitude={parseFloat(
+              selectedPark.geometry.coordinates[0][0][0][0]
+            )}
             closeButton={true}
             closeOnClick={false}
             anchor="left"
           >
-            <div className="mapCard">
+            <div className="card-container">
               <label>Place</label>
               <h5 className="place">{selectedPark.properties.steward}</h5>
               <p className="descInfo">{selectedPark.properties.street}</p>
@@ -150,8 +163,12 @@ const Maps = () => {
               <label>Ratings</label>
               <MapRatings />
               <label>Information</label>
-              <span className="descInfo">{selectedPark.properties.minortype}</span>
-              <span className="date"> 1 Hour ago</span>
+              <p className="descInfo">{selectedPark.properties.minortype}</p>
+              <div className="btn">
+                <button className="btn-button">
+                  <a className="a-link">Survey..</a>
+                </button>
+              </div>
             </div>
           </Popup>
         ) : null}
@@ -166,6 +183,7 @@ const Maps = () => {
           />
         </div>
       </Map>
+      <ControlPanel onSelectParks={onSelectParks} />
     </div>
   );
 };
