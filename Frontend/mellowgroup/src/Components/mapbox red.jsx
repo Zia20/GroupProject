@@ -1,4 +1,4 @@
-//const dotenv = require('dotenv').config()
+import "../App.css";
 import {
   RulerControl,
   StylesControl,
@@ -7,13 +7,14 @@ import {
 } from "mapbox-gl-controls";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState } from "react";
-import Map, { Layer, Source, Marker, NavigationControl } from "react-map-gl";
+import Map, { Layer, Source, Popup, Marker, NavigationControl } from "react-map-gl";
 import geoJsonData from "./data/ParksSitesAddress.json";
-//import geoJsonData from "./data/ParksSites.geojson";
-import "../App.css";
-//import parkLogo from "./svg/park-trees.svg";
-import ParkIcon from '@mui/icons-material/Park';
-//@material-ui/icons
+import {ParkIcon, Room, Star} from "@mui/icons-material";
+import NorthIcon from '@mui/icons-material/North';
+import { toggleButtonGroupClasses } from "@mui/material";
+import MapRatings from "./MapRatings";
+
+const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const navStyle = {
   position: "absolute",
@@ -21,8 +22,6 @@ const navStyle = {
   left: 0,
   padding: "10px",
 };
-
-const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const dataLayer = {
   id: "data",
@@ -59,56 +58,78 @@ const Maps = () => {
   const [hoverInfo, setHoverInfo] = useState(null);
   console.log(`geojson data ${typeof geoJsonData}`);
   return (
-    <div
-      className="mapboxgl-ctrl-group 
-                    mapboxgl-ctrl-icon 
-                    mapboxgl-ctrl-compass-arrow"
-    >
+    <div>
       <Map
         initialViewState={{
           longitude: long,
           latitude: lat,
           center: [-144, 51],
           zoom: zoom,
-          pixelRatio: window.devicePixelRatio || 1,
-          attributionControl: false,
-          logo: false,
-          locale: {
-            "NavigationControl.ZoomIn": "Zoom in",
-            "NavigationControl.ZoomOut": "Zoom out",
-          },
         }}
+        {...viewport} //viewport not working
         mapboxAccessToken={AKEY}
+        onViewportChange ={(nextViewport) => setViewport(nextViewport)}
         style={{ width: 1300, height: 660 }}
         mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"
-      >
+        >
         <Source type="geojson" data={geoJsonData}>
           <Layer {...dataLayer} />
         </Source>
-
+{/* 
         {geoJsonData.features.map((park) => (
           <Marker
-            key={park.properties.asset_cd}
-            latitude={parseFloat(park.geometry.coordinates[0][0][0][1])}
-            longitude={parseFloat(park.geometry.coordinates[0][0][0][0])}
+          key={park.properties.asset_cd}
+          latitude={parseFloat(park.geometry.coordinates[0][0][0][1])}
+          longitude={parseFloat(park.geometry.coordinates[0][0][0][0])}
           >
-            {/* `${ZoomView}px` */}
             <button className="park-marker">
               <ParkIcon
-                color="error"
-                style={{height:10*`${zoom}px`,
-                width: 20*`${zoom}px`}}
-          />
+                color="success"
+                // style={{fontSize:viewport.zoom*20 }}
+                style={{ height: 5 * `${zoom}px`, width: 9 * `${zoom}px` }}
+              />
               Sorry, your browser does not support inline SVG.
             </button>
           </Marker>
-        ))}
+        ))} */}
+
+        <Marker
+          latitude={lat}
+          longitude={long}
+          closeButton={true}
+          closeOnClick={false}>
+          <Room
+            color="error"
+            //style={{fontSize:viewport.zoom *20 }}
+            style={{ height:10 * `${zoom}px`, width: 9 * `${zoom}px` }}
+          />
+        </Marker>
+
+        <Popup
+          latitude={lat}
+          longitude={long}
+          closeButton={true}
+          closeOnClick={false}
+          anchor="left">
+          <div className="mapCard"> 
+            <label>Place</label>
+            <h4 className="place">Calgary Location</h4>
+            <label>Review</label>
+            <p>This is the best city in Canada. Unexpected weather patterns!.</p>
+            <label>Ratings</label>
+            <MapRatings />
+            <label>Information</label>
+            <span className="date">1 Hour ago</span>
+          </div>
+        </Popup>
 
         <div className="sidebar">
           Longitude: {long}| Latitude: {lat} | Zoom: {zoom}
         </div>
         <div className="nav" style={navStyle}>
-          <NavigationControl onViewportChange={viewport} />
+          <NavigationControl
+            onViewportChange={(viewport) => this.setState({ viewport })}
+            />
         </div>
       </Map>
     </div>
