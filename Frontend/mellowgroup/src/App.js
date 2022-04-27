@@ -6,6 +6,7 @@ import Recreation from "./Components/Recreation/Recreation";
 import Signup from "./Components/SignIn/Signup";
 import Signin from "./Components/SignIn/Signin";
 import Web from "./Components/Web";
+import Parks from "./Components/Parks/Parks";
 import Footer from "./Components/Headers/Footer";
 import Navigation from "./Components/Headers/Navigation";
 import ErrorPage from "./Components/Headers/ErrorPage";
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Web />} />
         <Route path="/recreation" element={<Recreation />} />
-        {/* <Route path="/parks" element={<Parks />} /> */}
+        <Route path="/parks" element={<Parks />} />
         <Route path="/engage" element={<Engage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
