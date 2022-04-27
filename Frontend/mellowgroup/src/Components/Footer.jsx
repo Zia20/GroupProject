@@ -9,7 +9,7 @@ import { footerStyles } from "./Styles";
 const Footer = () => {
 
   return (
-    <div style={footerStyles}>
+    <div style={footerStyles} className='mt-2'>
       <Navbar collapseOnSelect expand="lg" variant="dark">
         <Container>
         <Navbar.Brand to="/">Mellow</Navbar.Brand>

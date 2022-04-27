@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Images from "../images/joggingBG.png";
 import Image1 from "../images/fire.png";
@@ -13,6 +14,9 @@ const Engage = () => {
   const [date, setDate ] = useState('');
   const [choose, setChoose ] = useState('');
   const [text, setText ] = useState('');
+  const [isPending, setIsPending ] = useState(false);
+  const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     
@@ -25,7 +29,7 @@ const Engage = () => {
       choose, 
       text 
     };
-
+    setIsPending(true);
     console.log(newComplain);
     const data = JSON.stringify(newComplain)
     try {
@@ -35,10 +39,11 @@ const Engage = () => {
           "Content-Type": "application/json" },
         body: data,
       })
+      setIsPending(false)
     } catch (error) {
       console.log(error)
     }
-    
+    navigate("/")
   }
 
   return (
@@ -74,7 +79,8 @@ const Engage = () => {
                   <option value="Maintenance Issues">maintenance Issues</option>
                 </select><br />
                 <textarea class="rounded" rows="4" cols="50" placeholder='Write your complaints' value={text} onChange={(event) => {setText(event.target.value)}}></textarea><br />
-                <Button className='mt-3 shadow-none' variant="outline-success" size="lg" type='submit'>Submit</Button>
+                {!isPending && <Button className='mt-3 shadow-none' variant="outline-success" size="lg" type='submit'>Submit</Button>}
+                {isPending && <Button className='mt-3 shadow-none' disabled variant="outline-success" size="lg" type='submit'>Submiting ...</Button>}
               </form>
             </div>
           </Col>
