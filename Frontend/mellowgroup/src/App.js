@@ -14,7 +14,7 @@ import Dog from "./Components/Dog";
 import Dashboard from "./Components/Dashboard";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Engage from "./Components/Engage";
-import offLeash from "./Components/property/dogs.json";
+import Dogpage from "./Components/Dogpage";
 
 function App() {
   return (
@@ -28,13 +28,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/about" element={<About />} />
-        <Route path="/dog"
-          element={offLeash.map((dogLists, index) => {
-            if (index < 3) {
-              return <Dog dogLists={dogLists} />;
-            }
-          })}
-        />
+        <Route path="/dog" element={<Dogpage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
