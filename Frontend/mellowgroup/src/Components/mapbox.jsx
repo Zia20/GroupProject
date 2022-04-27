@@ -6,7 +6,7 @@ import {
   ZoomControl,
 } from "mapbox-gl-controls";
 import "mapbox-gl/dist/mapbox-gl.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Map, {
   Layer,
   Source,
@@ -63,7 +63,17 @@ const Maps = () => {
   const [zoom, setZoom] = useState(9.4);
   const [viewport, setViewport] = useState();
   const [selectedPark, setSelectedPark] = useState(null);
-  console.log(`geojson data ${typeof geoJsonData}`);
+  
+  useEffect(() => {
+    const listener = e => {
+      if (e.key === "Escape") {
+        setSelectedPark(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
+  
+    },[]);
+
   return (
     <div>
       <Map
@@ -131,7 +141,8 @@ const Maps = () => {
           >
             <div className="mapCard">
               <label>Place</label>
-              <h4 className="place">Calgary Location</h4>
+              <h5 className="place">{selectedPark.properties.steward}</h5>
+              <p className="descInfo">{selectedPark.properties.street}</p>
               <label>Review</label>
               <p className="descInfo">
                 This is the best city in Canada. Unexpected weather patterns!.
@@ -139,7 +150,8 @@ const Maps = () => {
               <label>Ratings</label>
               <MapRatings />
               <label>Information</label>
-              <span className="date">1 Hour ago</span>
+              <span className="descInfo">{selectedPark.properties.minortype}</span>
+              <span className="date"> 1 Hour ago</span>
             </div>
           </Popup>
         ) : null}
