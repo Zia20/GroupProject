@@ -1,11 +1,11 @@
 import React from "react";
-import WordCount from "./WordCount";
-import Ratings from "./Ratings";
-import Cross from "./Cross";
-import Maps from "./mapbox";
+import WordCount from "./Headers/WordCount";
+import Information from "./About/Information";
+import Cross from "./Cross/Cross";
+import Maps from "./Maps/Maps";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import Downtown from "./DowntownProjects";
-import Highlights from "./Highlights";
+import Downtown from "./DowntownProjects/DowntownProjects";
+import Highlights from "./Headers/Highlights";
 
 function Web() {
   return (
@@ -19,7 +19,7 @@ function Web() {
         </Container>
       </div>
 
-      <Ratings />
+      <Information />
       <Cross />
       <Downtown />
       <Highlights />
