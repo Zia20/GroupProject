@@ -130,7 +130,9 @@ export const signupStyle = {
   textAlign: "center",
   marginTop: "150px",
   marginBottom: "100px",
-  marginRight: "45rem",
-  marginLeft: "45rem",
+  marginRight: "20px",
+  marginLeft: "20px",
+  paddingRight: "20px",
+  paddingLeft: "20px",
   shadow: "none",
 }
