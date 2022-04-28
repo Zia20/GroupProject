@@ -1,7 +1,7 @@
 // import { ReactDOM } from 'react';
 import "./App.css"; //Don't Remove please
 import { Route, Routes } from "react-router-dom";
-// import Parks from "./Components/Parks";
+import Parks from "./Components/Parks/Parks";
 import Recreation from "./Components/Recreation/Recreation";
 import Signup from "./Components/SignIn/Signup";
 import Signin from "./Components/SignIn/Signin";
@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Web />} />
         <Route path="/recreation" element={<Recreation />} />
-        {/* <Route path="/parks" element={<Parks />} /> */}
+        <Route path="/parks" element={<Parks />} />
         <Route path="/engage" element={<Engage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />

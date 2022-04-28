@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Dog from "./Dog";
-import offLeash from "../data/property/dogs.json";
+// import offLeash from "../data/property/dogs.json";
 import { signupStyle } from "../Styles/Styles";
 
 
 const Dogpage = () => {
 
+  const [offLeashList, setOffLeashList] = useState([]);
   const [category, setCategory ] = useState('');
   const [status, setStatus ] = useState('');
   const [location, setLocation ] = useState('');
@@ -16,7 +17,22 @@ const Dogpage = () => {
   const [isPending, setIsPending ] = useState(false);
   const [showModal, setShowModal] = useState()
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    getOffLeashList();
+  }, []);
 
+  const getOffLeashList = async() => {
+    
+    try {
+      let response = await fetch('/dog');
+      let dogData = await response.json();
+      return setOffLeashList(dogData);
+
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,7 +70,7 @@ const Dogpage = () => {
       <Container>
         <Row>
           <h1 className="text-warning">Off leash Dog parks near me</h1>
-          {offLeash.map((dogLists, index) => {
+          {offLeashList.map((dogLists, index) => {
             if (index < 3) {
               return <Dog dogLists={dogLists} />;
             }
