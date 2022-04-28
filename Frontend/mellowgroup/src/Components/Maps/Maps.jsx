@@ -162,7 +162,7 @@ const Maps = () => {
               <p className="descInfo">{selectedPark.properties.street}</p>
               <label>Review</label>
               <p className="descInfo">
-                This is the best city in Canada.
+                This is the best city in Canada!
               </p>
               <label>Ratings</label>
               <MapRatings />
