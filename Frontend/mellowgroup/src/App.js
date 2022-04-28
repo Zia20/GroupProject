@@ -13,6 +13,7 @@ import About from "./Components/About/About";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Engage from "./Components/Engage/Engage";
 import Dogpage from "./Components/Dog/Dogpage";
+import Survey from "./Components/Survey/Survey";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/dog" element={<Dogpage />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/survey" element={<Survey/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

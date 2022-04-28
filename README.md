@@ -198,4 +198,179 @@ GroupProject
 ├─ package.json
 └─ README.md
 
+
+
+
+```
+
+```
+GroupProject
+├─ .DS_Store
+├─ Backend
+│  ├─ .DS_Store
+│  ├─ auth
+│  │  └─ auth.js
+│  ├─ models
+│  │  ├─ complains.js
+│  │  ├─ dogFunctions.js
+│  │  ├─ dogs.js
+│  │  ├─ dogs.json
+│  │  ├─ loadInitialData.js
+│  │  ├─ parks.js
+│  │  └─ users.js
+│  ├─ mongoose.js
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ public
+│  │  ├─ images
+│  │  │  ├─ 01-BenchOverlookingRiver.png
+│  │  │  ├─ 02-CalgaryParkBenchToCityScape.png
+│  │  │  ├─ 03-CalgaryPathwayAndRiver.png
+│  │  │  ├─ 04-PrincessLand.png
+│  │  │  ├─ 05-RiverAndTrees.png
+│  │  │  ├─ girlphone.png
+│  │  │  ├─ Ukraine.png
+│  │  │  └─ voice.png
+│  │  └─ index.html
+│  ├─ routes
+│  │  ├─ complainRouter.js
+│  │  ├─ dogRouter.js
+│  │  ├─ loginRouter.js
+│  │  ├─ parkRouter.js
+│  │  ├─ signupRouter.js
+│  │  ├─ uploadRouter.js
+│  │  └─ weatherRouter.js
+│  └─ server.js
+├─ Frontend
+│  ├─ .DS_Store
+│  └─ mellowgroup
+│     ├─ mellowgroup@0.1.0
+│     ├─ package-lock.json
+│     ├─ package.json
+│     ├─ public
+│     │  ├─ favicon.png
+│     │  ├─ index.html
+│     │  └─ manifest.json
+│     ├─ react-scripts
+│     ├─ README.md
+│     └─ src
+│        ├─ App.css
+│        ├─ App.js
+│        ├─ App.test.js
+│        ├─ Components
+│        │  ├─ About
+│        │  │  ├─ About.jsx
+│        │  │  └─ Information.jsx
+│        │  ├─ Cross
+│        │  │  └─ Cross.jsx
+│        │  ├─ Dashboard
+│        │  │  └─ Dashboard.jsx
+│        │  ├─ data
+│        │  │  ├─ parksData
+│        │  │  │  └─ ParksSitesAddress.json
+│        │  │  ├─ property
+│        │  │  │  └─ dogs.json
+│        │  │  └─ recreationData
+│        │  │     ├─ RecreationsSites.json
+│        │  │     └─ WaterParks.json
+│        │  ├─ Dog
+│        │  │  ├─ Dog.jsx
+│        │  │  └─ Dogpage.js
+│        │  ├─ DowntownProjects
+│        │  │  └─ DowntownProjects.jsx
+│        │  ├─ Engage
+│        │  │  └─ Engage.jsx
+│        │  ├─ Headers
+│        │  │  ├─ ErrorPage.jsx
+│        │  │  ├─ Footer.jsx
+│        │  │  ├─ Highlights.jsx
+│        │  │  ├─ Navigation.jsx
+│        │  │  └─ WordCount.jsx
+│        │  ├─ Maps
+│        │  │  ├─ controlPanel.jsx
+│        │  │  ├─ mapbox original.jsx
+│        │  │  ├─ mapbox red.jsx
+│        │  │  ├─ mapbox_community.jsx
+│        │  │  ├─ MapRatings.jsx
+│        │  │  └─ Maps.jsx
+│        │  ├─ Parks
+│        │  │  └─ Parks.jsx
+│        │  ├─ PrivateRoute
+│        │  │  ├─ authentication.js
+│        │  │  └─ PrivateRoute.js
+│        │  ├─ Recreation
+│        │  │  └─ Recreation.jsx
+│        │  ├─ SignIn
+│        │  │  ├─ Signin.jsx
+│        │  │  └─ Signup.jsx
+│        │  ├─ Styles
+│        │  │  └─ Styles.jsx
+│        │  ├─ Survey
+│        │  │  ├─ survey.css
+│        │  │  └─ Survey.jsx
+│        │  └─ Web.jsx
+│        ├─ Fonts.js
+│        ├─ images
+│        │  ├─ 01-BenchOverlookingRiver.png
+│        │  ├─ 02-CalgaryParkBenchToCityScape.png
+│        │  ├─ 03-CalgaryPathwayAndRiver.png
+│        │  ├─ 04-PrincessLand.png
+│        │  ├─ 05-RiverAndTrees.png
+│        │  ├─ 12_generated.jpg
+│        │  ├─ AlaGit.jpg
+│        │  ├─ alone.jpg
+│        │  ├─ amuseme.png
+│        │  ├─ amusement-park.png
+│        │  ├─ Ataene.jpg
+│        │  ├─ bnurmos.png
+│        │  ├─ camp.png
+│        │  ├─ campfire.jpg
+│        │  ├─ camping.png
+│        │  ├─ circle.jpg
+│        │  ├─ city.png
+│        │  ├─ ConfederationPark.jpg
+│        │  ├─ counting.png
+│        │  ├─ dog.png
+│        │  ├─ downtown.png
+│        │  ├─ edworthy-bridge.jpg
+│        │  ├─ environmnt.png
+│        │  ├─ falling_trees.png
+│        │  ├─ fire.png
+│        │  ├─ FishCreek.jpg
+│        │  ├─ globe.png
+│        │  ├─ globeBG.png
+│        │  ├─ ipad.png
+│        │  ├─ jogging.png
+│        │  ├─ joggingBG.png
+│        │  ├─ mobile.png
+│        │  ├─ neu4mann.png
+│        │  ├─ ney.png
+│        │  ├─ Nice_park.png
+│        │  ├─ NoseHillPark.jpg
+│        │  ├─ PrinceIslandPark.jpg
+│        │  ├─ recording.png
+│        │  ├─ recordingBG.png
+│        │  ├─ Senior.png
+│        │  ├─ signin.jpg
+│        │  ├─ skyline-poster.jpg
+│        │  ├─ St.PatrickIslandPark.jpg
+│        │  ├─ SueHigginsPark.jpg
+│        │  ├─ trees.png
+│        │  ├─ Ukraine.png
+│        │  ├─ upload.png
+│        │  ├─ urban.png
+│        │  ├─ walking.png
+│        │  ├─ world.png
+│        │  ├─ worldBG.png
+│        │  ├─ yosemite-falls.png
+│        │  └─ Zia20.png
+│        ├─ index.css
+│        ├─ index.js
+│        ├─ reportWebVitals.js
+│        └─ setupTests.js
+├─ JSONdebuggerText.MD
+├─ package-lock.json
+├─ package.json
+└─ README.md
+
 ```
