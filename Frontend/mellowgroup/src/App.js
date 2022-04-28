@@ -1,12 +1,11 @@
 // import { ReactDOM } from 'react';
 import "./App.css"; //Don't Remove please
 import { Route, Routes } from "react-router-dom";
-// import Parks from "./Components/Parks";
+import Parks from "./Components/Parks/Parks";
 import Recreation from "./Components/Recreation/Recreation";
 import Signup from "./Components/SignIn/Signup";
 import Signin from "./Components/SignIn/Signin";
 import Web from "./Components/Web";
-import Parks from "./Components/Parks/Parks";
 import Footer from "./Components/Headers/Footer";
 import Navigation from "./Components/Headers/Navigation";
 import ErrorPage from "./Components/Headers/ErrorPage";
