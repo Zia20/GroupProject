@@ -19,7 +19,7 @@ const survey = () => {
     }
   };
 return (
-<div style={{height:550}}> <Likert {...likertOptions} /></div>
+<div style={{height:250}}> <Likert {...likertOptions} /></div>
   )
 }
 
