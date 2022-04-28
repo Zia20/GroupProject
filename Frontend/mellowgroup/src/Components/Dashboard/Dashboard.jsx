@@ -8,14 +8,14 @@ const Dashboard = () => {
 
 const sidenav =  {
     height: "100%",
-    width: "160px",
+    width: "170px",
     position: "fixed",
     zIndex: "0",
     top: "30",
-    marginTop:"300px",
+    // marginTop:"200px",
     left: "0",
-    bottom: "20px",
-    backgroundColor: "grey",
+    // bottom: "30px",
+    backgroundColor: "CadetBlue",
     overflowX: "hidden",
     paddingTop: "20px",
   }
@@ -23,7 +23,7 @@ const sidenav =  {
 
   return (
     <div>
-    <Container>
+    <Container fluid='md'>
       <Row>
         <div style={sidenav}>
           <div>
@@ -48,56 +48,57 @@ const sidenav =  {
             </ul>
           </div>
         </div>
-        <div className="container-fluid">
-        <div className="row content">
-          <br />
-          <div className="col-sm-9">
-            <div className="well bg-info">
+        
+        <div className="container fluid='md'">
+        {/* <div class="row justify-content-sm-center mb-5"> */}
+        <div className="row content mb-5" >
+          <div className="col-lg-12 px-1 mx-5 ">
+            <div className="well bg-info d-block p-5 mb-1 text-white text-center">
               <h4>Mellow</h4>
               <p>Some text..</p>
             </div>
-            <div className="row">
-              <div className="col-sm-3 bg-danger">
+            <div className="row content">
+              <div className="col-sm-3 bg-danger d-block p-4 text-white">
                 <div className="well">
                   <h4>Users</h4>
                   <p>1 Million</p>
                 </div>
               </div>
-              <div className="col-sm-3 bg-primary">
+              <div className="col-sm-3 bg-primary d-block p-4 text-white">
                 <div className="well">
                   <h4>Pages</h4>
                   <p>100 Million</p>
                 </div>
               </div>
-              <div className="col-sm-3 bg-warning">
+              <div className="col-sm-3 bg-warning d-block p-4 text-white">
                 <div className="well">
                   <h4>Sessions</h4>
                   <p>10 Million</p>
                 </div>
               </div>
-              <div className="col-sm-3 bg-info">
+              <div className="col-sm-3 bg-dark d-block p-4 text-white">
                 <div className="well">
                   <h4>Bounce</h4>
                   <p>30%</p>
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-sm-4 bg-secondary">
+            <div className="row ">
+              <div className="col-sm-4 bg-secondary d-block p-4 text-white">
                 <div className="well">
                   <p>Text</p>
                   <p>Text</p>
                   <p>Text</p>
                 </div>
               </div>
-              <div className="col-sm-4 bg-info">
+              <div className="col-sm-4 bg-info d-block p-4 text-white">
                 <div className="well">
                   <p>Text</p>
                   <p>Text</p>
                   <p>Text</p>
                 </div>
               </div>
-              <div className="col-sm-4 bg-danger">
+              <div className="col-sm-4 bg-danger d-block p-4 text-white">
                 <div className="well">
                   <p>Text</p>
                   <p>Text</p>
@@ -106,12 +107,12 @@ const sidenav =  {
               </div>
             </div>
             <div className="row">
-              <div className="col-sm-8 bg-warning">
+              <div className="col-sm-8 bg-warning d-block p-4 text-white">
                 <div className="well">
                   <p>Text</p>
                 </div>
               </div>
-              <div className="col-sm-4 bg-danger">
+              <div className="col-sm-4 bg-danger d-block p-4 text-white">
                 <div className="well">
                   <p>Text</p>
                 </div>
