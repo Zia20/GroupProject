@@ -45,10 +45,10 @@ export const aboutStyles = {
 
   //Engage Form Styles
 export const CampFormStyles = {
-  backgroundImage: "linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)",
+  backgroundImage: "linear-gradient(120deg, #fefdfa 40%, #00bf80 100%)",
   padding: "10px",
-  paddingTop: "80px",
-  paddingBottom: "100px",
+  paddingTop: "60px",
+  paddingBottom: "60px",
   fontFamily: "Arial",
 };
   //Cross section Styles
