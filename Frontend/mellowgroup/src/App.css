@@ -121,14 +121,6 @@ input[type ="radio"]{
 	justify-content: space-around;
 }
 
-label{
-  width: max-content;
-	color: tomato;
-	font-size: .5px;
-	border-bottom: 1px solid tomato;
-  margin: 3px 0;
-}
-
 .descInfo{
   font-size: 14px;
 }
