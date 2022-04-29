@@ -13,6 +13,7 @@ import About from "./Components/About/About";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Engage from "./Components/Engage/Engage";
 import Dogpage from "./Components/Dog/Dogpage";
+import DogId from "./Components/Dog/DogId";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/about" element={<About />} />
         <Route path="/dog" element={<Dogpage />} />
+        <Route path="/dog/:id" element={<DogId />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

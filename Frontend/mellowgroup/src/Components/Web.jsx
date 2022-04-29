@@ -3,7 +3,7 @@ import WordCount from "./Headers/WordCount";
 import Information from "./About/Information";
 import Cross from "./Cross/Cross";
 import Maps from "./Maps/Maps";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import Downtown from "./DowntownProjects/DowntownProjects";
 import Highlights from "./Headers/Highlights";
 
