@@ -1,39 +1,53 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
+import { Button, Container, Modal, Row } from "react-bootstrap";
+=======
+import React, { useState } from "react";
 import { Button, Container, Row } from "react-bootstrap";
+>>>>>>> 2b3c80d5f66beae269c8ba7e008955e29923f162
 import { useNavigate } from "react-router-dom";
 import Dog from "./Dog";
-// import offLeash from "../data/property/dogs.json";
+import offLeash from "../data/property/dogs.json";
 import { signupStyle } from "../Styles/Styles";
 
 
 const Dogpage = () => {
 
-  const [offLeashList, setOffLeashList] = useState([]);
+<<<<<<< HEAD
+  const [offLeashList, setOffLeashList] = useState();
+=======
+>>>>>>> 2b3c80d5f66beae269c8ba7e008955e29923f162
   const [category, setCategory ] = useState('');
   const [status, setStatus ] = useState('');
   const [location, setLocation ] = useState('');
   const [steward, setSteward ] = useState('');
   const [opened_dt, setOpened_dt ] = useState('');
   const [isPending, setIsPending ] = useState(false);
-  const [showModal, setShowModal] = useState()
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true)
   const navigate = useNavigate();
+<<<<<<< HEAD
   
   useEffect(() => {
+    const getOffLeashList = async() => {
+      
+      try {
+        let response = await fetch('/dog');
+        let dogData = await response.json();
+        return setOffLeashList(dogData);
+  
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
     getOffLeashList();
   }, []);
 
-  const getOffLeashList = async() => {
-    
-    try {
-      let response = await fetch('/dog');
-      let dogData = await response.json();
-      return setOffLeashList(dogData);
+=======
 
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
 
+>>>>>>> 2b3c80d5f66beae269c8ba7e008955e29923f162
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newDog = { 
@@ -65,17 +79,36 @@ const Dogpage = () => {
       navigate("/dog")
   }
 
+  if(!offLeashList){
+    return <p className="mx-auto">Loading Data...</p>
+}
   return (
     <>
       <Container>
         <Row>
           <h1 className="text-warning">Off leash Dog parks near me</h1>
+<<<<<<< HEAD
           {offLeashList.map((dogLists, index) => {
+            if (index < 8) {
+=======
+          {offLeash.map((dogLists, index) => {
             if (index < 3) {
+>>>>>>> 2b3c80d5f66beae269c8ba7e008955e29923f162
               return <Dog dogLists={dogLists} />;
             }
           })}
-          <form onSubmit={handleSubmit}>
+
+          <input type="text" className="shadow-none" placeholder="Search Dog Parks" value={category} onChange={ (event) => {setCategory(event.target.value)} } />
+          <Button variant="success btn-warning shadow-none" onClick={handleShow}>Dog Form</Button>
+          <Modal show={show}
+            onHide={handleClose}
+            backdrop="static"
+            keyboard={false}>
+            <Modal.Header closeButton>
+            <Modal.Title>Off leash Dog Form</Modal.Title>
+          </Modal.Header>
+          
+          <form className="mx-auto" onSubmit={handleSubmit}>
             <div>
             <label>Category</label><br />
               <input type="text" className="shadow-none" value={category} onChange={ (event) => {setCategory(event.target.value)} } />
@@ -97,10 +130,11 @@ const Dogpage = () => {
               <input type="text" className="shadow-none" value={opened_dt} onChange={ (event) => {setOpened_dt(event.target.value)} } />
             </div>
             <div><br />
-            {!isPending && <button className="btn btn-lg btn-primary shadow-none" type="submit">Add Dog</button>}
-            {isPending && <button className="btn btn-lg btn-primary shadow-none" disabled type="submit">Adding Dog...</button>}
+            {!isPending && <button className="btn btn-lg btn-warning shadow-none" type="submit">Add Dog</button>}
+            {isPending && <button className="btn btn-lg btn-warning shadow-none" disabled type="submit">Adding Dog...</button>}
             </div>
           </form>
+          </Modal>
         </Row>
       </Container>
     </>

@@ -71,7 +71,7 @@ export const myCross = {
   color: "white",
   backgroundImage: "linear-gradient(120deg, #05EDFF 0%, #00FFAA 100%)",
   padding: "10px",
-  marginRight: "10px",
+  marginTop: "10px",
   fontFamily: "Arial",
   };
 
@@ -98,10 +98,12 @@ export const upLoadstyle = {
 };
 
 export const carousalStyle = {
-  backgroundImage: "linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%)",
+  backgroundImage: "linear-gradient(360deg, #a6d7db 0%, #ebf6f7 100%)",
   fontFamily: "Arial",
-  paddingTop: "30px",
-  paddingBottom: "30px",
+  textAlign: "center",
+  paddingTop: "33px",
+  paddingBottom: "33px",
+  
 };
 
 export const fontStyle = {
@@ -130,9 +132,7 @@ export const signupStyle = {
   textAlign: "center",
   marginTop: "150px",
   marginBottom: "100px",
-  marginRight: "20px",
-  marginLeft: "20px",
-  paddingRight: "20px",
-  paddingLeft: "20px",
+  marginRight: "45rem",
+  marginLeft: "45rem",
   shadow: "none",
 }

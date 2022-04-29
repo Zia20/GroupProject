@@ -33,7 +33,8 @@ app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/complain', complainRouter);
 app.use('/dog', dogRouter);
-// app.use('/survey', surveyRouter);
+app.use('/dog/:_id', dogRouter);
+
 
 app.use(express.static(path.join(__dirname,'./public')));
 
