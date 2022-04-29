@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Carousel, Button } from 'react-bootstrap';
-import Images from "../../images/FishCreek.jpg";
-import Image1 from "../../images/ConfederationPark.jpg";
-import Image2 from "../../images/edworthy-bridge.jpg";
-import Image3 from "../../images/recordingBG.png";
-import Image4 from "../../images/NoseHillPark.jpg";
-import Image5 from "../../images/PrinceIslandPark.jpg";
-import Image6 from "../../images/St.PatrickIslandPark.jpg";
-import Image7 from "../../images/SueHigginsPark.jpg";
+import Images from "../images/FishCreek.jpg";
+import Image1 from "../images/ConfederationPark.jpg";
+import Image2 from "../images/edworthy-bridge.jpg";
+import Image3 from "../images/recordingBG.png";
+import Image4 from "../images/NoseHillPark.jpg";
+import Image5 from "../images/PrinceIslandPark.jpg";
+import Image6 from "../images/St.PatrickIslandPark.jpg";
+import Image7 from "../images/SueHigginsPark.jpg";
 import 'font-awesome/css/font-awesome.min.css';
-// import 'animate.css';
+import 'animate.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCampground, faHospital, faMapLocationDot, faEye, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { myParkStyle, upLoadstyle, carousalStyle, fontStyle  } from "../Styles/Styles";
@@ -54,7 +54,7 @@ const Parks = () => {
         <Container fluid='md'>
           <Row>
             <Col>
-              <img alt='parks' width='380px' src={Image3}/>
+              <img alt='parks' width='420px' src={Image3}/>
             </Col>
             <Col>
               <div className='py-3 my-5'>
@@ -76,7 +76,7 @@ const Parks = () => {
         <Container fluid='md'>
           <Row>
             <div class="text-center">
-          <h1>The Most Beautiful Parks</h1>
+          <h1 className='animate__animated animate__heartBeat'>The Most Beautiful Parks</h1>
           <h3>Calgary's parks and green spaces offer an urban connection to nature</h3>
           </div>
             <Carousel>

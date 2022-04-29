@@ -123,10 +123,9 @@ input[type ="radio"]{
 
 label{
   width: max-content;
-	/* color: black; */
-	font-size: 14px;
-  font-family: Arial Bold, Helvetica, sans-serif;
-	/* border-bottom: 1px solid tomato; */
+	color: tomato;
+	font-size: .5px;
+	border-bottom: 1px solid tomato;
   margin: 3px 0;
 }
 
