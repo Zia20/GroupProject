@@ -24,13 +24,20 @@ const Signin = () => {
         await fetch("/login", {
           method: "POST",
           headers: { "Content-Type": "application/json"},
+          credentials: "include",
           body: data,
         })
+        if(data.users){
+          navigate("/dashboard")
+          console.log("Login Success")
+        } else{
+          navigate("/login")
+          console.log("Invalid Credentials")
+        }
         setIsPending(false)
       } catch (error) {
         console.log(error)
       }
-      navigate("/")
   }
   return (
     <form style={signupStyle} onSubmit={handleSubmit}>

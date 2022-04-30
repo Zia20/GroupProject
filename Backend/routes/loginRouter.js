@@ -15,27 +15,35 @@ loginRouter.route("/")
 })
 .post( async(req, res) => {
 
-    console.log("reached");
     const  users = await User.findOne({email: req.body.email});
-
     if(!users){
+        console.log("Wrong email and passowrd")
         return res.status(404).send({
-            message: "User not found"
+            message: "User not found",
         });
     } else if(!await bcrypt.compare(req.body.password, users.password)){
+        console.log("Wrong password")
         return res.status(400).send({
             message: "Incorrect credentials"
         });
     }
-    const token = jwt.sign({_id: users._id}, "secret")
-
-    res.cookie("jwt", token, {
-        httpOnly: true,
-        maxAge: 24 * 60 * 60 * 1000 //Max age of cookie is one day.
-    });
+    if(users){
+        const token = jwt.sign({
+            email: users.email,
+            name: User.name
+        }, "secret")
     
-    res.send({
-        message: "Success"
-    })
+        // console.log(`The access TOKEN is ${token}`),
+        res.cookie("jwt", token, {
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000, //Max age of cookie is one day.
+        });
+        return res.json({status: "ok", users: true})
+        // res.send({
+        //     message: "Success"
+        // })
+    } else {
+        return res.json({status: 'error', users: false});
+    }
 });
 module.exports = loginRouter;

@@ -36,7 +36,7 @@ const Signup = () => {
       } catch (error) {
         console.log(error)
       }
-      navigate("/")
+      navigate("/signin")
   }
 
   return (
