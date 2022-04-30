@@ -121,6 +121,7 @@ input[type ="radio"]{
 	justify-content: space-around;
 }
 
+<<<<<<< HEAD
 /* label{
   width: max-content;
 	color: tomato;
@@ -141,6 +142,8 @@ label{
   margin: 3px 0;
 }
 
+=======
+>>>>>>> 29e75dcdbfb0950d4d50835a2bcee1267e3cbfb5
 .descInfo{
   font-size: 14px;
 }

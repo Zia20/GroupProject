@@ -22,11 +22,14 @@ const Footer = () => {
             &copy; Mellow 2022
             </Nav.Link>
           </Nav>
-        </Navbar.Collapse>
-        <FontAwesomeIcon className='px-2 mx-2' icon={faLinkedinIn} size="2x"  />
-        <FontAwesomeIcon className='px-2 mx-2' icon={faFacebookF} size="2x" />
-        <FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x" />
-        <FontAwesomeIcon className='px-2 mx-2' icon={faTwitter} size="2x" />
+        </Navbar.Collapse><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+        <FontAwesomeIcon className='px-2 mx-2' icon={faLinkedinIn} size="2x"  /></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+        <FontAwesomeIcon className='px-2 mx-2' icon={faFacebookF} size="2x" /></a>
+        <a href="https://www.github.com/" target="_blank" rel="noreferrer">
+        <FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x" /></a>
+        <a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
+        <FontAwesomeIcon className='px-2 mx-2' icon={faTwitter} size="2x" /></a>
         </Container>
     </Navbar>
     </div>

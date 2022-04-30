@@ -23,7 +23,7 @@ function Downtown() {
                 variant="danger"
                 action
                 href="https://engage.calgary.ca/beltlinearp"
-                rel="opener"
+                target="_blank" rel="noreferrer"
               >
                 Beltline Area Redevelopment Plan: Amendments
               </ListGroup.Item>
@@ -31,7 +31,7 @@ function Downtown() {
                 variant="info"
                 action
                 href="https://engage.calgary.ca/stephenavenue"
-                rel="opener"
+                target="_blank" rel="noreferrer"
               >
                 The future of Stephen Avenue
               </ListGroup.Item>
@@ -39,7 +39,7 @@ function Downtown() {
                 variant="danger"
                 action
                 href="https://engage.calgary.ca/CalgarysBird"
-                rel="opener"
+                target="_blank" rel="noreferrer"
               >
                 Calgary's Bird!
               </ListGroup.Item>
@@ -47,7 +47,7 @@ function Downtown() {
                 variant="info"
                 action
                 href="https://engage.calgary.ca/kensingtonarea"
-                rel="opener"
+                target="_blank" rel="noreferrer"
               >
                 Kensington Area Improvements
               </ListGroup.Item>
@@ -55,7 +55,7 @@ function Downtown() {
                 variant="danger"
                 action
                 href="https://engage.calgary.ca/GFLplan"
-                rel="opener"
+                target="_blank" rel="noreferrer"
               >
                 Greater Forest Lawn Communities Local Area Planning{" "}
               </ListGroup.Item>
@@ -63,7 +63,7 @@ function Downtown() {
                 variant="info"
                 action
                 href="https://engage.calgary.ca/crescentroad"
-                rel="opener"
+                target="_blank" rel="noreferrer"
               >
                 Crescent Road N.W. Master Plan
               </ListGroup.Item>
@@ -71,7 +71,7 @@ function Downtown() {
                 variant="danger"
                 action
                 href="https://engage.calgary.ca/inglewoodramsay"
-                rel="opener"
+                target="_blank" rel="noreferrer"
               >
                 Inglewood / Ramsay Area Projects - Staying Connected{" "}
               </ListGroup.Item>
