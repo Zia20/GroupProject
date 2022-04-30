@@ -16,6 +16,8 @@ const loginRouter = require("./routes/loginRouter");
 const signupRouter = require("./routes/signupRouter");
 const complainRouter = require("./routes/complainRouter");
 const dogRouter = require("./routes/dogRouter");
+const userRouter = require("./routes/userRouter");
+
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
@@ -27,6 +29,7 @@ app.use(cookieParser());
 
 //Website routing
 app.use('/', parkRouter);
+app.use('/user', userRouter);
 app.use('/upload', uploadRouter);
 app.use('/weather', weatherRouter);
 app.use('/login', loginRouter);
@@ -40,5 +43,5 @@ app.use(express.static(path.join(__dirname,'./public')));
 
 app.listen(PORT, function(){
 
-    console.log(`Server is running on port:${PORT}`)
+    console.log(`Server is running on port: ${PORT}`)
 });

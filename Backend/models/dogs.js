@@ -3,17 +3,29 @@ const mongoose = require("../mongoose");
 const Schema = mongoose.Schema;
 
 const dogSchema = new Schema({
+    off_leash_area_id:{
+        type: String,
+        required: true
+    },
     category:{
         type: String,
         required: true
     },
-    status:{
+    status: {
+        type: String,
+        required: true,
+    },
+    description: {
         type: String,
         required: true
     },
-    location: {
+    parcel_location: {
         type: String,
-        required: true,
+        required: true
+    },
+    wam_parent_id: {
+        type: String,
+        required: true
     },
     steward: {
         type: String,

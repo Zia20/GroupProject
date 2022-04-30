@@ -6,7 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 function Downtown() {
   return (
-    <div style={myDowntown}>
+    <div style={myDowntown} className="mt-2">
       <Container>
         <Row>
           <Col>

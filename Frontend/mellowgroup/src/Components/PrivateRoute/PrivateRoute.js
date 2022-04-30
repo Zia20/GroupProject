@@ -1,13 +1,14 @@
-// import React from 'react'
-// import { Navigate } from 'react-router-dom';
+import React, {useLocalState} from 'react'
+import { Navigate } from 'react-router-dom';
+import Signin from '../SignIn/Signin';
 
-// const PrivateRoute = ({children}) => {
-//     const [jwt, setJwt ] = useLocalState('', "jwt");
+const PrivateRoute = ({children}) => {
+    const [jwt, setJwt ] = useLocalState('', "jwt");
 
-//   return (
+  return (
 
-//     jwt ? children : <Navigate to="/signin" />
-//   )
-// }
+    jwt ? children : <Navigate to="/dashboard" />
+  )
+}
 
-// export default PrivateRoute;
+export default PrivateRoute;

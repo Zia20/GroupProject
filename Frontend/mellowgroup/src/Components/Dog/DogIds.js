@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Card, Container, Row } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 // import Dog from "./Dog";
 
 
 const DogIds = (props) => {
 
+  const params = useParams();
   const id = props.id;
     
   return (

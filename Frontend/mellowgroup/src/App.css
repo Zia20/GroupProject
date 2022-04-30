@@ -121,11 +121,23 @@ input[type ="radio"]{
 	justify-content: space-around;
 }
 
-label{
+/* label{
   width: max-content;
 	color: tomato;
 	font-size: .5px;
 	border-bottom: 1px solid tomato;
+  margin: 3px 0;
+} */
+
+label{
+  width: max-content;
+	/* color: tomato; */
+	font-size: .5px;
+	/* border-bottom: 1px solid tomato; */
+	/* color: black; */
+	font-size: 14px;
+  font-family: Arial Bold, Helvetica, sans-serif;
+	/* border-bottom: 1px solid tomato; */
   margin: 3px 0;
 }
 

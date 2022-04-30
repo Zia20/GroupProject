@@ -10,7 +10,7 @@ import Image5 from "../../images/PrinceIslandPark.jpg";
 import Image6 from "../../images/St.PatrickIslandPark.jpg";
 import Image7 from "../../images/SueHigginsPark.jpg";
 import 'font-awesome/css/font-awesome.min.css';
-import 'animate.css';
+// import 'animate.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCampground, faHospital, faMapLocationDot, faEye, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { myParkStyle, upLoadstyle, carousalStyle, fontStyle } from "../Styles/Styles";
@@ -58,7 +58,7 @@ const Parks = () => {
             </Col>
             <Col>
               <div className='py-3 my-5'>
-                <h1 className='animate__animated animate__shakeX'>Make your experience better</h1>
+                <h1 >Make your experience better</h1>
                 <form onSubmit={handleSubmit}>
                   <label>Submit a complaint by Uploading an Image.</label><br />
                   <input type="file" onChange={handleFileChange} /><br />
