@@ -15,7 +15,7 @@ loginRouter.route("/")
 })
 .post( async(req, res) => {
 
-    const  users = await User.findOne({email: req.body.email});
+    const users = await User.findOne({email: req.body.email});
     if(!users){
         console.log("Wrong email and passowrd")
         return res.status(404).send({
@@ -27,23 +27,17 @@ loginRouter.route("/")
             message: "Incorrect credentials"
         });
     }
-    if(users){
-        const token = jwt.sign({
-            email: users.email,
-            name: User.name
-        }, "secret")
+    const token = jwt.sign({email: users.email}, "secret")
+
+    console.log(`The access TOKEN is ${token}`),
+    res.cookie("jwt", token, {
+        httpOnly: true,
+        maxAge: 24 * 60 * 60 * 1000, //Max age of cookie is one day.
+    });
     
-        // console.log(`The access TOKEN is ${token}`),
-        res.cookie("jwt", token, {
-            httpOnly: true,
-            maxAge: 24 * 60 * 60 * 1000, //Max age of cookie is one day.
-        });
-        return res.json({status: "ok", users: true})
-        // res.send({
-        //     message: "Success"
-        // })
-    } else {
-        return res.json({status: 'error', users: false});
-    }
+    res.send({
+        message: "Success",
+        token: `${token}`
+    })
 });
 module.exports = loginRouter;
