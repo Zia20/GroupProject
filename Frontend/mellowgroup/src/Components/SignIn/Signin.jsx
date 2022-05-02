@@ -1,16 +1,46 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import Images from "../../images/signin.jpg";
 import { signupStyle } from "../Styles/Styles";
+import PropTypes from 'prop-types';
+import { setUserSession } from '../PrivateRoute/Authentication';
 
 const Signin = () => {
 
   const [email, setEmail ] = useState('');
   const [password, setPassword ] = useState('');
   const [isPending, setIsPending ] = useState(false);
+  const [error, setError ] =useState(null)
+  const [user, setUser ] = useState()
   const navigate = useNavigate();
 
+
+  useEffect(() => {
+    const getUser = async() => {
+      try {
+
+        let response = await fetch('/login');
+        let userData = await response.json();
+        console.log(userData)
+        return setUser(userData);
+        // setIsPending(false)
+        // setUserSession(userData.token)
+        // console.log(user.token);
+        // navigate("/dashboard")  
+
+      } catch (error) {
+
+        // setIsPending(false)
+        if(error.statusCode === 400 || error.statusCode === 404 ){
+          setError(error.message);
+        } else{
+          setError("Something went wrong!")
+        }
+      }
+    }
+    getUser();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +49,7 @@ const Signin = () => {
       password, 
     };
     setIsPending(true);
+    setError(null)
     const data = JSON.stringify(users)
       try {
         await fetch("/login", {
@@ -27,16 +58,8 @@ const Signin = () => {
           credentials: "include",
           body: data,
         })
-        if(data.users){
-          navigate("/dashboard")
-          console.log("Login Success")
-        } else{
-          navigate("/login")
-          console.log("Invalid Credentials")
-        }
-        setIsPending(false)
       } catch (error) {
-        console.log(error)
+      console.log(error.message);
       }
   }
   return (
@@ -57,6 +80,7 @@ const Signin = () => {
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
+      {error && <div className="checkbox mb-3">{error}</div>}
       {!isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" type="submit">Sign in</button>}
       {isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" disabled type="submit">Adding ...</button>}
 
@@ -64,5 +88,7 @@ const Signin = () => {
     </form>
   )
 }
+
+
 
 export default Signin;

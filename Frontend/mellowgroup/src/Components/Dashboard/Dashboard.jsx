@@ -9,17 +9,9 @@ const Dashboard = () => {
   const [users, setUsers] = useState();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   // if(token) {
-  //   //   const users = jwt.decode(token)
-  //   //   console.log(users)
-  //   // } else if(!users){
-  //   //   localStorage.removeItem("token");
-  //   //   navigate("/login")
-      
-  //   // }
-  // }, [])
+  const handleLogout = () => {
+    navigate("/signin");
+  }
 
 const sidenav =  {
     height: "100%",
@@ -41,7 +33,7 @@ const sidenav =  {
           <h1><li><a href="#" className="f-50 text-decoration-none">Recreation</a></li></h1>
           <h1><li><a href="#" className="f-50 text-decoration-none">Complains</a></li></h1>
           <h1><li><a href="#" className="f-50 text-decoration-none">Signups</a></li></h1>
-          <h1><li><a href="#" className="f-50 text-decoration-none">Ratings</a></li></h1>
+          <h1><li><a href="#" className="f-50 text-decoration-none" onClick={handleLogout}>Logout</a></li></h1>
         </ul>
       </div>
       <div>
