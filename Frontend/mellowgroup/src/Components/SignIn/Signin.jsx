@@ -6,52 +6,49 @@ import { signupStyle } from "../Styles/Styles";
 
 const Signin = () => {
 
-  const [email, setEmail ] = useState('');
   const [password, setPassword ] = useState('');
   const [isPending, setIsPending ] = useState(false);
+  const [error, setError ] = useState(null)
+  const [username, setUsername ] = useState('')
   const navigate = useNavigate();
 
-
   const handleSubmit = async (e) => {
+
     e.preventDefault();
-    const users = { 
-      email, 
-      password, 
-    };
-    setIsPending(true);
-    const data = JSON.stringify(users)
-      try {
-        await fetch("/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json"},
-          credentials: "include",
-          body: data,
-        })
-        if(data.users){
-          navigate("/dashboard")
-          console.log("Login Success")
-        } else{
-          navigate("/login")
-          console.log("Invalid Credentials")
-        }
-        setIsPending(false)
-      } catch (error) {
-        console.log(error)
+    const user = { username: username, password: password };
+
+    const data = JSON.stringify(user)
+    try {
+      const response = await fetch("/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json"},
+        body: data,
+      })
+      console.log(response)
+      console.log(data)
+      if(response.status === 200 ){
+        navigate("/dashboard")
+        setIsPending(true);
+      } else {
+        setError("Something went wrong!")
       }
+    } catch (error) {
+    console.log(error.message);
+    }
+
   }
   return (
     <form style={signupStyle} onSubmit={handleSubmit}>
       <img className="mb-4" width="125" height="100" alt='parks' src={Images}/>
       <h1 className="h3 mb-3 fw-normal">Please sign In</h1>
       <div className="form-floating">
-        <input type="email" className="form-control shadow-none" id="floatingInput" value={email} onChange={ (event) => {setEmail(event.target.value)} } />
-        <label htmlFor="floatingInput">Email address</label>
+        <input type="text" className="form-control shadow-none" value={username} onChange={ (event) => {setUsername(event.target.value)} } />
+        <label htmlFor="floatingInput">Username</label>
       </div>
       <div className="form-floating">
-        <input type="password" className="form-control shadow-none" id="floatingPassword" value={password} onChange={ (event) => {setPassword(event.target.value)} } />
+        <input type="password" className="form-control shadow-none" value={password} onChange={ (event) => {setPassword(event.target.value)} } />
         <label htmlFor="floatingPassword">Password</label>
       </div>
-
       <div className="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me" /> Remember me
@@ -59,7 +56,6 @@ const Signin = () => {
       </div>
       {!isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" type="submit">Sign in</button>}
       {isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" disabled type="submit">Adding ...</button>}
-
       <p className="mt-5 mb-3 text-muted">&copy; Mellow 2022</p>
     </form>
   )

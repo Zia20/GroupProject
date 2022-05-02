@@ -1,8 +1,10 @@
 require("dotenv").config();
 const express = require('express');
 const app = express();
-const cors = require('cors')
-const path = require('path');
+const session = require("express-session");
+const passport = require("passport");
+// const cors = require('cors')
+// const path = require('path');
 const cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser');
 
@@ -11,37 +13,36 @@ const PORT = process.env.PORT || 3020;
 //Imported routes
 const parkRouter = require("./routes/parkRouter");
 const uploadRouter = require("./routes/uploadRouter");
-const weatherRouter = require("./routes/weatherRouter");
-const loginRouter = require("./routes/loginRouter");
-const signupRouter = require("./routes/signupRouter");
+const authRouter = require("./routes/authRouter");
 const complainRouter = require("./routes/complainRouter");
 const dogRouter = require("./routes/dogRouter");
-const userRouter = require("./routes/userRouter");
-
+const signupRouter = require("./routes/signupRouter");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
-app.use(cors({
-    credentials: true,
-    // origin: ["http://localhost:3020"]
-}))
+
 app.use(cookieParser());
+// app.use(logger("dev"));
+app.use(session({ secret: "apple" }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Website routing
 app.use('/', parkRouter);
-app.use('/user', userRouter);
 app.use('/upload', uploadRouter);
-app.use('/weather', weatherRouter);
-app.use('/login', loginRouter);
-app.use('/signup', signupRouter);
+app.use('/auth', authRouter);
 app.use('/complain', complainRouter);
 app.use('/dog', dogRouter);
 app.use('/dog/:_id', dogRouter);
+app.use('/signup', signupRouter);
 
+// app.use('/logout', logoutRouter);
+// app.use('/login', loginRouter);
+// const logoutRouter = require("./routes/logoutRouter");
+// const loginRouter = require("./routes/loginRouter");
 
-app.use(express.static(path.join(__dirname,'./public')));
+// app.use(express.static(path.join(__dirname,'./public')));
 
 app.listen(PORT, function(){
-
     console.log(`Server is running on port: ${PORT}`)
 });
