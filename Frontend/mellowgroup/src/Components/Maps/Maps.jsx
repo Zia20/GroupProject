@@ -4,45 +4,15 @@ import ControlPanel from "./controlPanel";
 //import MapRef from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState, useEffect } from "react";
-import Map, {
-  Layer,
-  Source,
-  Popup,
-  Marker,
-  NavigationControl,
-} from "react-map-gl";
-import geoJsonData from "../data/parksData/ParksSitesAddress.json";
+import Map, { Popup, Marker, NavigationControl } from "react-map-gl";
+import geoJsonData from "../data/parksData/ParksSitesMajor.json";
 import ParkIcon from "@mui/icons-material/Park";
 import RoomIcon from "@mui/icons-material/Room";
 import HomeIcon from "@mui/icons-material/Home";
-//import { Card, Typography, Link } from "@mui/material";
-//import { toggleButtonGroupClasses } from "@mui/material";
+import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
 import MapRatings from "./MapRatings";
-import MdNorth from "react-icons"
 
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
-
-const dataLayer = {
-  id: "data",
-  type: "fill",
-  paint: {
-    "fill-color": {
-      property: "percentile",
-      stops: [
-        [0, "#3288bd"],
-        [1, "#66c2a5"],
-        [2, "#abdda4"],
-        [3, "#e6f598"],
-        [4, "#ffffbf"],
-        [5, "#fee08b"],
-        [6, "#fdae61"],
-        [7, "#f46d43"],
-        [8, "#d53e4f"],
-      ],
-    },
-    "fill-opacity": 0.8,
-  },
-};
 
 const navStyle = {
   position: "absolute",
@@ -60,8 +30,8 @@ const Maps = () => {
   const [long, setLong] = useState(-114.0719);
   const [lat, setLat] = useState(51.0447);
   const [zoom, setZoom] = useState(9.4);
-  const [viewport, setViewport] = useState();
   const [selectedPark, setSelectedPark] = useState(null);
+  const [viewport, setViewport] = useState();
 
   const mapContainer = useRef();
 
@@ -74,6 +44,13 @@ const Maps = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   };
+
+  const [viewState, setViewState] = useState({
+    longitude: -114.0719,
+    latitude: 51.0447,
+    center: [-144, 51],
+    zoom: zoom,
+  });
 
   const mapRef = useRef(null);
   // {*mapRef.current.animateToRegion*}
@@ -99,23 +76,18 @@ const Maps = () => {
   return (
     <div>
       <Map
-        ref={mapRef}
         initialViewState={initialViewState}
-        {...viewport} //viewport not working
+        {...viewState} //viewport not working
+        onMove={(evt) => setViewState(evt.viewState)}
         mapboxAccessToken={AKEY}
-        onViewportChange={(nextViewport) => setViewport(nextViewport)}
         style={{ width: 1300, height: 660 }}
         mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"
       >
-        <Source type="geojson" data={geoJsonData}>
-          <Layer {...dataLayer} />
-        </Source>
-
-        {geoJsonData.features.map((park) => (
+        {geoJsonData.map((park) => (
           <Marker
-            key={park.properties.asset_cd}
-            latitude={parseFloat(park.geometry.coordinates[0][0][0][1])}
-            longitude={parseFloat(park.geometry.coordinates[0][0][0][0])}
+            key={park.Name}
+            latitude={park.Latitude}
+            longitude={park.Longitude}
           >
             <button
               className="park-marker"
@@ -125,9 +97,19 @@ const Maps = () => {
               }}
             >
               <ParkIcon
-                color="success"
-                // style={{fontSize:viewport.zoom*20 }}
-                style={{ height: 5 * `${zoom}px`, width: 9 * `${zoom}px` }}
+                color="black"
+                style={{
+                  height: 25 * `${viewState.zoom}px`,
+                  width: 15 * `${viewState.zoom}px`,
+                }}
+              />
+              <PersonPinCircleIcon
+                color="error"
+                //style={{fontSize:viewport.zoom *20 }}
+                style={{
+                  height: 20 * `${viewState.zoom}px`,
+                  width: 20 * `${viewState.zoom}px`,
+                }}
               />
             </button>
           </Marker>
@@ -139,35 +121,37 @@ const Maps = () => {
           closeButton={true}
           closeOnClick={false}
         >
-          <RoomIcon
+          <PersonPinCircleIcon
             color="error"
             //style={{fontSize:viewport.zoom *20 }}
-            style={{ height: 15 * `${zoom}px`, width: 15 * `${zoom}px` }}
+            style={{
+              height: 20 * `${viewState.zoom}px`,
+              width: 20 * `${viewState.zoom}px`,
+            }}
           />
         </Marker>
 
         {selectedPark ? (
           <Popup
-            latitude={parseFloat(selectedPark.geometry.coordinates[0][0][0][1])}
-            longitude={parseFloat(
-              selectedPark.geometry.coordinates[0][0][0][0]
-            )}
+            latitude={parseFloat(selectedPark.Latitude)}
+            longitude={parseFloat(selectedPark.Longitude)}
             closeButton={true}
             closeOnClick={false}
             anchor="left"
           >
             <div className="card-container">
               <label>Place</label>
-              <h5 className="place">{selectedPark.properties.steward}</h5>
-              <p className="descInfo">{selectedPark.properties.street}</p>
+              <h5 className="place">{selectedPark.Name}</h5>
+              <p className="descInfo">{selectedPark.Address}</p>
               <label>Review</label>
               <p className="descInfo">
-                This is the best city in Canada!
+                {selectedPark.Longitude}
+                {selectedPark.Latitude}
               </p>
               <label>Ratings</label>
               <MapRatings />
               <label>Information</label>
-              <p className="descInfo">{selectedPark.properties.minortype}</p>
+              <p className="descInfo">{selectedPark.Description}</p>
               <div className="btn">
                 <button className="btn-button">
                   <a className="a-link">Survey..</a>
@@ -178,16 +162,18 @@ const Maps = () => {
         ) : null}
 
         <div className="sidebar">
-          Longitude: {long}| Latitude: {lat} | Zoom: {zoom}
-        <div ref={mapRef} ></div>
+          Longitude: {viewState.longitude.toFixed(2)}| Latitude:{" "}
+          {viewState.latitude.toFixed(2)} | Zoom: {viewState.zoom.toFixed(2)}
+          <div ref={mapRef}></div>
         </div>
 
-        <div>
+        <button>
           <HomeIcon
             className="home"
-            onClick={initialViewState}
+            onClick={(evt) => setViewState(initialViewState)}
           />
-        </div>
+        </button>
+
         <div className="nav" style={navStyle}>
           <NavigationControl
             showCompass={true}

@@ -1,17 +1,15 @@
-import "../App.css";
-import {
-  RulerControl,
-  StylesControl,
-  CompassControl,
-  ZoomControl,
-} from "mapbox-gl-controls";
+import "../../App.css";
+import { useRef, useCallback } from "react";
+import ControlPanel from "./controlPanel";
+//import MapRef from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import React, { useState } from "react";
-import Map, { Layer, Source, Popup, Marker, NavigationControl } from "react-map-gl";
-import geoJsonData from "./data/ParksSitesAddress.json";
-import {ParkIcon, Room, Star} from "@mui/icons-material";
-import NorthIcon from '@mui/icons-material/North';
-import { toggleButtonGroupClasses } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import Map, { Popup, Marker, NavigationControl } from "react-map-gl";
+import geoJsonData from "../data/parksData/ParksSitesMajor.json";
+import ParkIcon from "@mui/icons-material/Park";
+import RoomIcon from "@mui/icons-material/Room";
+import HomeIcon from "@mui/icons-material/Home";
+import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
 import MapRatings from "./MapRatings";
 
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
@@ -23,28 +21,6 @@ const navStyle = {
   padding: "10px",
 };
 
-const dataLayer = {
-  id: "data",
-  type: "fill",
-  paint: {
-    "fill-color": {
-      property: "percentile",
-      stops: [
-        [0, "#3288bd"],
-        [1, "#66c2a5"],
-        [2, "#abdda4"],
-        [3, "#e6f598"],
-        [4, "#ffffbf"],
-        [5, "#fee08b"],
-        [6, "#fdae61"],
-        [7, "#f46d43"],
-        [8, "#d53e4f"],
-      ],
-    },
-    "fill-opacity": 0.8,
-  },
-};
-
 const navControlStyle = {
   right: 10,
   top: 10,
@@ -54,84 +30,158 @@ const Maps = () => {
   const [long, setLong] = useState(-114.0719);
   const [lat, setLat] = useState(51.0447);
   const [zoom, setZoom] = useState(9.4);
+  const [selectedPark, setSelectedPark] = useState(null);
   const [viewport, setViewport] = useState();
-  const [hoverInfo, setHoverInfo] = useState(null);
-  console.log(`geojson data ${typeof geoJsonData}`);
+
+  const mapContainer = useRef();
+
+  const initialViewState = {
+    container: mapContainer.current,
+    longitude: long,
+    latitude: lat,
+    center: [-144, 51],
+    zoom: zoom,
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+
+  const [viewState, setViewState] = useState({
+    longitude: -114.0719,
+    latitude: 51.0447,
+    center: [-144, 51],
+    zoom: zoom,
+  });
+
+  const mapRef = useRef(null);
+  // {*mapRef.current.animateToRegion*}
+
+  const onSelectParks = useCallback(({ long, lat }) => {
+    mapRef.current?.flyTo({ center: [long, lat], duration: 2000 });
+  }, []);
+
+  //popup escape
+  useEffect(() => {
+    const listener = (e) => {
+      if (e.key === "Escape") {
+        setSelectedPark(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
+
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  }, []);
+
   return (
     <div>
       <Map
-        initialViewState={{
-          longitude: long,
-          latitude: lat,
-          center: [-144, 51],
-          zoom: zoom,
-        }}
-        {...viewport} //viewport not working
+        initialViewState={initialViewState}
+        {...viewState} //viewport not working
+        onMove={(evt) => setViewState(evt.viewState)}
         mapboxAccessToken={AKEY}
-        onViewportChange ={(nextViewport) => setViewport(nextViewport)}
         style={{ width: 1300, height: 660 }}
         mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"
-        >
-        <Source type="geojson" data={geoJsonData}>
-          <Layer {...dataLayer} />
-        </Source>
-{/* 
-        {geoJsonData.features.map((park) => (
+      >
+        {geoJsonData.map((park) => (
           <Marker
-          key={park.properties.asset_cd}
-          latitude={parseFloat(park.geometry.coordinates[0][0][0][1])}
-          longitude={parseFloat(park.geometry.coordinates[0][0][0][0])}
+            key={park.Name}
+            latitude={park.Latitude}
+            longitude={park.Longitude}
           >
-            <button className="park-marker">
+            <button
+              className="park-marker"
+              onClick={(e) => {
+                e.preventDefault();
+                setSelectedPark(park);
+              }}
+            >
               <ParkIcon
-                color="success"
-                // style={{fontSize:viewport.zoom*20 }}
-                style={{ height: 5 * `${zoom}px`, width: 9 * `${zoom}px` }}
+                color="black"
+                style={{
+                  height: 25 * `${viewState.zoom}px`,
+                  width: 15 * `${viewState.zoom}px`,
+                }}
               />
-              Sorry, your browser does not support inline SVG.
+              <PersonPinCircleIcon
+                color="error"
+                //style={{fontSize:viewport.zoom *20 }}
+                style={{
+                  height: 20 * `${viewState.zoom}px`,
+                  width: 20 * `${viewState.zoom}px`,
+                }}
+              />
             </button>
           </Marker>
-        ))} */}
+        ))}
 
         <Marker
           latitude={lat}
           longitude={long}
           closeButton={true}
-          closeOnClick={false}>
-          <Room
+          closeOnClick={false}
+        >
+          <PersonPinCircleIcon
             color="error"
             //style={{fontSize:viewport.zoom *20 }}
-            style={{ height:10 * `${zoom}px`, width: 9 * `${zoom}px` }}
+            style={{
+              height: 20 * `${viewState.zoom}px`,
+              width: 20 * `${viewState.zoom}px`,
+            }}
           />
         </Marker>
 
-        <Popup
-          latitude={lat}
-          longitude={long}
-          closeButton={true}
-          closeOnClick={false}
-          anchor="left">
-          <div className="mapCard"> 
-            <label>Place</label>
-            <h4 className="place">Calgary Location</h4>
-            <label>Review</label>
-            <p>This is the best city in Canada. Unexpected weather patterns!.</p>
-            <label>Ratings</label>
-            <MapRatings />
-            <label>Information</label>
-            <span className="date">1 Hour ago</span>
-          </div>
-        </Popup>
+        {selectedPark ? (
+          <Popup
+            latitude={parseFloat(selectedPark.Latitude)}
+            longitude={parseFloat(selectedPark.Longitude)}
+            closeButton={true}
+            closeOnClick={false}
+            anchor="left"
+          >
+            <div className="card-container">
+              <label>Place</label>
+              <h5 className="place">{selectedPark.Name}</h5>
+              <p className="descInfo">{selectedPark.Address}</p>
+              <label>Review</label>
+              <p className="descInfo">
+                {selectedPark.Longitude}
+                {selectedPark.Latitude}
+              </p>
+              <label>Ratings</label>
+              <MapRatings />
+              <label>Information</label>
+              <p className="descInfo">{selectedPark.Description}</p>
+              <div className="btn">
+                <button className="btn-button">
+                  <a className="a-link">Survey..</a>
+                </button>
+              </div>
+            </div>
+          </Popup>
+        ) : null}
 
         <div className="sidebar">
-          Longitude: {long}| Latitude: {lat} | Zoom: {zoom}
+          Longitude: {viewState.longitude.toFixed(2)}| Latitude:{" "}
+          {viewState.latitude.toFixed(2)} | Zoom: {viewState.zoom.toFixed(2)}
+          <div ref={mapRef}></div>
         </div>
+
+        <button>
+          <HomeIcon
+            className="home"
+            onClick={(evt) => setViewState(initialViewState)}
+          />
+        </button>
+
         <div className="nav" style={navStyle}>
           <NavigationControl
-            onViewportChange={(viewport) => this.setState({ viewport })}
-            />
+            showCompass={true}
+            onViewportChange={(viewport) => setViewport({ viewport })}
+          />
         </div>
       </Map>
+      <ControlPanel onSelectParks={onSelectParks} />
     </div>
   );
 };
