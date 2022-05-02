@@ -1,22 +1,20 @@
 import * as React from 'react';
-import parksData from "../data/parksData/ParksSitesAddress.json";
+//import parksData from "../data/parksData/ParksSitesAddress.json";
+import parksData from "../data/parksData/ParksSitesMajor.json";
 
-const values = Object.values(parksData);
-
-console.log(values.filter(category => category.properties));
 function ControlPanel(props) {
   return (
     <div className="control-panel">
-        {values.filter(category => category.properties === 'CALGARY PARK').map((category, index) => (
+        {parksData.filter(city => city.Name === 'Downtown').map((city, index) => (
         <div key={`btn-${index}`} className="input">
             <input
             type="radio"
-            name="category"
-            id={`category-${index}`}
-            defaultChecked={category.planning_category === 'Calgary Park'}
-            onClick={() => props.onSelectParks(category)}
+            name="city"
+            id={`city-${index}`}
+            defaultChecked={city.Name === 'Downtown'}
+            onClick={() => props.onSelectParks(city)}
             />
-            <label htmlFor={`category-${index}`}>{category.properties}</label>
+            <label htmlFor={`city-${index}`}>{city.Name}</label>
         </div>
         ))}
     </div>

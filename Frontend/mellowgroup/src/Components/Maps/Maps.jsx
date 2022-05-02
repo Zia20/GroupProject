@@ -1,14 +1,19 @@
 import "../../App.css";
-import { useRef, useCallback } from "react";
-import ControlPanel from "./controlPanel";
-//import MapRef from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import React, { useState, useEffect } from "react";
-import Map, { Popup, Marker, NavigationControl } from "react-map-gl";
+import ControlPanel from "./controlPanel";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import Map, {
+  Popup,
+  Marker,
+  NavigationControl,
+  ScaleControl,
+  GeolocateControl,
+} from "react-map-gl";
 import geoJsonData from "../data/parksData/ParksSitesMajor.json";
 import ParkIcon from "@mui/icons-material/Park";
 import RoomIcon from "@mui/icons-material/Room";
 import HomeIcon from "@mui/icons-material/Home";
+import PinDropIcon from "@mui/icons-material/PinDrop";
 import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
 import MapRatings from "./MapRatings";
 
@@ -18,7 +23,7 @@ const navStyle = {
   position: "absolute",
   top: 0,
   left: 0,
-  padding: "10px",
+  padding: "12px",
 };
 
 const navControlStyle = {
@@ -74,6 +79,7 @@ const Maps = () => {
   }, []);
 
   return (
+    <div className="mapTitle">City of Calgary Parks Map
     <div>
       <Map
         initialViewState={initialViewState}
@@ -101,14 +107,6 @@ const Maps = () => {
                 style={{
                   height: 25 * `${viewState.zoom}px`,
                   width: 15 * `${viewState.zoom}px`,
-                }}
-              />
-              <PersonPinCircleIcon
-                color="error"
-                //style={{fontSize:viewport.zoom *20 }}
-                style={{
-                  height: 20 * `${viewState.zoom}px`,
-                  width: 20 * `${viewState.zoom}px`,
                 }}
               />
             </button>
@@ -140,17 +138,17 @@ const Maps = () => {
             anchor="left"
           >
             <div className="card-container">
-              <label>Place</label>
+              <label className="popups-label">Place</label>
               <h5 className="place">{selectedPark.Name}</h5>
               <p className="descInfo">{selectedPark.Address}</p>
-              <label>Review</label>
+              <label className="popups-label">Review</label>
               <p className="descInfo">
                 {selectedPark.Longitude}
                 {selectedPark.Latitude}
               </p>
-              <label>Ratings</label>
+              <label className="popups-label">Ratings</label>
               <MapRatings />
-              <label>Information</label>
+              <label className="popups-label">Information</label>
               <p className="descInfo">{selectedPark.Description}</p>
               <div className="btn">
                 <button className="btn-button">
@@ -175,13 +173,16 @@ const Maps = () => {
         </button>
 
         <div className="nav" style={navStyle}>
+          <GeolocateControl/>
           <NavigationControl
             showCompass={true}
             onViewportChange={(viewport) => setViewport({ viewport })}
           />
+          <ScaleControl />
         </div>
       </Map>
       <ControlPanel onSelectParks={onSelectParks} />
+      </div>
     </div>
   );
 };

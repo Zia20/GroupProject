@@ -67,9 +67,9 @@ input[type ="radio"]{
 
   .home {
     font-size: xx-large;
-    top: 4.5em;
-    left: 52.6em;
-    border-radius: 7px;
+    top: 6.0em;
+    left: 52.3em;
+    border-radius: 9px;
     position: relative;
     }
 
@@ -121,29 +121,14 @@ input[type ="radio"]{
 	justify-content: space-around;
 }
 
-<<<<<<< HEAD
-/* label{
+.popups-label{
   width: max-content;
 	color: tomato;
 	font-size: .5px;
 	border-bottom: 1px solid tomato;
   margin: 3px 0;
-} */
-
-label{
-  width: max-content;
-	/* color: tomato; */
-	font-size: .5px;
-	/* border-bottom: 1px solid tomato; */
-	/* color: black; */
-	font-size: 14px;
-  font-family: Arial Bold, Helvetica, sans-serif;
-	/* border-bottom: 1px solid tomato; */
-  margin: 3px 0;
 }
 
-=======
->>>>>>> 29e75dcdbfb0950d4d50835a2bcee1267e3cbfb5
 .descInfo{
   font-size: 14px;
 }
@@ -184,4 +169,11 @@ a-link{
   right: 0;
   outline: none;
   cursor: auto;
+}
+
+.mapTitle  {
+  font-size: 28px;
+  color: green;
+  font-weight: 900;
+	justify-content: center;
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 
 const survey = () => {
-<<<<<<< HEAD
   const likertOptions = [
     
     {
@@ -32,11 +31,6 @@ const survey = () => {
     <div style={{height:50}}> <Likert onChange = {(val)=>onChange(val,likertOptions[0])} {...likertOptions[0]} /></div>  
     <div style={{height:50}}> <Likert onChange = {onChange} {...likertOptions[0]} /></div> 
     </>)
-=======
-  return (
-    <div>survey</div>
-  )
->>>>>>> 69f1ffad5bab10d5d8b857c4f6e0914d995225f1
 }
 
 export default survey
