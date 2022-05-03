@@ -149,8 +149,7 @@ const Maps = () => {
         {selectedPark ? (
           <Popup
             latitude={parseFloat(selectedPark.geometry.coordinates[0][0][0][1])}
-            longitude={parseFloat(
-              selectedPark.geometry.coordinates[0][0][0][0]
+            longitude={parseFloat(selectedPark.geometry.coordinates[0][0][0][0]
             )}
             closeButton={true}
             closeOnClick={false}
