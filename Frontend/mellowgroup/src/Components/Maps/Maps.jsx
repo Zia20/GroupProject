@@ -11,25 +11,15 @@ import Map, {
 } from "react-map-gl";
 import geoJsonData from "../data/parksData/ParksSitesMajor.json";
 import ParkIcon from "@mui/icons-material/Park";
-import RoomIcon from "@mui/icons-material/Room";
 import HomeIcon from "@mui/icons-material/Home";
-import PinDropIcon from "@mui/icons-material/PinDrop";
 import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
+//import PinDropIcon from "@mui/icons-material/PinDrop";
+//import RoomIcon from "@mui/icons-material/Room";
 import MapRatings from "./MapRatings";
+import Search from "../Search/Search";
+import { navStyle, navControlStyle, searchStyle } from "../Styles/Styles";
 
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
-
-const navStyle = {
-  position: "absolute",
-  top: 0,
-  left: 0,
-  padding: "12px",
-};
-
-const navControlStyle = {
-  right: 10,
-  top: 10,
-};
 
 const Maps = () => {
   const [long, setLong] = useState(-114.0719);
@@ -37,6 +27,7 @@ const Maps = () => {
   const [zoom, setZoom] = useState(9.4);
   const [selectedPark, setSelectedPark] = useState(null);
   const [viewport, setViewport] = useState();
+  const [searchPark, setSearchPark] = useState();
 
   const mapContainer = useRef();
 
@@ -78,12 +69,28 @@ const Maps = () => {
     };
   }, []);
 
+  //Search Parks
+  useEffect(() => {
+    if (searchPark > -1) {
+      let park = geoJsonData[searchPark];
+      let parkLat = park.Latitude;
+      let parkLong = park.Longitude;
+      setViewState((cur) => {
+        return {
+          ...cur,
+          zoom: 13,
+          latitude: parkLat,
+          longitude: parkLong,
+        };
+      });
+    }
+  }, [searchPark]);
+
   return (
-    <div className="mapTitle">City of Calgary Parks Map
     <div>
       <Map
         initialViewState={initialViewState}
-        {...viewState} //viewport not working
+        {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
         mapboxAccessToken={AKEY}
         style={{ width: 1300, height: 660 }}
@@ -172,8 +179,12 @@ const Maps = () => {
           />
         </button>
 
+        <div style={searchStyle}>
+          <Search setSearchPark={setSearchPark} />
+        </div>
+
         <div className="nav" style={navStyle}>
-          <GeolocateControl/>
+          <GeolocateControl />
           <NavigationControl
             showCompass={true}
             onViewportChange={(viewport) => setViewport({ viewport })}
@@ -182,7 +193,6 @@ const Maps = () => {
         </div>
       </Map>
       <ControlPanel onSelectParks={onSelectParks} />
-      </div>
     </div>
   );
 };

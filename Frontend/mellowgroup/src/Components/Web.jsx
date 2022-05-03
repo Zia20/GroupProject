@@ -14,6 +14,7 @@ function Web() {
       <div>
         <Container>
           <Col>
+            <div className="mapTitle">City of Calgary Parks Map</div>
             <Maps />
           </Col>
         </Container>

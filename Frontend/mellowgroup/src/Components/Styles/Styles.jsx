@@ -136,3 +136,21 @@ export const signupStyle = {
   marginLeft: "45rem",
   shadow: "none",
 }
+
+export const navStyle = {
+  position: "absolute",
+  top: 0,
+  left: 0,
+  padding: "12px",
+};
+
+export const navControlStyle = {
+  right: 10,
+  top: 10,
+};
+
+export const searchStyle = {
+  position: "absolute",
+  top: 0,
+  right: 50,
+};
