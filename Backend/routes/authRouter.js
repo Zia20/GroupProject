@@ -16,6 +16,8 @@ try {
         return done(null, false);
       }
 
+      const userToSend = user.toObject();
+      delete userToSend.password;
       return done(null, user);
     } catch (error) {
       return done(error, null);
@@ -24,12 +26,12 @@ try {
 );
 
 passport.serializeUser(function (user, done) {
-  console.log("passport wants to store this user in a cookie", user);
-  done(null, user.id);
+  // console.log("passport wants to store this user in a cookie", user);
+  done(null, user._id); //This is updated in class to include the id since we removed the user.object
 });
 
 passport.deserializeUser(async function (id, done) {
-  console.log("passport is trying to recover the user from the cookie", id);
+  // console.log("passport is trying to recover the user from the cookie", id);
   try {
     const user = await getUserById(id);
     if (!user) {
@@ -59,12 +61,12 @@ router.post("/admin",  async (req, res) => {
 
 //Admin login
 router.post("/login/admin", passport.authenticate("local"), (req, res) => {
-  res.send("success");
+  res.send(req.user); //updated in
 });
 
 //User Login
 router.post("/login", passport.authenticate("local"), (req, res) => {
-  res.send("success");
+  res.send(req.user);
 });
 
 //Create Any User
@@ -88,8 +90,12 @@ router.get("/logout", (req, res) => {
 });
 
 router.get('/loggedInUser', function (req, res) {
-  req.login();
   res.send(req.user)
+  // req.login();
+})
+
+router.get("/user", (req, res) => {
+  res.send(req.user);  //The req.user stores the entire user-
 })
 
 module.exports = router;

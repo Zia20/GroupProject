@@ -14,8 +14,6 @@ import geoJsonData from "../data/parksData/ParksSitesMajor.json";
 import ParkIcon from "@mui/icons-material/Park";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
-//import PinDropIcon from "@mui/icons-material/PinDrop";
-//import RoomIcon from "@mui/icons-material/Room";
 import MapRatings from "./MapRatings";
 import Search from "../Search/Search";
 import { navStyle, navControlStyle, searchStyle } from "../Styles/Styles";
