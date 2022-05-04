@@ -14,6 +14,7 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import Engage from "./Components/Engage/Engage";
 import Dogpage from "./Components/Dog/Dogpage";
 import DogId from "./Components/Dog/DogId";
+import Admin from "./Components/SignIn/Admin";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/dog" element={<Dogpage />} />
         <Route path="/dog/:id" element={<DogId />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

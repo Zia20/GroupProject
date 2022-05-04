@@ -6,10 +6,10 @@ import { signupStyle } from "../Styles/Styles";
 
 const Signin = () => {
 
+  const [username, setUsername ] = useState('')
   const [password, setPassword ] = useState('');
   const [isPending, setIsPending ] = useState(false);
   const [error, setError ] = useState(null)
-  const [username, setUsername ] = useState('')
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -24,10 +24,9 @@ const Signin = () => {
         headers: { "Content-Type": "application/json"},
         body: data,
       })
-      console.log(response)
-      console.log(data)
+      
       if(response.status === 200 ){
-        navigate("/dashboard")
+        navigate(-1)
         setIsPending(true);
       } else {
         setError("Something went wrong!")
