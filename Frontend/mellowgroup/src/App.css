@@ -177,3 +177,20 @@ a-link{
   font-weight: 900;
 	justify-content: center;
 }
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.search input {
+  margin-top: 20px;
+  width: 300px;
+  height: 400;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
