@@ -28,8 +28,5 @@ signupRouter.route("/")
     username,
     password: hashedPassword,
   });
-
-  console.log(user);
-
 });
 module.exports = signupRouter;

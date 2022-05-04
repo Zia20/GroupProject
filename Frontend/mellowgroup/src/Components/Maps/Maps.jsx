@@ -1,14 +1,10 @@
 import "../../App.css";
-import "mapbox-gl/dist/mapbox-gl.css";
+import { useRef, useCallback } from "react";
 import ControlPanel from "./controlPanel";
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import Map, {
-  Popup,
-  Marker,
-  NavigationControl,
-  ScaleControl,
-  GeolocateControl,
-} from "react-map-gl";
+//import MapRef from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+import React, { useState, useEffect } from "react";
+import Map, { Popup, Marker, NavigationControl } from "react-map-gl";
 import geoJsonData from "../data/parksData/ParksSitesMajor.json";
 import ParkIcon from "@mui/icons-material/Park";
 import HomeIcon from "@mui/icons-material/Home";
@@ -116,6 +112,14 @@ const Maps = () => {
                   width: 15 * `${viewState.zoom}px`,
                 }}
               />
+              <PersonPinCircleIcon
+                color="error"
+                //style={{fontSize:viewport.zoom *20 }}
+                style={{
+                  height: 20 * `${viewState.zoom}px`,
+                  width: 20 * `${viewState.zoom}px`,
+                }}
+              />
             </button>
           </Marker>
         ))}
@@ -145,17 +149,17 @@ const Maps = () => {
             anchor="left"
           >
             <div className="card-container">
-              <label className="popups-label">Place</label>
+              <label>Place</label>
               <h5 className="place">{selectedPark.Name}</h5>
               <p className="descInfo">{selectedPark.Address}</p>
-              <label className="popups-label">Review</label>
+              <label>Review</label>
               <p className="descInfo">
                 {selectedPark.Longitude}
                 {selectedPark.Latitude}
               </p>
-              <label className="popups-label">Ratings</label>
+              <label>Ratings</label>
               <MapRatings />
-              <label className="popups-label">Information</label>
+              <label>Information</label>
               <p className="descInfo">{selectedPark.Description}</p>
               <div className="btn">
                 <button className="btn-button">
@@ -189,7 +193,6 @@ const Maps = () => {
             showCompass={true}
             onViewportChange={(viewport) => setViewport({ viewport })}
           />
-          <ScaleControl />
         </div>
       </Map>
       <ControlPanel onSelectParks={onSelectParks} />
