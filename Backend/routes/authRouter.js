@@ -1,5 +1,5 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const { createUser, getUserByUsername, getUserById, verifyPassword, } = require("../models/user");
@@ -42,16 +42,54 @@ passport.deserializeUser(async function (id, done) {
   }
 });
 
+//Create and Admin
+router.post("/admin",  async (req, res) => {
+  const isAdmin = req.body;
+  try {
+    await createUser(isAdmin);
+    res.status(201)
+    res.json({
+      username: isAdmin.username
+    })
+  } catch (error) {
+    res.sendStatus(400)
+    console.log(error)
+  }
+});
+
+//Admin login
+router.post("/login/admin", passport.authenticate("local"), (req, res) => {
+  res.send("success");
+});
+
+//User Login
 router.post("/login", passport.authenticate("local"), (req, res) => {
   res.send("success");
 });
-router.post("/signup", passport.authenticate("local"), (req, res) => {
-  res.send("success");
+
+//Create Any User
+router.post("/signup",  async (req, res) => {
+  const newUser = req.body;
+  try {
+    await createUser(newUser);
+    res.status(201)
+    res.json({
+      username: newUser.username
+    })
+  } catch (error) {
+    res.sendStatus(400)
+    console.log(error)
+  }
 });
 
 router.get("/logout", (req, res) => {
   req.logout();
   res.send("successfully logged out");
 });
+
+router.get('/loggedInUser', function (req, res) {
+  req.login();
+  res.send(req.user)
+})
 
 module.exports = router;

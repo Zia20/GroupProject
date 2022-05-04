@@ -1,6 +1,7 @@
 const mongoose = require("../mongoose");
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 const bcrypt = require("bcryptjs");
+const { Schema, model } = mongoose
 
 const userSchema = new Schema({
     firstName: {
@@ -25,18 +26,25 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    // isAdmin:{
+    //     type: Boolean,
+    //     default: false
+    // },
 }, {
     timestamps: true
 });
 
-const User = mongoose.model("User", userSchema);
+const User = model("User", userSchema);
 
 const createUser = async (user) => {
   
     const hashedPassword = bcrypt.hashSync(user.password);
   
     const newUser = await User.create({
-      user,
+      username: user.username,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,      
       password: hashedPassword,
     });
   
@@ -67,5 +75,3 @@ return passwordsMatch;
 };
 
 module.exports = { createUser, getUserByUsername,  getUserById, updateUser, verifyPassword, };
-
-// module.exports = User;
