@@ -34,14 +34,6 @@ const dogSchema = new Schema({
     opened_dt: {
         type: String,
         required: true
-    },
-    createdAt: {
-        type: String,
-        required: true
-    },
-    updatedAt: {
-        type: String,
-        required: true
     }
 }, {
     timestamps: true

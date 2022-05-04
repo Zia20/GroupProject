@@ -11,13 +11,16 @@ const Dogpage = () => {
   
 
   const [offLeashList, setOffLeashList] = useState();
+
   const [category, setCategory ] = useState('');
   const [status, setStatus ] = useState('');
+  const [description, setDescription ] = useState('');
   const [location, setLocation ] = useState('');
+  const [parentId, setParentId ] = useState('');
   const [steward, setSteward ] = useState('');
+  const [maintainId, setMaintainedBy ] = useState('');
   const [opened_dt, setOpened_dt ] = useState('');
-  const [createdAt, setcreatedAt] = useState('');
-  const [updatedAt, setupdatedAt ] = useState('');
+  
   const [isPending, setIsPending ] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -43,12 +46,13 @@ const Dogpage = () => {
     e.preventDefault();
     const newDog = { 
       category, 
-      status, 
-      location, 
+      status,
+      description, 
+      location: parcel_location, 
+      parentId: wam_parent_id,
       steward,
-      opened_dt,
-      createdAt,
-      updatedAt
+      maintainId: maintained_by,
+      opened_dt
     };
 
     setIsPending(true);
@@ -106,24 +110,28 @@ const Dogpage = () => {
               <input type="text" className="shadow-none" value={status} onChange={ (event) => {setStatus(event.target.value)} } />
             </div>
             <div>
+              <label>Description</label><br />
+              <input type="text" className="shadow-none" value={description} onChange={ (event) => {setDescription(event.target.value)} } />
+            </div>
+            <div>
               <label>Location</label><br />
               <input type="text" className="shadow-none" value={location} onChange={ (event) => {setLocation(event.target.value)} } />
+            </div>
+            <div>
+              <label>Parent Id</label><br />
+              <input type="text" className="shadow-none" value={parentId} onChange={ (event) => {setParentId(event.target.value)} } />
             </div>
             <div>
               <label>Steward</label><br />
               <input type="text" className="shadow-none" value={steward} onChange={ (event) => {setSteward(event.target.value)} } />
             </div>
+            <div>
+              <label>Maintained By</label><br />
+              <input type="text" className="shadow-none" value={maintainId} onChange={ (event) => {setMaintainedBy(event.target.value)} } />
+            </div>
             <div >
               <label>Opened_dt</label><br />
               <input type="text" className="shadow-none" value={opened_dt} onChange={ (event) => {setOpened_dt(event.target.value)} } />
-            </div>
-            <div >
-              <label>createdAt</label><br />
-              <input type="text" className="shadow-none" value={createdAt} onChange={ (event) => {setcreatedAt(event.target.value)} } />
-            </div>
-            <div >
-              <label>updatedAt</label><br />
-              <input type="text" className="shadow-none" value={updatedAt} onChange={ (event) => {setupdatedAt(event.target.value)} } />
             </div>
             <div><br />
             {!isPending && <button className="btn btn-lg btn-warning shadow-none" type="submit">Add Dog</button>}

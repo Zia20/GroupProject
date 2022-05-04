@@ -9,6 +9,7 @@ import Map, {
   Marker,
   NavigationControl,
   GeolocateControl,
+  ScaleControl
 } from "react-map-gl";
 import geoJsonData from "../data/parksData/ParksSitesMajor.json";
 import ParkIcon from "@mui/icons-material/Park";
@@ -183,6 +184,7 @@ const Maps = () => {
             showCompass={true}
             onViewportChange={(viewport) => setViewport({ viewport })}
           />
+          <ScaleControl/>
         </div>
       </Map>
       <ControlPanel onSelectParks={onSelectParks} />
