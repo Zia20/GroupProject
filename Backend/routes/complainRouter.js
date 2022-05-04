@@ -2,6 +2,15 @@ const express = require("express");
 const complainRouter = express.Router();
 const Complain = require("../models/complains");
 
+
+
+const mustBeLoggedIn = (req, res, next) => {
+    if(req.user){
+        return next();
+    }
+    res.statusCode(401)
+} 
+
 complainRouter.route("/")
 .all((req, res, next) => {
     res.statusCode = 200;
@@ -11,10 +20,8 @@ complainRouter.route("/")
 .get((req, res) => {
     res.send("Please send your complains to the City of Calgary");
 })
-.post( async (req, res) => {
-    
+.post(mustBeLoggedIn, async (req, res) => {
     const newComplain = req.body;
-
     try {
        await Complain.create(newComplain)
         res.send("Success!")

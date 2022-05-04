@@ -6,10 +6,10 @@ import { signupStyle } from "../Styles/Styles";
 
 const Signup = () => {
 
-  const [username, setUsername ] = useState('');
   const [firstName, setFirstName ] = useState('');
   const [lastName, setLastName ] = useState('');
   const [email, setEmail ] = useState('');
+  const [username, setUsername ] = useState('');
   const [password, setPassword ] = useState('');
   const [isPending, setIsPending ] = useState(false);
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Signup = () => {
 
   const data = JSON.stringify(user)
     try {
-      await fetch("/signup", {
+      await fetch("/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: data,
