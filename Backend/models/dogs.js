@@ -13,7 +13,7 @@ const dogSchema = new Schema({
     },
     status: {
         type: String,
-        required: true,
+        required: true
     },
     description: {
         type: String,
@@ -32,6 +32,14 @@ const dogSchema = new Schema({
         required: true
     },
     opened_dt: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: String,
+        required: true
+    },
+    updatedAt: {
         type: String,
         required: true
     }

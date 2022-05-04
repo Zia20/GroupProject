@@ -24,6 +24,8 @@ const DogIds = (props) => {
             <h6>{id.steward}</h6>
             <h6>{id.maintained_by}</h6>
             <h6>{id.opened_dt}</h6>
+            <h6>{id.createdAt}</h6>
+            <h6>{id.updatedAt}</h6>
           </Card.Text>
         </Card.Body>
       </Card>

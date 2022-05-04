@@ -16,6 +16,8 @@ const Dogpage = () => {
   const [location, setLocation ] = useState('');
   const [steward, setSteward ] = useState('');
   const [opened_dt, setOpened_dt ] = useState('');
+  const [createdAt, setcreatedAt] = useState('');
+  const [updatedAt, setupdatedAt ] = useState('');
   const [isPending, setIsPending ] = useState(false);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -44,7 +46,9 @@ const Dogpage = () => {
       status, 
       location, 
       steward,
-      opened_dt
+      opened_dt,
+      createdAt,
+      updatedAt
     };
 
     setIsPending(true);
@@ -112,6 +116,14 @@ const Dogpage = () => {
             <div >
               <label>Opened_dt</label><br />
               <input type="text" className="shadow-none" value={opened_dt} onChange={ (event) => {setOpened_dt(event.target.value)} } />
+            </div>
+            <div >
+              <label>createdAt</label><br />
+              <input type="text" className="shadow-none" value={createdAt} onChange={ (event) => {setcreatedAt(event.target.value)} } />
+            </div>
+            <div >
+              <label>updatedAt</label><br />
+              <input type="text" className="shadow-none" value={updatedAt} onChange={ (event) => {setupdatedAt(event.target.value)} } />
             </div>
             <div><br />
             {!isPending && <button className="btn btn-lg btn-warning shadow-none" type="submit">Add Dog</button>}
