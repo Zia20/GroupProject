@@ -4,7 +4,12 @@ import ControlPanel from "./controlPanel";
 //import MapRef from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState, useEffect } from "react";
-import Map, { Popup, Marker, NavigationControl } from "react-map-gl";
+import Map, {
+  Popup,
+  Marker,
+  NavigationControl,
+  GeolocateControl,
+} from "react-map-gl";
 import geoJsonData from "../data/parksData/ParksSitesMajor.json";
 import ParkIcon from "@mui/icons-material/Park";
 import HomeIcon from "@mui/icons-material/Home";
@@ -106,18 +111,10 @@ const Maps = () => {
               }}
             >
               <ParkIcon
-                color="black"
+                color="light blue"
                 style={{
                   height: 25 * `${viewState.zoom}px`,
                   width: 15 * `${viewState.zoom}px`,
-                }}
-              />
-              <PersonPinCircleIcon
-                color="error"
-                //style={{fontSize:viewport.zoom *20 }}
-                style={{
-                  height: 20 * `${viewState.zoom}px`,
-                  width: 20 * `${viewState.zoom}px`,
                 }}
               />
             </button>
@@ -130,14 +127,6 @@ const Maps = () => {
           closeButton={true}
           closeOnClick={false}
         >
-          <PersonPinCircleIcon
-            color="error"
-            //style={{fontSize:viewport.zoom *20 }}
-            style={{
-              height: 20 * `${viewState.zoom}px`,
-              width: 20 * `${viewState.zoom}px`,
-            }}
-          />
         </Marker>
 
         {selectedPark ? (
@@ -149,17 +138,18 @@ const Maps = () => {
             anchor="left"
           >
             <div className="card-container">
-              <label>Place</label>
+              <label className="popups-label">Place</label>
               <h5 className="place">{selectedPark.Name}</h5>
               <p className="descInfo">{selectedPark.Address}</p>
-              <label>Review</label>
-              <p className="descInfo">
-                {selectedPark.Longitude}
-                {selectedPark.Latitude}
-              </p>
-              <label>Ratings</label>
-              <MapRatings />
-              <label>Information</label>
+              <label className="popups-label">Review</label><br/>
+              <a href="http://localhost:3000/engage">
+                <button>
+                  Review
+                </button>
+              </a><br/>
+              <label className="popups-label">Ratings</label>
+              <MapRatings /><br/>
+              <label className="popups-label">Information</label>
               <p className="descInfo">{selectedPark.Description}</p>
               <div className="btn">
                 <button className="btn-button">
