@@ -47,11 +47,11 @@ const Dogpage = () => {
     const newDog = { 
       category, 
       status,
-      description, 
-      location: parcel_location, 
-      parentId: wam_parent_id,
+      description,
+      parcel_location:  location,
+      wam_parent_id: parentId,
       steward,
-      maintainId: maintained_by,
+      maintained_by: maintainId,
       opened_dt
     };
 

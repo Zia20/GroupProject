@@ -1,7 +1,6 @@
 import "../../App.css";
 import { useRef, useCallback } from "react";
 import ControlPanel from "./controlPanel";
-//import MapRef from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState, useEffect } from "react";
 import Map, {
@@ -11,12 +10,10 @@ import Map, {
   GeolocateControl,
   ScaleControl
 } from "react-map-gl";
+import { Box, Button, Typography } from "@mui/material";
 import geoJsonData from "../data/parksData/ParksSitesMajor.json";
 import ParkIcon from "@mui/icons-material/Park";
 import HomeIcon from "@mui/icons-material/Home";
-import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
-//import PinDropIcon from "@mui/icons-material/PinDrop";
-//import RoomIcon from "@mui/icons-material/Room";
 import MapRatings from "./MapRatings";
 import Search from "../Search/Search";
 import { navStyle, navControlStyle, searchStyle } from "../Styles/Styles";
@@ -144,18 +141,18 @@ const Maps = () => {
               <p className="descInfo">{selectedPark.Address}</p>
               <label className="popups-label">Review</label><br/>
               <a href="http://localhost:3000/engage">
-                <button>
+                <Button>
                   Review
-                </button>
+                </Button>
               </a><br/>
               <label className="popups-label">Ratings</label>
-              <MapRatings /><br/>
+              <MapRatings />
               <label className="popups-label">Information</label>
               <p className="descInfo">{selectedPark.Description}</p>
               <div className="btn">
-                <button className="btn-button">
+                <Button className="btn-button">
                   <a className="a-link">Survey..</a>
-                </button>
+                </Button>
               </div>
             </div>
           </Popup>
