@@ -5,8 +5,11 @@ const createDog = async(dog) => {  //function to add/create dog parks to the dat
     return newDog;
 }
 
-const getAllDogs = async() => { //function to find all dogs in the database.
-    const dogs = await Dog.find();
+const getAllDogs = async(description) => { //function to find all dogs in the database.
+    if (!description) {
+        return await Dog.find();
+    }
+    const dogs = await Dog.find({description: new RegExp(description, 'i')});
     return dogs;
 }
 const DeleteDogById = async() => { //function to find all dogs in the database.

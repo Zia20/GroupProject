@@ -10,7 +10,7 @@ dogRouter.route("/")
 })
 .get(async (req, res) => {
     try {
-        const dog = await getAllDogs();
+        const dog = await getAllDogs(req.query.description);
         console.log(dog)
         res.send(dog)
     } catch (error) {

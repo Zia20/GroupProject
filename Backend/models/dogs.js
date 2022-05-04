@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const dogSchema = new Schema({
     off_leash_area_id:{
         type: String,
-        required: true
+        required: false
     },
     category:{
         type: String,
