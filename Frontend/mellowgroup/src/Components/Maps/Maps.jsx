@@ -13,10 +13,7 @@ import { Box, Button, Typography } from "@mui/material";
 import geoJsonData from "../data/parksData/ParksSitesMajor.json";
 import ParkIcon from "@mui/icons-material/Park";
 import HomeIcon from "@mui/icons-material/Home";
-<<<<<<< HEAD
 import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
-=======
->>>>>>> b13aba049d51e46d0aef1ac303cd776c95dcee6b
 import MapRatings from "./MapRatings";
 import Search from "../Search/Search";
 import { navStyle, navControlStyle, searchStyle } from "../Styles/Styles";
