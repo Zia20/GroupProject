@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import Images from "../../images/signin.jpg";
 import { signupStyle } from "../Styles/Styles";
+import AuthContext from '../PrivateRoute/AuthContext';
 
 const Admin = () => {
 
+  const authContext = useContext(AuthContext)
+  const login = authContext.login;
   const [username, setUsername ] = useState('')
   const [password, setPassword ] = useState('');
   const [isPending, setIsPending ] = useState(false);

@@ -5,6 +5,17 @@ import Dog from "./Dog";
 import SearchDogs from "../Search/SearchDogs";
 
 const Dogpage = () => {
+<<<<<<< HEAD
+  const [offLeashList, setOffLeashList] = useState();
+  const [category, setCategory ] = useState('');
+  const [status, setStatus ] = useState('');
+  const [location, setLocation ] = useState('');
+  const [steward, setSteward ] = useState('');
+  const [opened_dt, setOpened_dt ] = useState('');
+  const [createdAt, setcreatedAt] = useState('');
+  const [updatedAt, setupdatedAt ] = useState('');
+  const [isPending, setIsPending ] = useState(false);
+=======
   const [category, setCategory] = useState("");
   const [status, setStatus] = useState("");
   const [description, setDescription] = useState("");
@@ -16,6 +27,7 @@ const Dogpage = () => {
   const [refresh, setRefresh] = useState(0);
 
   const [isPending, setIsPending] = useState(false);
+>>>>>>> b13aba049d51e46d0aef1ac303cd776c95dcee6b
   const [show, setShow] = useState(false);
   const [filteredDogs, setFilteredDogs] = useState([]);
   const handleClose = () => setShow(false);

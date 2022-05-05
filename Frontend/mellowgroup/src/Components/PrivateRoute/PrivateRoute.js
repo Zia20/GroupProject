@@ -1,15 +1,26 @@
-// import React, {useLocalState, useState} from 'react'
-// import { Navigate } from 'react-router-dom';
-// import Signin from '../SignIn/Signin';
+import React, { useContext } from 'react';
+import { Navigate, Route } from 'react-router-dom';
+import AuthContext from './AuthContext';
 
-// const PrivateRoute = () => {
+const PrivateRoute = (props) => {
 
-//     const [ token, setToken ] = useState();
-//     // const [jwt, setJwt ] = useLocalState('', "jwt");
+    const authContext = useContext(AuthContext);
 
-//     if(!token){
-//       return <Signin setToken={setToken} />
-//     }
-// }
+    const loggedInUser = props.loggedInUser;
+    const loading = authContext.loading;
 
-// export default PrivateRoute;
+    const mustBeAdmin = props.mustBeAdmin;
+    const element = props.element;
+
+    if(loading){
+        return <div>Loading...</div>
+    }
+
+    if((loggedInUser?.isAdmin && mustBeAdmin) || (loggedInUser && !mustBeAdmin)){
+        return element;
+    } else {
+        return <Navigate to="/login" />
+    }
+}
+
+export default PrivateRoute;

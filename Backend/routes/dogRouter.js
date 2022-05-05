@@ -10,7 +10,15 @@ dogRouter.route("/")
 })
 .get(async (req, res) => {
     try {
+<<<<<<< HEAD
+        const dog = await getAllDogs();
+=======
         const dog = await getAllDogs(req.query.description);
+<<<<<<< HEAD
+=======
+        console.log(dog)
+>>>>>>> b13aba049d51e46d0aef1ac303cd776c95dcee6b
+>>>>>>> 4c1a0d07ca8e379c03fd8c4c0c7839e74827df30
         res.send(dog)
     } catch (error) {
         console.log(error.message);
@@ -49,7 +57,6 @@ dogRouter.route("/")
 
 dogRouter.route("/:id")
 .get(async (req, res) => {
-    
     const id = req.params.id;
     try {
         const dogsId = await getDogById(id);

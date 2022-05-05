@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
-import Images from "../../images/signin.jpg";
+import Images from "../../images/amuseme.png";
 import { signupStyle } from "../Styles/Styles";
+import AuthContext from "../PrivateRoute/AuthContext"
 
 const Signin = () => {
+
+  const authContext = useContext(AuthContext)
+  const login = authContext.login;
 
   const [username, setUsername ] = useState('')
   const [password, setPassword ] = useState('');
@@ -13,10 +17,8 @@ const Signin = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
     const user = { username: username, password: password };
-
     const data = JSON.stringify(user)
     try {
       const response = await fetch("/auth/login", {
@@ -26,19 +28,21 @@ const Signin = () => {
       })
       
       if(response.status === 200 ){
-        navigate(-1)
+        const userData = await response.json();
+        login(userData);
+        navigate("/")
         setIsPending(true);
       } else {
-        setError("Something went wrong!")
+        setError("Invalid username or password")
+        navigate("/signin")
       }
     } catch (error) {
     console.log(error.message);
     }
-
   }
   return (
     <form style={signupStyle} onSubmit={handleSubmit}>
-      <img className="mb-4" width="125" height="100" alt='parks' src={Images}/>
+      <img className="mb-4 rounded-2" width="125" height="100" alt='parks' src={Images}/>
       <h1 className="h3 mb-3 fw-normal">Please sign In</h1>
       <div className="form-floating">
         <input type="text" className="form-control shadow-none" value={username} onChange={ (event) => {setUsername(event.target.value)} } />
@@ -53,8 +57,11 @@ const Signin = () => {
           <input type="checkbox" value="remember-me" /> Remember me
         </label>
       </div>
+      <div className="checkbox mb-3">
+      {error && <div className="checkbox mb-3">{error}</div>}
+      </div>
       {!isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" type="submit">Sign in</button>}
-      {isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" disabled type="submit">Adding ...</button>}
+      {isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" disabled type="submit">Adding...</button>}
       <p className="mt-5 mb-3 text-muted">&copy; Mellow 2022</p>
     </form>
   )

@@ -50,10 +50,10 @@ const createUser = async (user) => {
   
     return newUser;
   };
-
+ // Does not return user with password
 const getUserById = async (id) => {
-const user = await User.findById(id);
-console.log(`User is ${user}`);
+const user = await User.findById(id).select('-password'); //remove password from find by id
+// console.log(`User is ${user}`);
 return user;
 };
 

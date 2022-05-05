@@ -6,6 +6,8 @@ import Maps from "./Maps/Maps";
 import { Container, Col } from "react-bootstrap";
 import Downtown from "./DowntownProjects/DowntownProjects";
 import Highlights from "./Headers/Highlights";
+import "../App.css";
+
 
 function Web() {
   return (
