@@ -2,6 +2,13 @@ const express = require("express");
 const multer = require("multer");
 const uploadRouter = express.Router();
 
+const mustBeLoggedIn = (req, res, next) => {
+    if(req.user){
+        return next();
+    }
+    res.status(401)
+} 
+
     //Using DiskStorage Method(des:func, filename: func)
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -38,7 +45,7 @@ uploadRouter.route("/")
     res.status = 200;
     res.send(`This request is not supported!`);
 })
-.post(upload, (req, res) => {
+.post(mustBeLoggedIn, upload, (req, res) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json(req.file);

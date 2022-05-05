@@ -2,6 +2,13 @@ const express = require("express");
 const dogRouter = express.Router();
 const { createDog, getAllDogs, getDogById, updateDog, DeleteDogById} = require("../models/dogFunctions");
 
+const mustBeLoggedIn = (req, res, next) => {
+    if(req.user){
+        return next();
+    }
+    res.status(401)
+} 
+
 dogRouter.route("/")
 .all((req, res, next) => {
     res.sendStatus = 200;
@@ -28,7 +35,7 @@ dogRouter.route("/")
     }
 })
 
-.put(async (req, res) => {
+.put(mustBeLoggedIn, async (req, res) => {
     const newDogUpdate = req.body;
     try {
         const updatedDog = await updateDog(newDogUpdate);

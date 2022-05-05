@@ -58,12 +58,12 @@ const Engage = () => {
           <Col>
             <div> 
               <h1 className='animate__animated animate__shakeY'>We are here to assist you!</h1>
-              <h5>Please complete the form below</h5>
+              <h5>Please complete the form below for your complaints</h5>
               <form onSubmit={handleSubmit}>
-                <label><br/>First Name:</label><br />
+                <label><br/>Complainant's First Name:</label><br />
                 <input className="rounded text-success" type="text" required value={firstName} onChange={ (event) => {setFirstName(event.target.value)} } /><br />
 
-                <label>Last Name:</label><br />
+                <label>Complainant's Last Name:</label><br />
                 <input className="rounded text-success" type="text" required value={lastName} onChange={(event) => {setLastName(event.target.value)}} /><br />
 
                 <label>Email:</label><br />
@@ -74,15 +74,14 @@ const Engage = () => {
 
                 <label htmlFor="complaints">Choose a type:</label><br />
                 <select className="rounded mb-3" id="complaints" value={choose} onChange={(event) => {setChoose(event.target.value)}}>
-                  <option value="Review">Review</option>
                   <option value="Wildlife">Wildlife</option>
                   <option value="Assault">Assault</option>
                   <option value="Damaged Items">Damaged Items</option>
-                  <option value="Maintenance Issues">Maintenance Issues</option>
+                  <option value="Maintenance Issues">maintenance Issues</option>
                 </select><br />
-                <textarea className="rounded" rows="4" cols="50" placeholder='Write your review...' value={text} onChange={(event) => {setText(event.target.value)}}></textarea><br />
+                <textarea className="rounded" rows="4" cols="50" placeholder='Write your complaints' value={text} onChange={(event) => {setText(event.target.value)}}></textarea><br />
                 {!isPending && <Button className='mt-3 shadow-none' variant="outline-success" size="lg" type='submit'>Submit</Button>}
-                {isPending && <Button className='mt-3 shadow-none' disabled variant="outline-success" size="lg" type='submit'>Submiting ...</Button>}
+                {isPending && <Button className='mt-3 shadow-none' disabled variant="outline-success" size="lg" type='submit'>Submiting...</Button>}
               </form>
             </div>
           </Col>

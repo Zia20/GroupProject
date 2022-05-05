@@ -15,20 +15,13 @@ const uploadRouter = require("./routes/uploadRouter");
 const authRouter = require("./routes/authRouter"); 
 const complainRouter = require("./routes/complainRouter");
 const dogRouter = require("./routes/dogRouter");
-const signupRouter = require("./routes/signupRouter"); //Not is use
+// const signupRouter = require("./routes/signupRouter"); //Not is use
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(session({secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: false}));
 // app.use(logger("dev"));
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -37,11 +30,10 @@ app.use('/upload', uploadRouter);
 app.use('/auth', authRouter);
 app.use('/complain', complainRouter);
 app.use('/dog', dogRouter);
-app.use('/signup', signupRouter); //Not in use
+// app.use('/signup', signupRouter); //Not in use
 app.use("/upload", uploadRouter);
-app.use("/auth", authRouter);
 app.use("/dog/:_id", dogRouter);
-app.use("/signup", signupRouter);
+// app.use("/signup", signupRouter);
 
 // app.use('/logout', logoutRouter);
 // app.use('/login', loginRouter);

@@ -13,8 +13,7 @@ function Recreation() {
   const [ weatherData, setWeatherData ] = useState([{}]);
   const [ city, setCity ] = useState('')
 
-  // const APIKEY = process.env.API_KEY;
-  const APIKEY = "754f9c28133517d9c836a53957ce5bca"
+  const APIKEY ="d9ed8b0bed9ec132fed0d22c1998912e"
   
   const weatherUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=metric`;
 
@@ -23,6 +22,7 @@ function Recreation() {
       try {
         const response = await fetch(weatherUrl);        
         let data = await response.json();
+        console.log(data)
         setWeatherData(data)
         setCity('')
         console.log(data)

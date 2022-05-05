@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faRightToBracket, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { myBLink, myLink, NavbarStyle  } from "../Styles/Styles";
 import AuthContext from '../PrivateRoute/AuthContext';
+import Time from "./Time"
 
 function Navigation() {
   
@@ -30,30 +31,21 @@ function Navigation() {
               <Link to="/dog" style={myLink} className="mx-2">Dogs</Link>
               <Link to="/about" style={myLink} className="mx-2">About Us</Link>
             </Nav>
-            <Form className="d-flex">
-              <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />
-              <Link to="/search" style={myLink}><Button className='shadow-none mx-2' variant="outline-dark">Search</Button></Link>
-            </Form>
-
-
-
+            <Time />
+            {loggedInUser && (<Form className="d-flex">
+            <Button style={myLink} className="bg-warning shadow-none">{loggedInUser.username}</Button>
+            </Form>)}
             {!loggedInUser && (<Form className="d-flex">
             <Link to="/signup" style={myLink}><Button className='shadow-none mx-2' variant="outline-dark"><FontAwesomeIcon icon={faUserPlus}/>Sign Up</Button></Link>
             </Form>)}
-
-
             {!loggedInUser && (<Form className="d-flex">
            <Link to="/signin" style={myLink}><Button className='shadow-none mx-2' variant="outline-dark"><FontAwesomeIcon icon={faRightToBracket}/>Sign In</Button></Link>
             </Form>)}
-
 
            {loggedInUser && (<Form className="d-flex">
             <Link to="/signin" style={myLink}><Button onClick={() => authContext.logout()} className='shadow-none mx-2' variant="outline-dark"><FontAwesomeIcon icon={faRightToBracket}/>logout</Button></Link>
             </Form>)}
 
-            {loggedInUser && (<Form className="d-flex">
-            <Button style={myLink} className="bg-warning shadow-none">{loggedInUser.username}</Button>
-            </Form>)}
 
 
           </Navbar.Collapse>
