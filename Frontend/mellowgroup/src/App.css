@@ -178,6 +178,13 @@ a-link{
 	justify-content: center;
 }
 
+.mapRecTitle  {
+  font-size: 28px;
+  color: blue;
+  font-weight: 900;
+	justify-content: center;
+}
+
 .search {
   display: flex;
   justify-content: center;

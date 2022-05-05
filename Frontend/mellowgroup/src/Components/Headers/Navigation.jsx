@@ -19,7 +19,7 @@ function Navigation() {
     <>
       <Navbar bg="success" expand="lg" className='py-3 mx-auto'>
         <Container fluid>
-          <Navbar.Brand style={NavbarStyle}><Link to="/" style={myBLink}>Me<span className='text-danger'>llow</span></Link></Navbar.Brand>
+          <Navbar.Brand style={NavbarStyle}><Link to="/" style={myBLink}>Mel<span className='text-danger'>low</span></Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className="me-auto mx-auto my-2 my-lg-0" style={myLink} navbarScroll>

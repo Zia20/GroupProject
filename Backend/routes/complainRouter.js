@@ -13,7 +13,7 @@ const mustBeLoggedIn = (req, res, next) => {
 
 complainRouter.route("/")
 .all((req, res, next) => {
-    console.log(error.message);
+    // console.log(error.message);
     res.setHeader("Content-Type", "application/json");
     next();
 })
