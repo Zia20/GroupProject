@@ -1,72 +1,37 @@
-import "../App.css";
+import "../../App.css";
 import { useRef, useCallback } from "react";
-import ControlPanel from "./controlPanel";
-//import MapRef from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState, useEffect } from "react";
 import Map, {
-  Layer,
-  Source,
   Popup,
   Marker,
   NavigationControl,
+  GeolocateControl,
+  ScaleControl
 } from "react-map-gl";
-import geoJsonData from "./data/ParksSitesAddress.json";
-import ParkIcon from "@mui/icons-material/Park";
-import RoomIcon from "@mui/icons-material/Room";
+import { Box, Button, Typography } from "@mui/material";
+import recData from "../data/recreationData/RecreationMajor.json";
+import PoolIcon from '@mui/icons-material/Pool';
 import HomeIcon from "@mui/icons-material/Home";
-import NorthIcon from "@mui/icons-material/North";
-//import { Card, Typography, Link } from "@mui/material";
-//import { toggleButtonGroupClasses } from "@mui/material";
+import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
 import MapRatings from "./MapRatings";
+import SearchRec from "../Search/SearchRec";
+import { navStyle, navControlStyle, searchStyle } from "../Styles/Styles";
 
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
-const dataLayer = {
-  id: "data",
-  type: "fill",
-  paint: {
-    "fill-color": {
-      property: "percentile",
-      stops: [
-        [0, "#3288bd"],
-        [1, "#66c2a5"],
-        [2, "#abdda4"],
-        [3, "#e6f598"],
-        [4, "#ffffbf"],
-        [5, "#fee08b"],
-        [6, "#fdae61"],
-        [7, "#f46d43"],
-        [8, "#d53e4f"],
-      ],
-    },
-    "fill-opacity": 0.8,
-  },
-};
-
-const navStyle = {
-  position: "absolute",
-  top: 0,
-  left: 0,
-  padding: "10px",
-};
-
-const navControlStyle = {
-  right: 10,
-  top: 10,
-};
-
-const Maps = () => {
+const MapsRec = () => {
   const [long, setLong] = useState(-114.0719);
   const [lat, setLat] = useState(51.0447);
   const [zoom, setZoom] = useState(9.4);
-  const [viewport, setViewport] = useState();
   const [selectedPark, setSelectedPark] = useState(null);
+  const [viewport, setViewport] = useState();
+  const [searchPark, setSearchPark] = useState();
 
-  const mapContainer = useRef();
+//  const mapContainer = useRef();
 
   const initialViewState = {
-    container: mapContainer.current,
+    //container: mapContainer.current,
     longitude: long,
     latitude: lat,
     center: [-144, 51],
@@ -75,12 +40,15 @@ const Maps = () => {
     height: window.innerHeight,
   };
 
+  const [viewState, setViewState] = useState({
+    longitude: -114.0719,
+    latitude: 51.0447,
+    center: [-144, 51],
+    zoom: zoom,
+  });
+
   const mapRef = useRef(null);
   // {*mapRef.current.animateToRegion*}
-
-  const onSelectParks = useCallback(({ long, lat }) => {
-    mapRef.current?.flyTo({ center: [long, lat], duration: 2000 });
-  }, []);
 
   //popup escape
   useEffect(() => {
@@ -96,26 +64,38 @@ const Maps = () => {
     };
   }, []);
 
+  //Search Parks
+  useEffect(() => {
+    if (searchPark > -1) {
+      let park = recData[searchPark];
+      let parkLat = park.Latitude;
+      let parkLong = park.Longitude;
+      setViewState((cur) => {
+        return {
+          ...cur,
+          zoom: 13,
+          latitude: parkLat,
+          longitude: parkLong,
+        };
+      });
+    }
+  }, [searchPark]);
+
   return (
     <div>
       <Map
-        ref={mapRef}
         initialViewState={initialViewState}
-        {...viewport} //viewport not working
+        {...viewState}
+        onMove={(evt) => setViewState(evt.viewState)}
         mapboxAccessToken={AKEY}
-        onViewportChange={(nextViewport) => setViewport(nextViewport)}
         style={{ width: 1300, height: 660 }}
-        mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"
+        mapStyle="mapbox://styles/mapbox/streets-v11?optimize=true"
       >
-        <Source type="geojson" data={geoJsonData}>
-          <Layer {...dataLayer} />
-        </Source>
-
-        {geoJsonData.features.map((park) => (
+        {recData.map((park) => (
           <Marker
-            key={park.properties.asset_cd}
-            latitude={parseFloat(park.geometry.coordinates[0][0][0][1])}
-            longitude={parseFloat(park.geometry.coordinates[0][0][0][0])}
+            key={park.Name}
+            latitude={park.Latitude}
+            longitude={park.Longitude}
           >
             <button
               className="park-marker"
@@ -124,10 +104,12 @@ const Maps = () => {
                 setSelectedPark(park);
               }}
             >
-              <ParkIcon
-                color="success"
-                // style={{fontSize:viewport.zoom*20 }}
-                style={{ height: 5 * `${zoom}px`, width: 9 * `${zoom}px` }}
+              <PoolIcon
+                color="primary"
+                style={{
+                  height: 25 * `${viewState.zoom}px`,
+                  width: 15 * `${viewState.zoom}px`,
+                }}
               />
             </button>
           </Marker>
@@ -139,64 +121,67 @@ const Maps = () => {
           closeButton={true}
           closeOnClick={false}
         >
-          <RoomIcon
-            color="error"
-            //style={{fontSize:viewport.zoom *20 }}
-            style={{ height: 15 * `${zoom}px`, width: 15 * `${zoom}px` }}
-          />
         </Marker>
 
         {selectedPark ? (
           <Popup
-            latitude={parseFloat(selectedPark.geometry.coordinates[0][0][0][1])}
-            longitude={parseFloat(selectedPark.geometry.coordinates[0][0][0][0]
-            )}
+            latitude={parseFloat(selectedPark.Latitude)}
+            longitude={parseFloat(selectedPark.Longitude)}
             closeButton={true}
             closeOnClick={false}
             anchor="left"
           >
             <div className="card-container">
-              <label>Place</label>
-              <h5 className="place">{selectedPark.properties.steward}</h5>
-              <p className="descInfo">{selectedPark.properties.street}</p>
-              <label>Review</label>
-              <p className="descInfo">
-                This is the best city in Canada. Unexpected weather patterns!.
-              </p>
-              <label>Ratings</label>
+              <label className="popups-label">Place</label>
+              <h5 className="place">{selectedPark.Name}</h5>
+              <p className="descInfo">{selectedPark.Address}</p>
+              <label className="popups-label">Review</label><br/>
+              <a href="http://localhost:3000/engage">
+                <Button>
+                  Review
+                </Button>
+              </a><br/>
+              <label className="popups-label">Ratings</label>
               <MapRatings />
-              <label>Information</label>
-              <p className="descInfo">{selectedPark.properties.minortype}</p>
+              <label className="popups-label">Information</label>
+              <p className="descInfo">{selectedPark.Facilities}</p>
               <div className="btn">
-                <button className="btn-button">
+                <Button className="btn-button">
                   <a className="a-link">Survey..</a>
-                </button>
+                </Button>
               </div>
             </div>
           </Popup>
         ) : null}
 
         <div className="sidebar">
-          Longitude: {long}| Latitude: {lat} | Zoom: {zoom}
-        <div ref={mapRef}></div>
+          Longitude: {viewState.longitude.toFixed(2)}| Latitude:{" "}
+          {viewState.latitude.toFixed(2)} | Zoom: {viewState.zoom.toFixed(2)}
+          <div ref={mapRef}></div>
         </div>
 
-        <div>
+        <button>
           <HomeIcon
             className="home"
-            onClick={initialViewState}
+            onClick={(evt) => setViewState(initialViewState)}
           />
+        </button>
+
+        <div style={searchStyle}>
+          <SearchRec setSearchPark={setSearchPark} />
         </div>
+
         <div className="nav" style={navStyle}>
+          <GeolocateControl />
           <NavigationControl
             showCompass={true}
-            onViewportChange={(viewport) => this.setState({ viewport })}
+            onViewportChange={(viewport) => setViewport({ viewport })}
           />
+          <ScaleControl/>
         </div>
       </Map>
-      <ControlPanel onSelectParks={onSelectParks} />
     </div>
   );
 };
 
-export default Maps;
+export default MapsRec;

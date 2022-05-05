@@ -6,12 +6,12 @@ const mustBeLoggedIn = (req, res, next) => {
     if(req.user){
         return next();
     }
-    res.statusCode(401)
+    res.status(401)
 } 
 
 complainRouter.route("/")
 .all((req, res, next) => {
-    res.statusCode = 200;
+    // console.log(error.message);
     res.setHeader("Content-Type", "application/json");
     next();
 })
@@ -28,7 +28,7 @@ complainRouter.route("/")
     }
 })
 .put((req, res) => {
-    res.statusCode = 403;
+    console.log(error.message);
     res.end(`Putting your command`);
 })
 .delete((req, res) => {

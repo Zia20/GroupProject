@@ -3,10 +3,9 @@ const express = require("express");
 const app = express();
 const session = require("express-session");
 const passport = require("passport");
-const cors = require('cors')
-const path = require('path');
-const cookieParser = require('cookie-parser')
-var bodyParser = require('body-parser');
+// const cors = require('cors')
+// const path = require('path');
+const cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 
 const PORT = process.env.PORT || 3020;
@@ -39,8 +38,8 @@ app.use('/auth', authRouter);
 app.use('/complain', complainRouter);
 app.use('/dog', dogRouter);
 app.use('/signup', signupRouter); //Not in use
+app.use("/upload", uploadRouter);
 app.use("/auth", authRouter);
-app.use("/dog", dogRouter);
 app.use("/dog/:_id", dogRouter);
 app.use("/signup", signupRouter);
 

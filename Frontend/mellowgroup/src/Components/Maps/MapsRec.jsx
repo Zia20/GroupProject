@@ -7,23 +7,20 @@ import Map, {
   Marker,
   NavigationControl,
   GeolocateControl,
-  ScaleControl
+  ScaleControl,
 } from "react-map-gl";
 import { Box, Button, Typography } from "@mui/material";
-import geoJsonData from "../data/parksData/ParksSitesMajor.json";
-import ParkIcon from "@mui/icons-material/Park";
+import recData from "../data/recreationData/RecreationMajor.json";
+import PoolIcon from "@mui/icons-material/Pool";
 import HomeIcon from "@mui/icons-material/Home";
-<<<<<<< HEAD
-=======
-import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
->>>>>>> 298aa32e5595c8afcd60dc99937cf1fa2b7fded7
+import ColorLensIcon from "@mui/icons-material/ColorLens";
 import MapRatings from "./MapRatings";
-import Search from "../Search/Search";
+import SearchRec from "../Search/SearchRec";
 import { navStyle, navControlStyle, searchStyle } from "../Styles/Styles";
 
 const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
-const Maps = () => {
+const MapsRec = () => {
   const [long, setLong] = useState(-114.0719);
   const [lat, setLat] = useState(51.0447);
   const [zoom, setZoom] = useState(9.4);
@@ -31,7 +28,7 @@ const Maps = () => {
   const [viewport, setViewport] = useState();
   const [searchPark, setSearchPark] = useState();
 
-//  const mapContainer = useRef();
+  //  const mapContainer = useRef();
 
   const initialViewState = {
     //container: mapContainer.current,
@@ -70,7 +67,7 @@ const Maps = () => {
   //Search Parks
   useEffect(() => {
     if (searchPark > -1) {
-      let park = geoJsonData[searchPark];
+      let park = recData[searchPark];
       let parkLat = park.Latitude;
       let parkLong = park.Longitude;
       setViewState((cur) => {
@@ -92,9 +89,9 @@ const Maps = () => {
         onMove={(evt) => setViewState(evt.viewState)}
         mapboxAccessToken={AKEY}
         style={{ width: 1300, height: 660 }}
-        mapStyle="mapbox://styles/mapbox/outdoors-v11?optimize=true"
+        mapStyle="mapbox://styles/mapbox/streets-v11?optimize=true"
       >
-        {geoJsonData.map((park) => (
+        {recData.map((park) => (
           <Marker
             key={park.Name}
             latitude={park.Latitude}
@@ -107,8 +104,18 @@ const Maps = () => {
                 setSelectedPark(park);
               }}
             >
-              <ParkIcon
-                color="green"
+              {/* if ({selectedPark.Facilities} === "Art Centre")
+              {
+                <ColorLensIcon
+                  color="error"
+                  style={{
+                    height: 25 * `${viewState.zoom}px`,
+                    width: 15 * `${viewState.zoom}px`,
+                  }}
+                />
+              } */}
+              <PoolIcon
+                color="primary"
                 style={{
                   height: 25 * `${viewState.zoom}px`,
                   width: 15 * `${viewState.zoom}px`,
@@ -123,8 +130,7 @@ const Maps = () => {
           longitude={long}
           closeButton={true}
           closeOnClick={false}
-        >
-        </Marker>
+        ></Marker>
 
         {selectedPark ? (
           <Popup
@@ -138,16 +144,16 @@ const Maps = () => {
               <label className="popups-label">Place</label>
               <h5 className="place">{selectedPark.Name}</h5>
               <p className="descInfo">{selectedPark.Address}</p>
-              <label className="popups-label">Review</label><br/>
+              <label className="popups-label">Review</label>
+              <br />
               <a href="http://localhost:3000/engage">
-                <Button>
-                  Review
-                </Button>
-              </a><br/>
+                <Button>Review</Button>
+              </a>
+              <br />
               <label className="popups-label">Ratings</label>
               <MapRatings />
               <label className="popups-label">Information</label>
-              <p className="descInfo">{selectedPark.Description}</p>
+              <p className="descInfo">{selectedPark.Facilities}</p>
               <div className="btn">
                 <Button className="btn-button">
                   <a className="a-link">Survey..</a>
@@ -171,7 +177,7 @@ const Maps = () => {
         </button>
 
         <div style={searchStyle}>
-          <Search setSearchPark={setSearchPark} />
+          <SearchRec setSearchPark={setSearchPark} />
         </div>
 
         <div className="nav" style={navStyle}>
@@ -180,11 +186,11 @@ const Maps = () => {
             showCompass={true}
             onViewportChange={(viewport) => setViewport({ viewport })}
           />
-          <ScaleControl/>
+          <ScaleControl />
         </div>
       </Map>
     </div>
   );
 };
 
-export default Maps;
+export default MapsRec;

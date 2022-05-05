@@ -1,0 +1,182 @@
+[
+ {
+  "City": "Calgary",
+  "Name": "Rocky Beach",
+  "Address": "Calgary, AB T2S 0L9",
+  "Facilities": "Beach",
+  "Latitude": 51.0305,
+  "Longitude": -114.0635,
+  "LatLong": "51.0305, -114.0635"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Sikome Lake ",
+  "Address": "Bow Bottom Trail S.E.",
+  "Facilities": "Beach",
+  "Latitude": 50.9002,
+  "Longitude": -114.0156,
+  "LatLong": "50.9002, -114.0156"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Sandy Beach Park",
+  "Address": "4500 14A St. S.W.",
+  "Facilities": "Beach",
+  "Latitude": 51.0096,
+  "Longitude": -114.0903,
+  "LatLong": "51.0096, -114.0904"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Thomson Family Park",
+  "Address": "1236 16 Ave SW, Calgary, AB T3C 0Z4",
+  "Facilities": "Family",
+  "Latitude": 51.0388,
+  "Longitude": -114.0905,
+  "LatLong": "51.0388, -114.0905"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Killarney Aquatic & Recreation Centre",
+  "Address": "1919 29 St SW, Calgary, AB T3E 2J7",
+  "Facilities": "Aquatic Swimming pool fitness",
+  "Latitude": 51.0373,
+  "Longitude": -114.1302,
+  "LatLong": "51.0373, -114.1302"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Inglewood Aquatic Centre",
+  "Address": "1527 17 Ave SE, Calgary, AB",
+  "Facilities": "Aquatic Swimming pool fitness",
+  "Latitude": 51.0376,
+  "Longitude": -114.0282,
+  "LatLong": "51.0376, -114.0282"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Glenmore Aquatic Centre",
+  "Address": "5330 19 St SW, Calgary, AB T3E 1P2",
+  "Facilities": "Aquatic Swimming pool fitness",
+  "Latitude": 51.0066,
+  "Longitude": -114.1055,
+  "LatLong": "51.0066, -114.1055"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Foothills Aquatic Centre",
+  "Address": "2915 24 Ave NW, Calgary, AB T2N 4L6",
+  "Facilities": "Aquatic Swimming pool fitness",
+  "Latitude": 51.0742,
+  "Longitude": -114.1256,
+  "LatLong": "51.0449, -114.1239"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Shaganappi Point Golf Course",
+  "Address": "1200 26 Street S.W., Calgary, AB",
+  "Facilities": "Golf Course",
+  "Latitude": 51.0449,
+  "Longitude": -114.1237,
+  "LatLong": "51.0448, -114.1237"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Lakeview Golf Course",
+  "Address": "5840 19 Street S.W., Calgary, AB",
+  "Facilities": "Golf Course",
+  "Latitude": 51.0018,
+  "Longitude": -114.1063,
+  "LatLong": "51.0018, -114.1063"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Maple Ridge Golf Course",
+  "Address": "1240 Mapleglade Drive S.E., Calgary, AB",
+  "Facilities": "Golf Course",
+  "Latitude": 50.9513,
+  "Longitude": -114.0328,
+  "LatLong": "50.9513, -114.0328"
+ },
+ {
+  "City": "Calgary",
+  "Name": "George Blundun",
+  "Address": "5020 26 Avenue S.W, Calgary, AB",
+  "Facilities": "Hockey Arenas",
+  "Latitude": 51.0321,
+  "Longitude": -114.1598,
+  "LatLong": "51.0321, -114.1598"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Jimmie Condon",
+  "Address": "502 Heritage Drive S.W., Calgary, AB",
+  "Facilities": "Hockey Arenas",
+  "Latitude": 50.9803,
+  "Longitude": -114.0743,
+  "LatLong": "50.9803, -114.0743"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Max Bell Centre – Ken Bracko",
+  "Address": "1001 Barlow Trail S.E, Calgary, AB",
+  "Facilities": "Hockey Arenas",
+  "Latitude": 51.0422,
+  "Longitude": -114.0042,
+  "LatLong": "51.0422, -114.0042"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Murray Copot",
+  "Address": "6727 Centre Street N.W., Calgary, AB",
+  "Facilities": "Hockey Arenas",
+  "Latitude": 51.1132,
+  "Longitude": -114.0653,
+  "LatLong": "51.1132, -114.0653"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Southland – Ed Whalen",
+  "Address": "2000 Southland Drive S.W., Calgary, AB",
+  "Facilities": "Leisure Centre Arena",
+  "Latitude": 50.9627,
+  "Longitude": -114.1082,
+  "LatLong": "50.9627, -114.1082"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Village Square – Wally Kozak",
+  "Address": "2623 56 Street N.E., Calgary, AB",
+  "Facilities": "Hockey Arenas",
+  "Latitude": 51.0761,
+  "Longitude": -113.9541,
+  "LatLong": "51.0761, -113.9541"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Annex building fields",
+  "Address": "7000 48 St SE, Calgary, AB T2C 4E1",
+  "Facilities": "Outdoor Soccer centre",
+  "Latitude": 50.9925,
+  "Longitude": -113.9603,
+  "LatLong": "50.9925, -113.9603"
+ },
+ {
+  "City": "Calgary",
+  "Name": "North Mount Pleasant",
+  "Address": "523 27 Ave. N.W., Calgary, AB",
+  "Facilities": "Art Centre",
+  "Latitude": 51.0768,
+  "Longitude": -114.0775,
+  "LatLong": "51.0768, -114.0775"
+ },
+ {
+  "City": "Calgary",
+  "Name": "Wildflower",
+  "Address": "3363 Spruce Dr. S.W., Calgary, AB",
+  "Facilities": "Art Centre",
+  "Latitude": 51.1034,
+  "Longitude": -114.1505,
+  "LatLong": "51.1034, -114.1505"
+ }
+]
