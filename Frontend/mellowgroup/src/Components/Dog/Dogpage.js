@@ -65,7 +65,7 @@ const Dogpage = () => {
     <>
       <Container>
         <Row>
-          <h1 className="text-warning">Off leash Dog parks near me</h1>
+          <h1 className="text-warning text-center">Off leash Dog parks near me</h1>
           <div>
             <SearchDogs setSearchDogs={setFilteredDogs} refresh={refresh} />
           </div>

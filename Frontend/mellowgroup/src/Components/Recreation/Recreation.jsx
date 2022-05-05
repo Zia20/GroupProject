@@ -7,6 +7,7 @@ import Image3 from "../../images/worldBG.png";
 import { recreatePage, recreated, weatherInput } from "../Styles/Styles";
 
 import { Container, Card, Row, Col, Button, ProgressBar, Spinner } from 'react-bootstrap';
+import WebMapRec from '../WebMapRec';
 
 function Recreation() {
 
@@ -48,6 +49,7 @@ function Recreation() {
         </Row>
       </Container>
     </div>
+    <WebMapRec/>
     <div style={recreatePage}>
       <Container>
         <Row className='mt-3'>
@@ -83,23 +85,61 @@ function Recreation() {
         </Row>
       </Container>
     </div>
-    <div style={recreated}>
-      <h5>Mellow Group</h5>
-      <p>Citizen to City Progress Reports</p>
-      <Spinner animation="grow" variant="primary" />
-      <Spinner animation="grow" variant="secondary" />
-      <Spinner animation="grow" variant="dark" />
-      <Spinner animation="grow" variant="danger" />
-      <Spinner animation="grow" variant="warning" />
-      <Spinner animation="grow" variant="info" />
-      <Spinner animation="grow" variant="light" />
-      <Spinner animation="grow" variant="success" />
-      <ProgressBar striped variant="success" animated now={90} label={`Mellow Progress`} />
-      <ProgressBar striped variant="info" animated now={60} label={`Recreation Completed`}/>
-      <ProgressBar striped variant="warning" animated now={85} label={`Campground Progress`} />
-      <ProgressBar striped variant="danger" animated now={75} label={`Parks Completed`}/>
-   </div>
-   <div style={recreatePage}>
+    <div style={recreatePage}>
+    <Container>
+      <Row>
+        <Col>
+          <Card style={{ width: '18rem', height: "20rem" }}>
+          <Card.Body>
+            <Card.Title>YYC Arenas</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <Button href="#">Calgary Parks</Button>
+          </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: '18rem', height: "20rem" }}>
+          <Card.Body>
+            <Card.Title>YYC Parks</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <Button href="#" style={{justifyContent: "center"}}>Calgary Parks</Button>
+          </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: '18rem', height: "20rem" }}>
+          <Card.Body>
+            <Card.Title>YYC Campgrounds</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <Button href="#">Calgary Parks</Button>
+          </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: '18rem', height: "20rem" }}>
+          <Card.Body>
+            <Card.Title>Dog Parks</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <Button href="#">Calgary Parks</Button>
+          </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+    </div>
+    <div>
       <Container >
         <Row className='mt-3'>
           <Col>
@@ -115,6 +155,22 @@ function Recreation() {
         </Row>
       </Container>
     </div>
+    <div style={recreated}>
+      <h5>Mellow Group</h5>
+      <p>Citizen to City Progress Reports</p>
+      <Spinner animation="grow" variant="primary" />
+      <Spinner animation="grow" variant="secondary" />
+      <Spinner animation="grow" variant="success" />
+      <Spinner animation="grow" variant="danger" />
+      <Spinner animation="grow" variant="warning" />
+      <Spinner animation="grow" variant="info" />
+      <Spinner animation="grow" variant="light" />
+      <Spinner animation="grow" variant="dark" />
+      <ProgressBar striped variant="success" animated now={40} label={`Parks Completed`} />
+      <ProgressBar striped variant="info" animated now={20} label={`Recreation Completed`}/>
+      <ProgressBar striped variant="warning" animated now={60} label={`Campground Progress`} />
+      <ProgressBar striped variant="danger" animated now={80} label={`Mellow Progress`}/>
+   </div>
     <div>
       <Container>
         <Row className='mt-3'>
@@ -128,56 +184,6 @@ function Recreation() {
           </Col>
         </Row>
       </Container>
-    </div>
-    <div style={recreatePage}>
-    <Container>
-      <Row>
-        <Col>
-          <Card style={{ width: '18rem', height: "20rem" }}>
-          <Card.Body>
-            <Card.Title>YYC Arenas</Card.Title>
-            <Card.Text>
-              YYC offers the best parks for tourism and family outdoors funs
-            </Card.Text>
-            <Button href="#">Calgary Parks</Button>
-          </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem', height: "20rem" }}>
-          <Card.Body>
-            <Card.Title>YYC Parks</Card.Title>
-            <Card.Text>
-              Explore our parks and stay close to nature.
-            </Card.Text>
-            <Button href="#" style={{justifyContent: "center"}}>Calgary Parks</Button>
-          </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem', height: "20rem" }}>
-          <Card.Body>
-            <Card.Title>YYC Campgrounds</Card.Title>
-            <Card.Text>
-              Our Campground welcome all our visitors with friendly experience 
-            </Card.Text>
-            <Button href="#">Calgary Parks</Button>
-          </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={{ width: '18rem', height: "20rem" }}>
-          <Card.Body>
-            <Card.Title>Dog Parks</Card.Title>
-            <Card.Text>
-              Visit YYC, visit parks and recreations
-            </Card.Text>
-            <Button href="#">Calgary Parks</Button>
-          </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
     </div>
   </>
   )

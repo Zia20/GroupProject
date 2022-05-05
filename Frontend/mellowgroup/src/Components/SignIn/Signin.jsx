@@ -1,12 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import "font-awesome/css/font-awesome.min.css";
 import Images from "../../images/amuseme.png";
 import { signupStyle } from "../Styles/Styles";
 import AuthContext from "../PrivateRoute/AuthContext"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Signin = () => {
 
@@ -65,7 +62,6 @@ const Signin = () => {
       </div>
       {!isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" type="submit">Sign in</button>}
       {isPending && <button className="w-100 btn btn-lg btn-primary shadow-none" disabled type="submit">Adding...</button>}
-      <button className="w-100 btn btn-lg btn-dark shadow-none mt-3" type="submit"><FontAwesomeIcon className='px-2 mx-2 text-center' icon={faGithub} size="2x"/></button>
       <p className="mt-5 mb-3 text-muted">&copy; Mellow 2022</p>
     </form>
   )

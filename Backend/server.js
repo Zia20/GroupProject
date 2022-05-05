@@ -20,18 +20,24 @@ const dogRouter = require("./routes/dogRouter");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(session({secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: false}));
 // app.use(logger("dev"));
 app.use(passport.initialize());
 app.use(passport.session());
 
 //Website routing
+<<<<<<< HEAD
 app.use('/upload', uploadRouter);
 app.use('/auth', authRouter);
 app.use('/complain', complainRouter);
 app.use('/dog', dogRouter);
 // app.use('/signup', signupRouter); //Not in use
 app.use("/upload", uploadRouter);
+=======
+app.use("/upload", uploadRouter);
+app.use("/auth", authRouter);
+app.use("/complain", complainRouter);
+app.use("/dog", dogRouter);
+>>>>>>> 53e28e8e6a59b4a1827163c1d4d10d253e8b2967
 app.use("/dog/:_id", dogRouter);
 // app.use("/signup", signupRouter);
 
