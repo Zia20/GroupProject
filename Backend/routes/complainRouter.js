@@ -2,8 +2,6 @@ const express = require("express");
 const complainRouter = express.Router();
 const Complain = require("../models/complains");
 
-
-
 const mustBeLoggedIn = (req, res, next) => {
     if(req.user){
         return next();
