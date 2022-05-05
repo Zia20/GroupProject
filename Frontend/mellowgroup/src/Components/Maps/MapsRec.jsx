@@ -11,7 +11,7 @@ import Map, {
 } from "react-map-gl";
 import { Box, Button, Typography } from "@mui/material";
 import recData from "../data/recreationData/RecreationMajor.json";
-import ParkIcon from "@mui/icons-material/Park";
+import PoolIcon from '@mui/icons-material/Pool';
 import HomeIcon from "@mui/icons-material/Home";
 import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
 import MapRatings from "./MapRatings";
@@ -104,8 +104,8 @@ const MapsRec = () => {
                 setSelectedPark(park);
               }}
             >
-              <ParkIcon
-                color="green"
+              <PoolIcon
+                color="primary"
                 style={{
                   height: 25 * `${viewState.zoom}px`,
                   width: 15 * `${viewState.zoom}px`,
