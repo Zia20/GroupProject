@@ -17,7 +17,6 @@ import Admin from "./Components/SignIn/Admin";
 import AuthProvider from "./Components/PrivateRoute/AuthProvider";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Logout from "./Components/SignIn/Logout";
-import WebMapRec from "./Components/WebMapRec";
 
 function App() {
 
@@ -28,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Web />} />
           {/* <Route path="/recreation" element={<Recreation />} /> */}
-          <Route path="/recreation" element={<WebMapRec />} />
+          <Route path="/recreation" element={<Recreation />} />
           <Route path="/parks" element={<Parks />} />
           <Route path="/engage" element={<Engage />} />
           <Route path="/signup" element={<Signup />} />

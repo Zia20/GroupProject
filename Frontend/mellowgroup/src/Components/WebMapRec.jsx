@@ -16,7 +16,6 @@ function WebMapRec() {
           </Col>
         </Container>
       </div>
-      <Recreation />
     </>
   );
 }

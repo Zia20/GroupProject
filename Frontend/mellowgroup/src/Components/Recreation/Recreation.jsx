@@ -7,6 +7,7 @@ import Image3 from "../../images/worldBG.png";
 import { recreatePage, recreated, weatherInput } from "../Styles/Styles";
 
 import { Container, Card, Row, Col, Button, ProgressBar, Spinner } from 'react-bootstrap';
+import WebMapRec from '../WebMapRec';
 
 function Recreation() {
 
@@ -48,6 +49,7 @@ function Recreation() {
         </Row>
       </Container>
     </div>
+    <WebMapRec/>
     <div style={recreatePage}>
       <Container>
         <Row className='mt-3'>
