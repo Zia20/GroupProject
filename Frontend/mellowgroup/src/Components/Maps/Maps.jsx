@@ -105,7 +105,7 @@ const Maps = () => {
               }}
             >
               <ParkIcon
-                color="green"
+                color="primary"
                 style={{
                   height: 25 * `${viewState.zoom}px`,
                   width: 15 * `${viewState.zoom}px`,
@@ -114,14 +114,6 @@ const Maps = () => {
             </button>
           </Marker>
         ))}
-
-        <Marker
-          latitude={lat}
-          longitude={long}
-          closeButton={true}
-          closeOnClick={false}
-        >
-        </Marker>
 
         {selectedPark ? (
           <Popup

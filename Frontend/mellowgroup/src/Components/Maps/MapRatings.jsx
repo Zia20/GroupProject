@@ -32,7 +32,6 @@ const MapRatings = () => {
             </label>
           );
         })}
-        <p>The rating is {rating}.</p>
       </div>
     </>
   );
