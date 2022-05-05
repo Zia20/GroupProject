@@ -7,13 +7,13 @@ import Map, {
   Marker,
   NavigationControl,
   GeolocateControl,
-  ScaleControl
+  ScaleControl,
 } from "react-map-gl";
 import { Box, Button, Typography } from "@mui/material";
 import recData from "../data/recreationData/RecreationMajor.json";
-import PoolIcon from '@mui/icons-material/Pool';
+import PoolIcon from "@mui/icons-material/Pool";
 import HomeIcon from "@mui/icons-material/Home";
-import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
+import ColorLensIcon from "@mui/icons-material/ColorLens";
 import MapRatings from "./MapRatings";
 import SearchRec from "../Search/SearchRec";
 import { navStyle, navControlStyle, searchStyle } from "../Styles/Styles";
@@ -28,7 +28,7 @@ const MapsRec = () => {
   const [viewport, setViewport] = useState();
   const [searchPark, setSearchPark] = useState();
 
-//  const mapContainer = useRef();
+  //  const mapContainer = useRef();
 
   const initialViewState = {
     //container: mapContainer.current,
@@ -104,6 +104,16 @@ const MapsRec = () => {
                 setSelectedPark(park);
               }}
             >
+              {/* if ({selectedPark.Facilities} === "Art Centre")
+              {
+                <ColorLensIcon
+                  color="error"
+                  style={{
+                    height: 25 * `${viewState.zoom}px`,
+                    width: 15 * `${viewState.zoom}px`,
+                  }}
+                />
+              } */}
               <PoolIcon
                 color="primary"
                 style={{
@@ -120,8 +130,7 @@ const MapsRec = () => {
           longitude={long}
           closeButton={true}
           closeOnClick={false}
-        >
-        </Marker>
+        ></Marker>
 
         {selectedPark ? (
           <Popup
@@ -135,12 +144,12 @@ const MapsRec = () => {
               <label className="popups-label">Place</label>
               <h5 className="place">{selectedPark.Name}</h5>
               <p className="descInfo">{selectedPark.Address}</p>
-              <label className="popups-label">Review</label><br/>
+              <label className="popups-label">Review</label>
+              <br />
               <a href="http://localhost:3000/engage">
-                <Button>
-                  Review
-                </Button>
-              </a><br/>
+                <Button>Review</Button>
+              </a>
+              <br />
               <label className="popups-label">Ratings</label>
               <MapRatings />
               <label className="popups-label">Information</label>
@@ -177,7 +186,7 @@ const MapsRec = () => {
             showCompass={true}
             onViewportChange={(viewport) => setViewport({ viewport })}
           />
-          <ScaleControl/>
+          <ScaleControl />
         </div>
       </Map>
     </div>
