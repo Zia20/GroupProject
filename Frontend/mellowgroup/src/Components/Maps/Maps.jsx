@@ -1,6 +1,5 @@
 import "../../App.css";
 import { useRef, useCallback } from "react";
-import ControlPanel from "./controlPanel";
 import "mapbox-gl/dist/mapbox-gl.css";
 import React, { useState, useEffect } from "react";
 import Map, {
@@ -28,10 +27,10 @@ const Maps = () => {
   const [viewport, setViewport] = useState();
   const [searchPark, setSearchPark] = useState();
 
-  const mapContainer = useRef();
+//  const mapContainer = useRef();
 
   const initialViewState = {
-    container: mapContainer.current,
+    //container: mapContainer.current,
     longitude: long,
     latitude: lat,
     center: [-144, 51],
@@ -49,10 +48,6 @@ const Maps = () => {
 
   const mapRef = useRef(null);
   // {*mapRef.current.animateToRegion*}
-
-  const onSelectParks = useCallback(({ long, lat }) => {
-    mapRef.current?.flyTo({ center: [long, lat], duration: 2000 });
-  }, []);
 
   //popup escape
   useEffect(() => {
@@ -109,7 +104,7 @@ const Maps = () => {
               }}
             >
               <ParkIcon
-                color="light blue"
+                color="green"
                 style={{
                   height: 25 * `${viewState.zoom}px`,
                   width: 15 * `${viewState.zoom}px`,
@@ -184,7 +179,6 @@ const Maps = () => {
           <ScaleControl/>
         </div>
       </Map>
-      <ControlPanel onSelectParks={onSelectParks} />
     </div>
   );
 };

@@ -26,7 +26,7 @@ const SearchDogs = ({ setSearchDogs, refresh }) => {
     <div className="search">
       <input
         type="text"
-        placeholder="Search Dogs..."
+        placeholder="Search Offleash Dog Park..."
         onChange={(evt) => {
           setText(evt.target.value);
         }}

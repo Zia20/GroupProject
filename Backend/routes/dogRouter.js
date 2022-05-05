@@ -11,7 +11,6 @@ dogRouter.route("/")
 .get(async (req, res) => {
     try {
         const dog = await getAllDogs(req.query.description);
-        console.log(dog)
         res.send(dog)
     } catch (error) {
         console.log(error.message);
@@ -24,7 +23,7 @@ dogRouter.route("/")
         const addedDog = await createDog(newDog);
         res.send(addedDog)
     } catch (error) {
-        res.status(500).send("Error");
+        res.status(500).send(error);
         console.log(error.message);
     }
 })
