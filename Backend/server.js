@@ -25,19 +25,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Website routing
-<<<<<<< HEAD
-app.use('/upload', uploadRouter);
-app.use('/auth', authRouter);
-app.use('/complain', complainRouter);
-app.use('/dog', dogRouter);
-// app.use('/signup', signupRouter); //Not in use
-app.use("/upload", uploadRouter);
-=======
 app.use("/upload", uploadRouter);
 app.use("/auth", authRouter);
 app.use("/complain", complainRouter);
 app.use("/dog", dogRouter);
->>>>>>> 53e28e8e6a59b4a1827163c1d4d10d253e8b2967
 app.use("/dog/:_id", dogRouter);
 // app.use("/signup", signupRouter);
 
