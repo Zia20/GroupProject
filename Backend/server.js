@@ -3,17 +3,10 @@ const express = require("express");
 const app = express();
 const session = require("express-session");
 const passport = require("passport");
-<<<<<<< HEAD
-const cors = require('cors')
-const path = require('path');
-const cookieParser = require('cookie-parser')
-var bodyParser = require('body-parser');
-=======
 // const cors = require('cors')
 // const path = require('path');
 const cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
->>>>>>> b13aba049d51e46d0aef1ac303cd776c95dcee6b
 
 const PORT = process.env.PORT || 3020;
 
@@ -27,9 +20,6 @@ const signupRouter = require("./routes/signupRouter"); //Not is use
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
-<<<<<<< HEAD
-app.use(session({secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: false}));
-=======
 // app.use(logger("dev"));
 app.use(
   session({
@@ -38,18 +28,10 @@ app.use(
     saveUninitialized: false,
   })
 );
->>>>>>> b13aba049d51e46d0aef1ac303cd776c95dcee6b
 app.use(passport.initialize());
 app.use(passport.session());
 
 //Website routing
-<<<<<<< HEAD
-app.use('/upload', uploadRouter);
-app.use('/auth', authRouter);
-app.use('/complain', complainRouter);
-app.use('/dog', dogRouter);
-app.use('/signup', signupRouter); //Not in use
-=======
 app.use("/upload", uploadRouter);
 app.use("/auth", authRouter);
 app.use("/complain", complainRouter);
@@ -63,7 +45,6 @@ app.use("/signup", signupRouter);
 // const loginRouter = require("./routes/loginRouter");
 
 // app.use(express.static(path.join(__dirname,'./public')));
->>>>>>> b13aba049d51e46d0aef1ac303cd776c95dcee6b
 
 app.listen(PORT, function () {
   console.log(`Server is running on port: ${PORT}`);
