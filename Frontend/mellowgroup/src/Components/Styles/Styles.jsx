@@ -19,16 +19,18 @@ export const weatherInput = {
   //Navigation Bar Styles
 export const myBLink = {
   textDecoration: "none",
-  fontSize: "25px",
+  fontSize: "26px",
   color: "black",
   shadow:"none"
 }
 
 export const myLink = {
   textDecoration: "none",
-  fontSize: "20px",
+  fontSize: "28px",
   color: "black",
-  shadow:"none"
+  shadow:"none",
+  textIndent: "1rem",
+  fontFamily: "Arial"
 }
 
 export const NavbarStyle = {

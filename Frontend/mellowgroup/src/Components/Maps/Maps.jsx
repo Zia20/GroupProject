@@ -18,7 +18,8 @@ import MapRatings from "./MapRatings";
 import Search from "../Search/Search";
 import { navStyle, navControlStyle, searchStyle } from "../Styles/Styles";
 
-const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
+// const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
+const AKEY = "pk.eyJ1IjoiYXRhZW5lIiwiYSI6ImNsMnRpc3EwcDAxaXMzY3FlOGg4a3A5ZmEifQ.dtj_XStiWa_Uy15mfMAM7Q"
 
 const Maps = () => {
   const [long, setLong] = useState(-114.0719);

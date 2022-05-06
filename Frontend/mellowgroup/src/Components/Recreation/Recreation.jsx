@@ -14,7 +14,7 @@ function Recreation() {
   const [ weatherData, setWeatherData ] = useState([{}]);
   const [ city, setCity ] = useState('')
 
-  const APIKEY ="d9ed8b0bed9ec132fed0d22c1998912e"
+  const APIKEY ="eb9a4f501594fa74eabf2097e53cea33"
   
   const weatherUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=metric`;
 
