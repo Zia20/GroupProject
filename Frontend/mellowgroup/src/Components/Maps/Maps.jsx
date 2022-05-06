@@ -134,6 +134,7 @@ const Maps = () => {
                 </Button>
               </a><br/>
               <label className="popups-label">Ratings</label>
+              {/* <p className="star">{(selectedPark.Ratings).fill(<MapRatings className="star"/>)}</p> */}
               <MapRatings />
               <label className="popups-label">Information</label>
               <p className="descInfo">{selectedPark.Description}</p>
