@@ -20,15 +20,21 @@ const dogRouter = require("./routes/dogRouter");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
-// app.use(logger("dev"));
+
+app.use(session({secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(session({secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: false}));
 
+
 //Website routing
+<<<<<<< HEAD
+=======
+// app.use('/signup', signupRouter); //Not in use
+>>>>>>> 1bc8f41ee6ee97fa32e62ac12e0d0a8145a83392
 app.use("/upload", uploadRouter);
 app.use("/auth", authRouter);
-app.use("/complain", complainRouter);
+app.use("/engage", complainRouter);
 app.use("/dog", dogRouter);
 app.use("/dog/:_id", dogRouter);
 // app.use("/signup", signupRouter);

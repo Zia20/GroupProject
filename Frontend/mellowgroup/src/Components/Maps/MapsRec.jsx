@@ -11,7 +11,8 @@ import Map, {
 } from "react-map-gl";
 import { Box, Button, Typography } from "@mui/material";
 import recData from "../data/recreationData/RecreationMajor.json";
-import PoolIcon from "@mui/icons-material/Pool";
+// import PoolIcon from "@mui/icons-material/Pool";
+import SurfingIcon from '@mui/icons-material/Surfing';
 import HomeIcon from "@mui/icons-material/Home";
 import ColorLensIcon from "@mui/icons-material/ColorLens";
 import MapRatings from "./MapRatings";
@@ -104,33 +105,16 @@ const MapsRec = () => {
                 setSelectedPark(park);
               }}
             >
-              {/* if ({selectedPark.Facilities} === "Art Centre")
-              {
-                <ColorLensIcon
-                  color="error"
-                  style={{
-                    height: 25 * `${viewState.zoom}px`,
-                    width: 15 * `${viewState.zoom}px`,
-                  }}
-                />
-              } */}
-              <PoolIcon
+              <SurfingIcon zoom={100}
                 color="primary"
                 style={{
-                  height: 25 * `${viewState.zoom}px`,
-                  width: 15 * `${viewState.zoom}px`,
+                  height: "30px",
+                  width: "30px",
                 }}
               />
             </button>
           </Marker>
         ))}
-
-        <Marker
-          latitude={lat}
-          longitude={long}
-          closeButton={true}
-          closeOnClick={false}
-        ></Marker>
 
         {selectedPark ? (
           <Popup

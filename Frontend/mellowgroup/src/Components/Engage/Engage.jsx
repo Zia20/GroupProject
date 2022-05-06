@@ -33,7 +33,7 @@ const Engage = () => {
     console.log(newComplain);
     const data = JSON.stringify(newComplain)
     try {
-     await fetch("/complain", {
+     await fetch("/engage", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json" },
@@ -57,12 +57,12 @@ const Engage = () => {
           <Col>
             <div> 
               <h1 className='animate__animated animate__shakeY'>We are here to assist you!</h1>
-              <h5>Please complete the form below for your complaints</h5>
+              <h5>Please complete the form below</h5>
               <form onSubmit={handleSubmit}>
-                <label><br/>Complainant's First Name:</label><br />
+                <label><br/>First Name:</label><br />
                 <input className="rounded text-success" type="text" required value={firstName} onChange={ (event) => {setFirstName(event.target.value)} } /><br />
 
-                <label>Complainant's Last Name:</label><br />
+                <label>Last Name:</label><br />
                 <input className="rounded text-success" type="text" required value={lastName} onChange={(event) => {setLastName(event.target.value)}} /><br />
 
                 <label>Email:</label><br />
@@ -73,6 +73,7 @@ const Engage = () => {
 
                 <label htmlFor="complaints">Choose a type:</label><br />
                 <select className="rounded mb-3" id="complaints" value={choose} onChange={(event) => {setChoose(event.target.value)}}>
+                <option value="Review">Review</option>
                   <option value="Wildlife">Wildlife</option>
                   <option value="Assault">Assault</option>
                   <option value="Damaged Items">Damaged Items</option>

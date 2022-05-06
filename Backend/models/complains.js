@@ -21,7 +21,7 @@ const complainSchema = new Schema({
     },
     choose: {
         type: String,
-        required: true
+        required: false
     },
     text: {
         type: String,

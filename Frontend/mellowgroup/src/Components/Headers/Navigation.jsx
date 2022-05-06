@@ -45,7 +45,6 @@ function Navigation() {
             <Link to="/signin" style={myLink}><Button onClick={() => authContext.logout()} className='shadow-none mx-2' variant="outline-dark"><FontAwesomeIcon icon={faRightToBracket}/>logout</Button></Link>
             </Form>)}
             {loggedInUser && (<Form className="d-flex">
-            <Button style={myLink} className="bg-warning shadow-none">{loggedInUser.username}</Button>
             </Form>)}
           </Navbar.Collapse>
         </Container>

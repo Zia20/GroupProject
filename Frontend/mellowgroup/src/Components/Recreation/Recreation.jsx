@@ -41,7 +41,9 @@ function Recreation() {
           <Col className='mt-5 pl-3'>
               <h1>YYC recreation, the best among <span className='text-success'>western Canada</span>.</h1>
               <h4 className='text-danger'>Visit our parks and recreational centers. Visit YYC</h4>
+              <a href="https://www.calgary.ca/csps/recreation/rentals-and-bookings.html">        
               <Button className='mt-3 shadow-none' variant="outline-success" size="lg">Book Now</Button>
+              </a>
           </Col>
           <Col>
             <img alt='parks' src={Images}/>
