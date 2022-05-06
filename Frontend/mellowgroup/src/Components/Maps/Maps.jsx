@@ -107,8 +107,8 @@ const Maps = () => {
               <ParkIcon
                 color="primary"
                 style={{
-                  height: 25 * `${viewState.zoom}px`,
-                  width: 15 * `${viewState.zoom}px`,
+                  height: "30px",
+                  width: "40px",
                 }}
               />
             </button>

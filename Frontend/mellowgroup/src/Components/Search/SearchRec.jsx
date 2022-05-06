@@ -7,7 +7,8 @@ const Search = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const search =() => {
     let selectedPark = recData.findIndex((park)=>{
-      return park.Name.toLocaleLowerCase().includes(searchTerm.toLowerCase()) 
+      return park.Name.toLocaleLowerCase().includes(searchTerm.toLowerCase()) ||
+      park.Facilities.toLocaleLowerCase().includes(searchTerm.toLowerCase())
     })
     setSearchPark(selectedPark)
   }
