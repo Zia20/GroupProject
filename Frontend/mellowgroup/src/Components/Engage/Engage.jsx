@@ -4,6 +4,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import Images from "../../images/contactus.jpg";
 import Image1 from "../../images/fire.png";
 import { CampFormStyles } from "../Styles/Styles";
+import Calenda from './Calendar';
 
 const Engage = () => {
 
@@ -106,6 +107,7 @@ const Engage = () => {
           </Col>
         </Row>
       </Container>
+      <Calenda />
     </div>
     </div>
     
