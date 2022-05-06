@@ -1,13 +1,13 @@
-  //Weateher Page Sytles
+//Weateher Page Sytles
 export const recreatePage = {
-    backgroundImage: "linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)",
-    padding: "50px",
-  }
+  backgroundImage: "linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)",
+  padding: "50px",
+};
 
-  export const recreated = {
-    backgroundImage: "linear-gradient(180deg, #2af598 0%, #009efd 100%)",
-    padding: "50px",
-  }
+export const recreated = {
+  backgroundImage: "linear-gradient(180deg, #2af598 0%, #009efd 100%)",
+  padding: "50px",
+};
 
 export const weatherInput = {
   display: "flex",
@@ -15,35 +15,38 @@ export const weatherInput = {
   padding: "10px",
   justifyContent: "center",
   alignItems: "center",
-}
-  //Navigation Bar Styles
+};
+//Navigation Bar Styles
 export const myBLink = {
   textDecoration: "none",
-  fontSize: "25px",
+  fontSize: "30px",
+
   color: "black",
-  shadow:"none"
-}
+  shadow: "none",
+};
 
 export const myLink = {
   textDecoration: "none",
-  fontSize: "20px",
+  textIndent: "1.25em",
+  fontSize: "28px",
+  fontFamily: "Arial",
   color: "black",
-  shadow:"none"
-}
+  shadow: "none",
+};
 
 export const NavbarStyle = {
   padding: "10px",
   fontFamily: "Cursive",
   marginLeft: "10px",
-  fontSpacing: "20px"
-}
-  //About us Page Styles
+  fontSpacing: "20px",
+};
+//About us Page Styles
 export const aboutStyles = {
   padding: "10px",
   fontFamily: "Arial",
 };
 
-  //Engage Form Styles
+//Engage Form Styles
 export const CampFormStyles = {
   backgroundImage: "linear-gradient(120deg, #fefdfa 40%, #00bf80 100%)",
   padding: "10px",
@@ -51,38 +54,37 @@ export const CampFormStyles = {
   paddingBottom: "60px",
   fontFamily: "Arial",
 };
-  //Cross section Styles
+//Cross section Styles
 export const myCross = {
   color: "white",
   backgroundImage: "linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%)",
   padding: "10px",
   fontFamily: "Arial",
 };
-  //Downtown section Styles
- export const myDowntown = {
+//Downtown section Styles
+export const myDowntown = {
   color: "white",
   backgroundImage: "linear-gradient(120deg, #84fab0 0%, #ffc107 100%)",
   padding: "10px",
   fontFamily: "Arial",
-  };
+};
 
-   //Highlights section Styles
- export const myHighlight = {
+//Highlights section Styles
+export const myHighlight = {
   color: "white",
   backgroundImage: "linear-gradient(120deg, #05EDFF 0%, #00FFAA 100%)",
   padding: "10px",
   marginTop: "10px",
   fontFamily: "Arial",
-  };
+};
 
-
-  //Footer Sytles
+//Footer Sytles
 export const footerStyles = {
-    backgroundImage: "linear-gradient(180deg, #2af598 0%, #009efd 100%)",
-    padding: "50px",
-  }
+  backgroundImage: "linear-gradient(180deg, #2af598 0%, #009efd 100%)",
+  padding: "50px",
+};
 
-    //Parks Styles
+//Parks Styles
 export const myParkStyle = {
   paddingTop: "30px",
   paddingBottom: "30px",
@@ -103,7 +105,6 @@ export const carousalStyle = {
   textAlign: "center",
   paddingTop: "33px",
   paddingBottom: "33px",
-  
 };
 
 export const fontStyle = {
@@ -126,7 +127,7 @@ export const topStyle = {
   fontFamily: "Arial",
 };
 
-  //Singup Styles
+//Singup Styles
 export const signupStyle = {
   fontSize: "1.125rem",
   textAlign: "center",
@@ -135,7 +136,7 @@ export const signupStyle = {
   marginRight: "45rem",
   marginLeft: "45rem",
   shadow: "none",
-}
+};
 
 export const navStyle = {
   position: "absolute",
