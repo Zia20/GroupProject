@@ -104,8 +104,8 @@ const MapsRec = () => {
                 e.preventDefault();
                 setSelectedPark(park);
               }}
-            >
-              <SurfingIcon zoom={100}
+            > 
+              <SurfingIcon
                 color="primary"
                 style={{
                   height: "30px",

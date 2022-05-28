@@ -18,8 +18,7 @@ import MapRatings from "./MapRatings";
 import Search from "../Search/Search";
 import { navStyle, navControlStyle, searchStyle } from "../Styles/Styles";
 
-// const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
-const AKEY = "pk.eyJ1IjoiYXRhZW5lIiwiYSI6ImNsMnRpc3EwcDAxaXMzY3FlOGg4a3A5ZmEifQ.dtj_XStiWa_Uy15mfMAM7Q"
+const AKEY = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const Maps = () => {
   const [long, setLong] = useState(-114.0719);
@@ -108,8 +107,8 @@ const Maps = () => {
               <ParkIcon
                 color="primary"
                 style={{
-                  height: 25 * `${viewState.zoom}px`,
-                  width: 15 * `${viewState.zoom}px`,
+                  height: "30px",
+                  width: "40px",
                 }}
               />
             </button>
@@ -135,6 +134,7 @@ const Maps = () => {
                 </Button>
               </a><br/>
               <label className="popups-label">Ratings</label>
+              {/* <p className="star">{(selectedPark.Ratings).fill(<MapRatings className="star"/>)}</p> */}
               <MapRatings />
               <label className="popups-label">Information</label>
               <p className="descInfo">{selectedPark.Description}</p>

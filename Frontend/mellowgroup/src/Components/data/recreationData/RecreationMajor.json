@@ -6,16 +6,16 @@
   "Facilities": "Beach",
   "Latitude": 51.0305,
   "Longitude": -114.0635,
-  "LatLong": "51.0305, -114.0635"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
-  "Name": "Sikome Lake ",
+  "Name": "Sikome Lake Beach",
   "Address": "Bow Bottom Trail S.E.",
   "Facilities": "Beach",
   "Latitude": 50.9002,
   "Longitude": -114.0156,
-  "LatLong": "50.9002, -114.0156"
+  "Ratings": 3
  },
  {
   "City": "Calgary",
@@ -24,7 +24,7 @@
   "Facilities": "Beach",
   "Latitude": 51.0096,
   "Longitude": -114.0903,
-  "LatLong": "51.0096, -114.0904"
+  "Ratings": 4
  },
  {
   "City": "Calgary",
@@ -33,7 +33,7 @@
   "Facilities": "Family",
   "Latitude": 51.0388,
   "Longitude": -114.0905,
-  "LatLong": "51.0388, -114.0905"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -42,7 +42,7 @@
   "Facilities": "Aquatic Swimming pool fitness",
   "Latitude": 51.0373,
   "Longitude": -114.1302,
-  "LatLong": "51.0373, -114.1302"
+  "Ratings": 3
  },
  {
   "City": "Calgary",
@@ -51,7 +51,7 @@
   "Facilities": "Aquatic Swimming pool fitness",
   "Latitude": 51.0376,
   "Longitude": -114.0282,
-  "LatLong": "51.0376, -114.0282"
+  "Ratings": 4
  },
  {
   "City": "Calgary",
@@ -60,7 +60,7 @@
   "Facilities": "Aquatic Swimming pool fitness",
   "Latitude": 51.0066,
   "Longitude": -114.1055,
-  "LatLong": "51.0066, -114.1055"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -69,7 +69,7 @@
   "Facilities": "Aquatic Swimming pool fitness",
   "Latitude": 51.0742,
   "Longitude": -114.1256,
-  "LatLong": "51.0449, -114.1239"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -87,7 +87,7 @@
   "Facilities": "Golf Course",
   "Latitude": 51.0018,
   "Longitude": -114.1063,
-  "LatLong": "51.0018, -114.1063"
+  "Ratings": 2
  },
  {
   "City": "Calgary",
@@ -96,7 +96,7 @@
   "Facilities": "Golf Course",
   "Latitude": 50.9513,
   "Longitude": -114.0328,
-  "LatLong": "50.9513, -114.0328"
+  "Ratings": 2
  },
  {
   "City": "Calgary",
@@ -105,7 +105,7 @@
   "Facilities": "Hockey Arenas",
   "Latitude": 51.0321,
   "Longitude": -114.1598,
-  "LatLong": "51.0321, -114.1598"
+  "Ratings": 4
  },
  {
   "City": "Calgary",
@@ -114,7 +114,7 @@
   "Facilities": "Hockey Arenas",
   "Latitude": 50.9803,
   "Longitude": -114.0743,
-  "LatLong": "50.9803, -114.0743"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -123,7 +123,7 @@
   "Facilities": "Hockey Arenas",
   "Latitude": 51.0422,
   "Longitude": -114.0042,
-  "LatLong": "51.0422, -114.0042"
+  "Ratings": 4
  },
  {
   "City": "Calgary",
@@ -132,7 +132,7 @@
   "Facilities": "Hockey Arenas",
   "Latitude": 51.1132,
   "Longitude": -114.0653,
-  "LatLong": "51.1132, -114.0653"
+  "Ratings": 3
  },
  {
   "City": "Calgary",
@@ -141,7 +141,7 @@
   "Facilities": "Leisure Centre Arena",
   "Latitude": 50.9627,
   "Longitude": -114.1082,
-  "LatLong": "50.9627, -114.1082"
+  "Ratings": 4
  },
  {
   "City": "Calgary",
@@ -150,7 +150,7 @@
   "Facilities": "Hockey Arenas",
   "Latitude": 51.0761,
   "Longitude": -113.9541,
-  "LatLong": "51.0761, -113.9541"
+  "Ratings": 3
  },
  {
   "City": "Calgary",
@@ -159,7 +159,7 @@
   "Facilities": "Outdoor Soccer centre",
   "Latitude": 50.9925,
   "Longitude": -113.9603,
-  "LatLong": "50.9925, -113.9603"
+  "Ratings": 3
  },
  {
   "City": "Calgary",
@@ -168,7 +168,7 @@
   "Facilities": "Art Centre",
   "Latitude": 51.0768,
   "Longitude": -114.0775,
-  "LatLong": "51.0768, -114.0775"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -177,6 +177,6 @@
   "Facilities": "Art Centre",
   "Latitude": 51.1034,
   "Longitude": -114.1505,
-  "LatLong": "51.1034, -114.1505"
+  "Ratings": 4
  }
 ]

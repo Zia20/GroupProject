@@ -6,7 +6,7 @@
   "Description": "Verdant park offering abundant outdoor activities, such as ice skating, fishing & bird watching.",
   "Latitude": 50.9743,
   "Longitude": -114.0327,
-  "LatLong": "50.9743, -114.0327"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -15,7 +15,7 @@
   "Description": "Bowness Park is a 30-hectare urban park on the Bow River in Bowness, a neighbourhood in the northwest quadrant of the City of Calgary, Alberta, Canada. ",
   "Latitude": 51.0971,
   "Longitude": -114.2171,
-  "LatLong": "51.0971, -114.2171"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -24,7 +24,7 @@
   "Description": "Parkhill\/Stanley Park is a residential neighbourhood in the south-west quadrant of Calgary, Alberta. It is bounded by Mission Road to the north, Macleod Trail to the east,Crescent Boulevard to the south and the Elbow River to the west.",
   "Latitude": 51.0179,
   "Longitude": -114.0664,
-  "LatLong": "51.0179, -114.0664"
+  "Ratings": 4
  },
  {
   "City": "Calgary",
@@ -33,7 +33,7 @@
   "Description": "Waterfront green space with biking & hiking paths, plus a sailing school & an aquatic playground.",
   "Latitude": 50.973,
   "Longitude": -114.119,
-  "LatLong": "50.973, -114.1190"
+  "Ratings": 4
  },
  {
   "City": "Calgary",
@@ -42,7 +42,7 @@
   "Description": "Relaxed public park with a pond, rose garden, playgrounds, picnic shelters & off-leash dog area.",
   "Latitude": 51.036,
   "Longitude": -113.9455,
-  "LatLong": "51.0360, -113.9455"
+  "Ratings": 4
  },
  {
   "City": "Calgary",
@@ -51,7 +51,7 @@
   "Description": "Park featuring tennis courts, a playground & picnic tables, plus the historic Haultain School.",
   "Latitude": 51.0404,
   "Longitude": -114.0677,
-  "LatLong": "51.0404-114.0677"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -60,7 +60,7 @@
   "Description": "Nose Hill Park is a natural park in the northwest quadrant of Calgary, Alberta which covers over 11 km². It is the fourth-largest urban park in Canada, and one of the largest urban parks in North America. It is a municipal park, unlike Fish Creek, which is a provincial park. It was created in 1980.",
   "Latitude": 51.1095,
   "Longitude": -114.1089,
-  "LatLong": "51.1095,-114.1089"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -69,7 +69,7 @@
   "Description": "Confederation Park is an urban park in northwest Calgary, Alberta. It is developed over an area of 160 hectares between the neighbourhoods of Mount Pleasant, Capitol Hill, Collingwood and Highland Park. 10th Street West bisects the park from north to south.",
   "Latitude": 51.0798,
   "Longitude": -114.0793,
-  "LatLong": "51.0798, -114.0793"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -78,7 +78,7 @@
   "Description": "Riley Park is an urban park in Calgary, Alberta, Canada.",
   "Latitude": 51.0585,
   "Longitude": -114.089,
-  "LatLong": "51.0585, -114.089"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -87,7 +87,7 @@
   "Description": "Compact urban plaza park with a small playground, a lawn & benches.",
   "Latitude": 51.0491,
   "Longitude": -114.0638,
-  "LatLong": "51.0491, -114.0638"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -96,7 +96,7 @@
   "Description": "Edworthy Park is a city park located in the Northwest section of Calgary along the south shore of the Bow River.",
   "Latitude": 51.0608,
   "Longitude": -114.1575,
-  "LatLong": "51.0608, -114.1575"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -105,7 +105,7 @@
   "Description": "The Pearce Estate Wetland is a city park located in Calgary, Alberta. The park occupies 21 hectares along the Bow River to the east of downtown Calgary.",
   "Latitude": 51.0412,
   "Longitude": -114.015,
-  "LatLong": "51.0412, -114.015"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -114,7 +114,7 @@
   "Description": "Park featuring a playground with a zip line & a water area, plus fitness stations, sports & more.",
   "Latitude": 51.1049,
   "Longitude": -113.9719,
-  "LatLong": "51.1049, -113.9719"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -132,7 +132,7 @@
   "Description": "Baker Park is a 12-hectare urban park on the bank of the Bow River in the west edge of the city of Calgary. It is part of the pedestrian and bicycle Bow River pathway that links a vast network of urban parks on both sides of the river. ",
   "Latitude": 51.0973,
   "Longitude": -114.12564,
-  "LatLong": "51.0973,-114.21564"
+  "Ratings": 5
  },
  {
   "City": "Calgary",
@@ -141,6 +141,6 @@
   "Description": "Waterfront 208-acre park with trails, playgrounds, tennis courts, fire pits, BBQs & picnic areas.",
   "Latitude": 50.9896,
   "Longitude": -114.1253,
-  "LatLong": "50.9896, -114.1253"
+  "Ratings": 5
  }
 ]

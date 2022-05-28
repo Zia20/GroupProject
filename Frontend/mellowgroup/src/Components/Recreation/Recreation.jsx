@@ -14,7 +14,7 @@ function Recreation() {
   const [ weatherData, setWeatherData ] = useState([{}]);
   const [ city, setCity ] = useState('')
 
-  const APIKEY ="eb9a4f501594fa74eabf2097e53cea33"
+  const APIKEY =""
   
   const weatherUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}&units=metric`;
 
@@ -41,7 +41,7 @@ function Recreation() {
           <Col className='mt-5 pl-3'>
               <h1>YYC recreation, the best among <span className='text-success'>western Canada</span>.</h1>
               <h4 className='text-danger'>Visit our parks and recreational centers. Visit YYC</h4>
-              <a href="https://www.calgary.ca/csps/recreation/rentals-and-bookings.html">        
+              <a href="https://www.calgary.ca/csps/recreation/rentals-and-bookings.html" target="_blank" rel="noreferrer">        
               <Button className='mt-3 shadow-none' variant="outline-success" size="lg">Book Now</Button>
               </a>
           </Col>
@@ -152,7 +152,8 @@ function Recreation() {
               <h2>
                   Enjoy the weather around the city
               </h2>
-              <Button className='mt-3' variant="outline-success" size="lg">Get in touch</Button>
+              <a href='http://localhost:3000/engage'>
+              <Button className='mt-3' variant="outline-success" size="lg">Get in touch</Button></a>
           </Col>
         </Row>
       </Container>
@@ -179,7 +180,8 @@ function Recreation() {
           <Col className='mt-5 pl-3'>
               <h1>Report an issue or rate YYC parks</h1>
               <h4>Residence to City Reporting</h4>
-              <Button className='mt-3' variant="outline-success" size="lg">Learn more</Button>
+              <a href="https://www.calgary.ca/categories/category-parksandrecreation.html " target="_blank" rel="noreferrer">
+              <Button className='mt-3' variant="outline-success" size="lg">Learn more</Button> </a>
           </Col>
           <Col>
             <img alt='parks' src={Image2}/>
