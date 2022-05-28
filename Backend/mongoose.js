@@ -2,7 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 // const connectionStringUrl=process.env.MONGO_URL || 
 
-mongoose.connect('mongodb://localhost:27017/FEEDBACK');
+mongoose.connect('mongodb://localhost:127.0.0.1/FEEDBACK');
 // console.log("CheckURL", connectionStringUrl);
 
 //Run CheckURL ensure connection

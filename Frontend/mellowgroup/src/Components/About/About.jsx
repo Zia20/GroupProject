@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "bootstrap/dist/css/bootstrap.css";
 import Images from "../../images/Ataene.jpg";
-import Image1 from "../../images/Fowzia.jpg";
+import Image1 from "../../images/team.jpg";
 import Image2 from "../../images/neu4mann.png";
 import Image3 from "../../images/Yulia.jpg";
 
