@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "bootstrap/dist/css/bootstrap.css";
 import Images from "../../images/Ataene.jpg";
-import Image1 from "../../images/Zia20.png";
+import Image1 from "../../images/team.jpg";
 import Image2 from "../../images/neu4mann.png";
-import Image3 from "../../images/bnurmos.png";
+import Image3 from "../../images/Yulia.jpg";
+
 import { aboutStyles } from "../Styles/Styles";
 
 function About() {
@@ -95,7 +96,7 @@ function About() {
                 <Card.Body className='text-center'>
                   <Card.Title className='bold'>Yulia Sinko</Card.Title>
                   <Card.Text>
-                  Software Engineer and a GIS
+                  Software Engineer & Advertising
                   </Card.Text>
                   <a href="https://github.com/bnurmos" target="_blank">
                   <Button type='button' className='shadow-none'  variant="primary"><FontAwesomeIcon className='px-2 mx-2' icon={faGithub} size="2x"  /></Button> </a>
